@@ -23,6 +23,8 @@ namespace PratikForumAPI
             services.AddControllers();
             services.AddDbContext<PratikForumAPIDBContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,7 +34,16 @@ namespace PratikForumAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.Use(async (ctx, next) =>
+            {
+                await next();
+                if (ctx.Response.StatusCode == 204)
+                {
+                    ctx.Response.ContentLength = 0;
+                }
+            });
+            app.UseCors(options => options.WithOrigins("http://localhost:4200")
+          .AllowAnyMethod().AllowAnyHeader());
             app.UseRouting();
 
             app.UseAuthorization();
@@ -41,6 +52,8 @@ namespace PratikForumAPI
             {
                 endpoints.MapControllers();
             });
+
+          
         }
     }
 }
