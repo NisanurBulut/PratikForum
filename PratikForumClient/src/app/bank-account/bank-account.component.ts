@@ -22,8 +22,10 @@ export class BankAccountComponent implements OnInit {
   }
   GetBankAccountList() {
     this.bankAccountForms.clear();
+
     this.bas.getBankAccountList().subscribe(res => {
-      if (res === []) {
+      console.log(res);
+      if (res === [] || (res as []).length === 0) {
         this.AddBankAccountForm();
       } else {
         (res as []).forEach((bankAccount: any) => {
