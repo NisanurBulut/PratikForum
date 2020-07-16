@@ -12,4 +12,7 @@ export class BankAccountService {
   postBankAccount(formData: FormGroup) {
     return this.http.post(environment.apiBaseUrl + '/BankAccount', formData);
   }
+  getBankAccountList() {
+    return this.http.get(environment.apiBaseUrl + '/BankAccount');
+  }
 }

@@ -17,7 +17,22 @@ export class BankAccountComponent implements OnInit {
   ngOnInit() {
     this.bs.getBankList()
       .subscribe(resp => this.bankList = resp as []);
-    this.AddBankAccountForm();
+
+    this.bas.getBankAccountList().subscribe(res => {
+      if (res === []) {
+        this.AddBankAccountForm();
+      } else {
+        (res as []).forEach((bankAccount: any) => {
+          this.bankAccountForms.push(this.fb.group({
+            BankID: [bankAccount.bankID, Validators.min(1)],
+            BankAccountID: [bankAccount.bankAccountID],
+            AccountNumber: [bankAccount.accountNumber, Validators.required],
+            AccountHolder: [bankAccount.accountHolder, Validators.required],
+            IFSC: [bankAccount.ifsc, Validators.required]
+          }));
+        });
+      }
+    });
   }
   AddBankAccountForm() {
     this.bankAccountForms.push(this.fb.group({
@@ -29,7 +44,6 @@ export class BankAccountComponent implements OnInit {
     }));
   }
   recordSubmit(fg: FormGroup) {
-    console.log(fg.value);
     this.bas.postBankAccount(fg.value).subscribe(
       (res: any) => {
         fg.patchValue({ bankAccountID: res.bankAccountID });

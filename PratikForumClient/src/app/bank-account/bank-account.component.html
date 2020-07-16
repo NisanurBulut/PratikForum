@@ -30,7 +30,7 @@
       <div class="td">
         <select class="form-control" formControlName="BankID">
           <option value="0">Seçiniz...</option>
-          <option *ngFor="let item of bankList" value="{{item.bankID}}">{{
+          <option *ngFor="let item of bankList" [ngValue]="item.bankID">{{
             item.bankName
           }}</option></select
         >

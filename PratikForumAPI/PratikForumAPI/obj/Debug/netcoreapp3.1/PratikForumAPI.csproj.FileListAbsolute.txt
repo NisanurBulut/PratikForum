@@ -165,3 +165,4 @@ E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\staticwebas
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.pdb
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.genruntimeconfig.cache
+E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.csprojAssemblyReference.cache
