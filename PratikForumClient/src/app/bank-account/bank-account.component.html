@@ -28,10 +28,10 @@
         />
       </div>
       <div class="td">
-        <input
+        <select
           class="form-control"
-          formControlName="bankId"
-        />
+          formControlName="bankId">
+          <option *ngFor="let item of bankList">{{item.bankName}}</option></select>
       </div>
       <div class="td">
         <input

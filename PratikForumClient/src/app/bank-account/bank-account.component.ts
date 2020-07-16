@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormArray } from '@angular/forms';
+import { BankService } from '../shared/bank.service';
 
 @Component({
   selector: 'app-bank-account',
@@ -9,9 +10,12 @@ import { FormBuilder, FormArray } from '@angular/forms';
 export class BankAccountComponent implements OnInit {
 
   bankAccountForms: FormArray = this.fb.array([]);
-  constructor(private fb: FormBuilder) { }
+  bankList = [];
+  constructor(private fb: FormBuilder, private bs: BankService) { }
 
   ngOnInit() {
+    this.bs.getBankList()
+      .subscribe(resp => this.bankList = resp as []);
     this.AddBankAccountForm();
   }
   AddBankAccountForm() {
