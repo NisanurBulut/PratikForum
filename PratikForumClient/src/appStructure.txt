@@ -1,0 +1,13 @@
+* src
++...*app
+|   |
+|   +---*BankAccount
+|   |   |--- BankAccount.Component.ts|.html
+|   |
+|   +---*Shared
+|   |   |---bank.service.ts
+|   |   |---bank.Account.service.ts,
+|   |
+|   |---app.module.ts
+|
+|---index.html (cdn path for bootstrap)
