@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nisanur.bulut\\source\\repos\\PratikForumAPI\\PratikForumAPI\\PratikForumAPI.csproj": {}
+    "E:\\PratikForum\\PratikForumAPI\\PratikForumAPI\\PratikForumAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nisanur.bulut\\source\\repos\\PratikForumAPI\\PratikForumAPI\\PratikForumAPI.csproj": {
+    "E:\\PratikForum\\PratikForumAPI\\PratikForumAPI\\PratikForumAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nisanur.bulut\\source\\repos\\PratikForumAPI\\PratikForumAPI\\PratikForumAPI.csproj",
+        "projectUniqueName": "E:\\PratikForum\\PratikForumAPI\\PratikForumAPI\\PratikForumAPI.csproj",
         "projectName": "PratikForumAPI",
-        "projectPath": "C:\\Users\\nisanur.bulut\\source\\repos\\PratikForumAPI\\PratikForumAPI\\PratikForumAPI.csproj",
+        "projectPath": "E:\\PratikForum\\PratikForumAPI\\PratikForumAPI\\PratikForumAPI.csproj",
         "packagesPath": "C:\\Users\\nisanur.bulut\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nisanur.bulut\\source\\repos\\PratikForumAPI\\PratikForumAPI\\obj\\",
+        "outputPath": "E:\\PratikForum\\PratikForumAPI\\PratikForumAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -40,6 +40,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
