@@ -6,7 +6,7 @@
 |   |
 |   +---*Shared
 |   |   |---bank.service.ts
-|   |   |---bank.Account.service.ts,
+|   |   |---bank-account.service.ts,
 |   |
 |   |---app.module.ts
 |
