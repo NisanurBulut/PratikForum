@@ -1,1 +1,38 @@
-<p>bank-account works!</p>
+<div class="grid-table">
+  <div class="thead">
+    <div class="tr">
+      <div class="td">Hesap No</div>
+      <div class="td">Hesap Sahibi</div>
+      <div class="td">Banka</div>
+      <div class="td">IFSC</div>
+    </div>
+  </div>
+  <div class="tbody">
+    <form class="tr" [formGroup]="fg" *ngFor="let fg of bankAccountForms.controls">
+      <div class="td">
+        <input
+          class="form-control"
+          formControlName="accountNumber"
+        />
+      </div>
+      <div class="td">
+        <input
+          class="form-control"
+          formControlName="accountHolder"
+        />
+      </div>
+      <div class="td">
+        <input
+          class="form-control"
+          formControlName="bankId"
+        />
+      </div>
+      <div class="td">
+        <input
+          class="form-control"
+          formControlName="IFSC"
+        />
+      </div>
+    </form>
+  </div>
+</div>
