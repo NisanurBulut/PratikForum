@@ -44,10 +44,19 @@ export class BankAccountComponent implements OnInit {
     }));
   }
   recordSubmit(fg: FormGroup) {
-    this.bas.postBankAccount(fg.value).subscribe(
-      (res: any) => {
-        fg.patchValue({ bankAccountID: res.bankAccountID });
-      }
-    );
+    if (fg.get('BankAccountID').value === 0) {
+      this.bas.postBankAccount(fg.value).subscribe(
+        (res: any) => {
+          fg.patchValue({ bankAccountID: res.bankAccountID });
+        }
+      );
+    } else {
+      this.bas.putBankAccount(fg.value).subscribe(
+        (res: any) => {
+
+        }
+      );
+    }
+
   }
 }

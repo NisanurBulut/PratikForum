@@ -11,7 +11,11 @@
       <div class="td">Hesap Sahibi</div>
       <div class="td">Banka</div>
       <div class="td">IFSC</div>
-      <div class="td">İşlem</div>
+      <div class="td">
+        <button class="btn btn-outline-success" (click)="AddBankAccountForm()">
+          <i class="fa fa-plus"></i> Yeni Hesap
+        </button>
+      </div>
     </div>
   </div>
   <div class="tbody">
@@ -41,10 +45,11 @@
       <div class="td">
         <button
           type="submit"
-          class="btn btn-success form-control"
+          [ngClass]="(fg.get('BankAccountID').value == 0) ? 'btn btn-success' : 'btn btn-outline-dark'"
           [disabled]="fg.invalid"
-        ><i class="far fa-save fa-lg"></i>
-          Kaydet
+        >
+          <i class="far fa-save fa-lg"></i>
+          {{ (fg.get('BankAccountID').value == 0) ? "Kaydet" : "Güncelle" }}
         </button>
       </div>
     </form>
