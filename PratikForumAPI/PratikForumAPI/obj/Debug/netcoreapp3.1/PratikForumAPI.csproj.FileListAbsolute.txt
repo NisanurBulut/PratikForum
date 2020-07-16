@@ -54,8 +54,6 @@ E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Microsoft.E
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.csproj.CopyComplete
-E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.csproj.CoreCompileInputs.cache
-E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.MvcApplicationPartsAssemblyInfo.cache
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
@@ -71,3 +69,6 @@ E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\wi
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.csproj.CoreCompileInputs.cache
+E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.MvcApplicationPartsAssemblyInfo.cache
