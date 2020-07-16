@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormArray } from '@angular/forms';
+import { FormBuilder, FormArray, Validators } from '@angular/forms';
 import { BankService } from '../shared/bank.service';
 
 @Component({
@@ -20,11 +20,11 @@ export class BankAccountComponent implements OnInit {
   }
   AddBankAccountForm() {
     this.bankAccountForms.push(this.fb.group({
-      bankId: [0],
+      bankId: [0, Validators.min(0)],
       bankAccountId: [0],
-      accountNumber: [''],
-      accountHolder: [''],
-      IFSC: ['']
+      accountNumber: ['', Validators.required],
+      accountHolder: ['', Validators.required],
+      IFSC: ['', Validators.required]
     }));
   }
 }
