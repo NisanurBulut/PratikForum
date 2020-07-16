@@ -95,6 +95,6 @@ export class BankAccountComponent implements OnInit {
     }
     setTimeout(() => {
       this.notification = null;
-    }, (5000));
+    }, (3000));
   }
 }

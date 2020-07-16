@@ -60,6 +60,8 @@
           <i class="far fa-save fa-lg"></i>
           {{ fg.get("BankAccountID").value == 0 ? "Kaydet" : "Güncelle" }}
         </button>
+      </div>
+      <div class="td">
         <button
           class="btn btn-default ml-1"
           (click)="deleteBankAccount(fg.get('BankAccountID').value, i)"
