@@ -12,6 +12,7 @@ export class BankAccountComponent implements OnInit {
 
   bankAccountForms: FormArray = this.fb.array([]);
   bankList = [];
+  notification = null;
   constructor(private fb: FormBuilder, private bs: BankService, private bas: BankAccountService) { }
 
   ngOnInit() {
@@ -48,21 +49,45 @@ export class BankAccountComponent implements OnInit {
       this.bas.postBankAccount(fg.value).subscribe(
         (res: any) => {
           fg.patchValue({ bankAccountID: res.bankAccountID });
+          this.showNotification('insert');
         }
       );
     } else {
       this.bas.putBankAccount(fg.value).subscribe(
         (res: any) => {
-
+          this.showNotification('update');
         }
       );
     }
   }
   deleteBankAccount(BankAccountID, i: number) {
-    this.bas.deleteBankAccount(BankAccountID).subscribe(
-      (res: any) => {
-     this.bankAccountForms.removeAt(i);
-      }
-    );
+    if (BankAccountID === 0) {
+      this.bankAccountForms.removeAt(i);
+    } else if (confirm('Bu işlemi yapmak istediğinizden emin misiniz ?')) {
+      this.bas.deleteBankAccount(BankAccountID).subscribe(
+        (res: any) => {
+          this.bankAccountForms.removeAt(i);
+          this.showNotification('delete');
+        }
+      );
+    }
+  }
+  showNotification(category) {
+    switch (category) {
+      case 'insert':
+        this.notification = { class: 'text-success', message: 'Başarıyla kaydedildi.' };
+        break;
+      case 'update':
+        this.notification = { class: 'text-warning', message: 'Başarıyla güncellendi.' };
+        break;
+      case 'delete':
+        this.notification = { class: 'text-danger', message: 'Başarıyla silindi.' };
+        break;
+      default:
+        break;
+    }
+    setTimeout(() => {
+      this.notification = null;
+    }, (3000));
   }
 }

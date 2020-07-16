@@ -16,6 +16,11 @@
           <i class="fa fa-plus"></i> Yeni Hesap
         </button>
       </div>
+      <div class="td">
+        <span *ngIf="notification" class="elementToFadeInAndOut">
+          <i class="fas fa-check-circle {{ notification.class }}"></i> {{notification.message}}
+        </span>
+      </div>
     </div>
   </div>
   <div class="tbody">
@@ -56,10 +61,10 @@
           {{ fg.get("BankAccountID").value == 0 ? "Kaydet" : "Güncelle" }}
         </button>
         <button
-          class="btn btn-danger ml-1"
+          class="btn btn-default ml-1"
           (click)="deleteBankAccount(fg.get('BankAccountID').value, i)"
         >
-          <i class="far fa-trash-alt fa-lg"></i> Sil
+          <i class="far fa-trash-alt fa-lg text-danger"></i>
         </button>
       </div>
     </form>
