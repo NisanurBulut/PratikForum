@@ -1,8 +1,8 @@
 <blockquote class="blockquote ml-5">
-    <h2>Banka Hesap Bilgileri</h2>
-    <footer class="blockquote-footer">
-       <i> Angular 8</i> ve <i>.Net Core</i> ile tablo üzerinden veri düzenleme
-    </footer>
+  <h2>Banka Hesap Bilgileri</h2>
+  <footer class="blockquote-footer">
+    <i> Angular 8</i> ve <i>.Net Core</i> ile tablo üzerinden veri düzenleme
+  </footer>
 </blockquote>
 <div class="grid-table">
   <div class="thead">
@@ -11,34 +11,40 @@
       <div class="td">Hesap Sahibi</div>
       <div class="td">Banka</div>
       <div class="td">IFSC</div>
+      <div class="td">İşlem</div>
     </div>
   </div>
   <div class="tbody">
-    <form class="tr" [formGroup]="fg" *ngFor="let fg of bankAccountForms.controls">
+    <form
+      class="tr"
+      [formGroup]="fg"
+      *ngFor="let fg of bankAccountForms.controls"
+    >
       <div class="td">
-        <input
-          class="form-control"
-          formControlName="accountNumber"
-        />
+        <input class="form-control" formControlName="accountNumber" />
       </div>
       <div class="td">
-        <input
-          class="form-control"
-          formControlName="accountHolder"
-        />
+        <input class="form-control" formControlName="accountHolder" />
       </div>
       <div class="td">
-        <select
-          class="form-control"
-          formControlName="bankId">
+        <select class="form-control" formControlName="bankId">
           <option value="0">Seçiniz...</option>
-          <option *ngFor="let item of bankList">{{item.bankName}}</option></select>
+          <option *ngFor="let item of bankList">{{
+            item.bankName
+          }}</option></select
+        >
       </div>
       <div class="td">
-        <input
-          class="form-control"
-          formControlName="IFSC"
-        />
+        <input class="form-control" formControlName="IFSC" />
+      </div>
+      <div class="td">
+        <button
+          type="submit"
+          class="btn btn-success form-control"
+          [disabled]="fg.invalid"
+        ><i class="far fa-save fa-lg"></i>
+          Kaydet
+        </button>
       </div>
     </form>
   </div>
