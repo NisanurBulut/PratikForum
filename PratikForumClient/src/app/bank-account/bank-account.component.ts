@@ -18,7 +18,10 @@ export class BankAccountComponent implements OnInit {
   ngOnInit() {
     this.bs.getBankList()
       .subscribe(resp => this.bankList = resp as []);
-
+    this.GetBankAccountList();
+  }
+  GetBankAccountList() {
+    this.bankAccountForms.clear();
     this.bas.getBankAccountList().subscribe(res => {
       if (res === []) {
         this.AddBankAccountForm();
@@ -49,12 +52,14 @@ export class BankAccountComponent implements OnInit {
       this.bas.postBankAccount(fg.value).subscribe(
         (res: any) => {
           fg.patchValue({ bankAccountID: res.bankAccountID });
+          this.GetBankAccountList();
           this.showNotification('insert');
         }
       );
     } else {
       this.bas.putBankAccount(fg.value).subscribe(
         (res: any) => {
+          this.GetBankAccountList();
           this.showNotification('update');
         }
       );
@@ -88,6 +93,6 @@ export class BankAccountComponent implements OnInit {
     }
     setTimeout(() => {
       this.notification = null;
-    }, (3000));
+    }, (5000));
   }
 }
