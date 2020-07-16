@@ -19,17 +19,18 @@
       class="tr"
       [formGroup]="fg"
       *ngFor="let fg of bankAccountForms.controls"
+      (submit)="recordSubmit(fg)"
     >
       <div class="td">
-        <input class="form-control" formControlName="accountNumber" />
+        <input class="form-control" formControlName="AccountNumber" />
       </div>
       <div class="td">
-        <input class="form-control" formControlName="accountHolder" />
+        <input class="form-control" formControlName="AccountHolder" />
       </div>
       <div class="td">
-        <select class="form-control" formControlName="bankId">
+        <select class="form-control" formControlName="BankID">
           <option value="0">Seçiniz...</option>
-          <option *ngFor="let item of bankList">{{
+          <option *ngFor="let item of bankList" value="{{item.bankID}}">{{
             item.bankName
           }}</option></select
         >
