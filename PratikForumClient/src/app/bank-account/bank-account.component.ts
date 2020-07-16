@@ -57,6 +57,12 @@ export class BankAccountComponent implements OnInit {
         }
       );
     }
-
+  }
+  deleteBankAccount(BankAccountID, i: number) {
+    this.bas.deleteBankAccount(BankAccountID).subscribe(
+      (res: any) => {
+     this.bankAccountForms.removeAt(i);
+      }
+    );
   }
 }

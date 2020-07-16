@@ -18,4 +18,7 @@ export class BankAccountService {
   getBankAccountList() {
     return this.http.get(environment.apiBaseUrl + '/BankAccount');
   }
+  deleteBankAccount(id) {
+    return this.http.delete(environment.apiBaseUrl + '/BankAccount/' + id);
+  }
 }

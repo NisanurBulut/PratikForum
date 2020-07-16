@@ -22,7 +22,7 @@
     <form
       class="tr"
       [formGroup]="fg"
-      *ngFor="let fg of bankAccountForms.controls"
+      *ngFor="let fg of bankAccountForms.controls; let i = index"
       (submit)="recordSubmit(fg)"
     >
       <div class="td">
@@ -45,11 +45,21 @@
       <div class="td">
         <button
           type="submit"
-          [ngClass]="(fg.get('BankAccountID').value == 0) ? 'btn btn-success' : 'btn btn-outline-dark'"
+          [ngClass]="
+            fg.get('BankAccountID').value == 0
+              ? 'btn btn-success'
+              : 'btn btn-outline-dark'
+          "
           [disabled]="fg.invalid"
         >
           <i class="far fa-save fa-lg"></i>
-          {{ (fg.get('BankAccountID').value == 0) ? "Kaydet" : "Güncelle" }}
+          {{ fg.get("BankAccountID").value == 0 ? "Kaydet" : "Güncelle" }}
+        </button>
+        <button
+          class="btn btn-danger ml-1"
+          (click)="deleteBankAccount(fg.get('BankAccountID').value, i)"
+        >
+          <i class="far fa-trash-alt fa-lg"></i> Sil
         </button>
       </div>
     </form>
