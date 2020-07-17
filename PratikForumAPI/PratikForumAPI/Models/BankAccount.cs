@@ -18,7 +18,7 @@ namespace PratikForumAPI.Models
         public string AccountNumber { get; set; }
         [Column(TypeName = "nvarchar(100)")]
         [Required]
-        public int AccountHolder { get; set; }
+        public int UserID { get; set; }
         [Required]
         [Column(TypeName ="nvarchar(20)")]
         public string IFSC { get; set; }

@@ -37,7 +37,7 @@ export class UserComponent implements OnInit {
   }
   AddUserForm() {
     this.userForms.push(this.fb.group({
-      userID: [{ value: 0, disabled: true }],
+      userID: 0,
       name: ['', Validators.required],
       surname: ['', Validators.required],
       password: ['', Validators.required]

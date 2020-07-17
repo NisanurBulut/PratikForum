@@ -18,6 +18,7 @@ C:\Users\nisanur.bulut\source\repos\PratikForumAPI\PratikForumAPI\obj\Debug\netc
 C:\Users\nisanur.bulut\source\repos\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.dll
 C:\Users\nisanur.bulut\source\repos\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.pdb
 C:\Users\nisanur.bulut\source\repos\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.genruntimeconfig.cache
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\appsettings.json
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -145,7 +146,6 @@ E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\li
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
-E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
@@ -154,7 +154,6 @@ E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\wi
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.csprojAssemblyReference.cache
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.AssemblyInfoInputs.cache
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.AssemblyInfo.cs
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.csproj.CoreCompileInputs.cache

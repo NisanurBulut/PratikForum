@@ -33,13 +33,12 @@
         <input class="form-control" formControlName="AccountNumber" />
       </div>
       <div class="td">
-        <select class="form-control" formControlName="BankID">
+        <select class="form-control" formControlName="userID">
           <option value="0">Seçiniz...</option>
           <option *ngFor="let item of userList" [ngValue]="item.userID">{{
             item.name+" "+item.surname
           }}</option></select
         >
-        <!-- <input class="form-control" formControlName="AccountHolder" /> -->
       </div>
       <div class="td">
         <select class="form-control" formControlName="BankID">
