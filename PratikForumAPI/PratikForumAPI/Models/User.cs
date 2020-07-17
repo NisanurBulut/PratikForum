@@ -17,6 +17,5 @@ namespace PratikForumAPI.Models
         public string Surname { get; set; }
         [Column(TypeName = "nvarchar(6)")]
         public string Password { get; set; }
-        public int BankAccountID { get; set; }
     }
 }

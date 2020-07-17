@@ -7,12 +7,13 @@
   <div class="grid-table">
     <div class="thead">
       <div class="tr">
+        <div class="td">UserID</div>
         <div class="td">İsim</div>
         <div class="td">Soyisim</div>
         <div class="td">Parola</div>
         <div class="td">
           <button class="btn btn-sm btn-outline-success" (click)="AddUserForm()">
-            <i class="fa fa-plus"></i> Yeni Hesap
+            <i class="fa fa-plus"></i> Ekle
           </button> </div>
         <div class="td" style="width: 175px;">
           <span *ngIf="notification" class="elementToFadeInAndOut">
@@ -29,14 +30,17 @@
         (submit)="recordSubmit(fg)"
       >
         <div class="td">
-          <input class="form-control" formControlName="AccountNumber" />
+          <input class="form-control disabled" formControlName="userID" />
         </div>
         <div class="td">
-          <input class="form-control" formControlName="AccountHolder" />
+          <input class="form-control" formControlName="name" />
         </div>
         <div class="td">
-          <input class="form-control" formControlName="IFSC" />
+          <input class="form-control" formControlName="surname" />
         </div>
+        <div class="td">
+            <input class="form-control" formControlName="password" />
+          </div>
         <div class="td">
           <button
             type="submit"

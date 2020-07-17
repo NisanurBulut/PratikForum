@@ -4,12 +4,13 @@ import { AppComponent } from './app.component';
 import { BankAccountComponent } from './bank-account/bank-account.component';
 import { HomeComponent } from './home/home.component';
 import { BankComponent } from './bank/bank.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'bankAccount', component: BankAccountComponent },
     { path: 'bank', component: BankComponent },
-    { path: 'user', component: BankComponent },
+    { path: 'user', component: UserComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

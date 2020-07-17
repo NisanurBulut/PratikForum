@@ -10,19 +10,19 @@ import { catchError } from 'rxjs/internal/operators/catchError';
 export class UserService {
   constructor(private http: HttpClient) { }
   getUserList() {
-    return this.http.get(environment.apiBaseUrl + '/Bank')
+    return this.http.get(environment.apiBaseUrl + '/Users')
       .pipe(catchError(this.handleError));
   }
   deleteUser(id) {
-    return this.http.delete(environment.apiBaseUrl + '/Bank/' + id)
+    return this.http.delete(environment.apiBaseUrl + '/Users/' + id)
       .pipe(catchError(this.handleError));
   }
   postUser(formData: FormGroup) {
-    return this.http.post(environment.apiBaseUrl + '/Bank', formData)
+    return this.http.post(environment.apiBaseUrl + '/Users', formData)
       .pipe(catchError(this.handleError));
   }
   putUser(formData: any) {
-    return this.http.put(environment.apiBaseUrl + '/Bank/' + formData.bankID, formData)
+    return this.http.put(environment.apiBaseUrl + '/Users/' + formData.userID, formData)
       .pipe(catchError(this.handleError));
   }
   private handleError(error: any, caught: any): any {

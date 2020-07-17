@@ -14,6 +14,7 @@ export class UserComponent implements OnInit {
   constructor(private fb: FormBuilder, private us: UserService) { }
 
   ngOnInit() {
+    this.GetUserList();
   }
   GetUserList() {
     this.userForms.clear();
@@ -26,9 +27,9 @@ export class UserComponent implements OnInit {
         (res as []).forEach((user: any) => {
           this.userForms.push(this.fb.group({
             userID: [user.userID, Validators.min(1)],
-            name: [user.Name],
-            surname: [user.Surname, Validators.required],
-            password: [user.Password, Validators.required]
+            name: [user.name],
+            surname: [user.surname, Validators.required],
+            password: [user.password, Validators.required]
           }));
         });
       }
@@ -36,7 +37,7 @@ export class UserComponent implements OnInit {
   }
   AddUserForm() {
     this.userForms.push(this.fb.group({
-      userID: [0, Validators.min(1)],
+      userID: [0],
       name: ['', Validators.required],
       surname: ['', Validators.required],
       password: ['', Validators.required]
