@@ -12,10 +12,10 @@
       <div class="td">Banka</div>
       <div class="td">IFSC</div>
       <div class="td">
-        <button class="btn btn-outline-success" (click)="AddBankAccountForm()">
+        <button class="btn btn-sm btn-outline-success" (click)="AddBankAccountForm()">
           <i class="fa fa-plus"></i> Yeni Hesap
         </button> </div>
-      <div class="td" style="width: 75px;">
+      <div class="td" style="width: 175px;">
         <span *ngIf="notification" class="elementToFadeInAndOut">
           <i class="fas fa-check-circle {{ notification.class }}"></i> {{notification.message}}
         </span>
@@ -51,8 +51,8 @@
           type="submit"
           [ngClass]="
             fg.get('BankAccountID').value == 0
-              ? 'btn btn-success'
-              : 'btn btn-outline-dark'
+              ? 'btn btn-sm btn-success'
+              : 'btn btn-sm btn-outline-dark'
           "
           [disabled]="fg.invalid"
         >
@@ -62,7 +62,7 @@
       </div>
       <div class="td">
         <button
-          class="btn btn-default ml-1"
+          class="btn btn-sm btn-default ml-1"
           (click)="deleteBankAccount(fg.get('BankAccountID').value, i)"
         >
           <i class="far fa-trash-alt fa-lg text-danger"></i>

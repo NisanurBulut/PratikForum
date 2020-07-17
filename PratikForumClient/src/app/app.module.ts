@@ -7,13 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { BankComponent } from './bank/bank.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BankAccountComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    BankComponent
   ],
   imports: [
     BrowserModule,
