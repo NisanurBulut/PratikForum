@@ -4,35 +4,54 @@
       <i> Banka Bilgileri </i>
     </footer>
   </blockquote>
-
   <div class="grid-table">
     <div class="thead">
       <div class="tr">
         <div class="td">Banka ID</div>
         <div class="td">Banka Bilgisi</div>
         <div class="td">
-          <button class="btn btn-sm btn-outline-success">
+          <button class="btn btn-sm btn-outline-success" (click)="addBank()">
             <i class="fa fa-plus"></i> Ekle
           </button>
         </div>
-        <div class="td"></div>
+        <div class="td">
+            <span *ngIf="notification" class="elementToFadeInAndOut">
+                <i class="fas fa-check-circle {{ notification.class }}"></i>
+                {{notification.message}}
+              </span>
+        </div>
       </div>
     </div>
     <div class="tbody">
-      <form>
+      <form
+        class="tr"
+        [formGroup]="fg"
+        *ngFor="let fg of bankForms.controls; let i = index"
+        (submit)="recordSubmit(fg)"
+      >
         <div class="td">
-          <input class="form-control" formControlName="" />
+          <input class="form-control" formControlName="bankID" />
         </div>
         <div class="td">
-          <input class="form-control" formControlName="" />
+          <input class="form-control" formControlName="bankName" />
         </div>
         <div class="td">
-          <button type="submit" [ngClass]="">
+          <button
+            type="submit"
+            [ngClass]="
+              fg.get('bankID').value == 0
+                ? 'btn btn-sm btn-success'
+                : 'btn btn-sm btn-outline-dark'
+            "
+            [disabled]="fg.invalid"
+          >
             <i class="far fa-save fa-lg"></i>
+            {{ fg.get("bankID").value == 0 ? "Kaydet" : "Güncelle" }}
           </button>
         </div>
         <div class="td">
-          <button class="btn btn-sm btn-default ml-1">
+          <button class="btn btn-sm btn-default ml-1"
+            (click)="deleteBank(fg.get('bankID').value, i)">
             <i class="far fa-trash-alt fa-lg text-danger"></i>
           </button>
         </div>
