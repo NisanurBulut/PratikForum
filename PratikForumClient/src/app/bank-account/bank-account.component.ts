@@ -38,7 +38,7 @@ export class BankAccountComponent implements OnInit {
             BankID: [bankAccount.bankID, Validators.min(1)],
             BankAccountID: [bankAccount.bankAccountID],
             AccountNumber: [bankAccount.accountNumber, Validators.required],
-            AccountHolder: [bankAccount.accountHolder, Validators.required],
+            userID: [bankAccount.userID, Validators.required],
             IFSC: [bankAccount.ifsc, Validators.required]
           }));
         });
@@ -50,7 +50,7 @@ export class BankAccountComponent implements OnInit {
       BankID: [0, Validators.min(1)],
       BankAccountID: [0],
       AccountNumber: ['', Validators.required],
-      AccountHolder: [0, Validators.required],
+      userID: [0, Validators.required],
       IFSC: ['', Validators.required]
     }));
   }
