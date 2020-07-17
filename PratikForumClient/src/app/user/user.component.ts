@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormArray, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, FormArray, Validators, FormGroup, FormControl } from '@angular/forms';
 import { UserService } from '../shared/user.service';
-import { userInfo } from 'os';
+
 
 @Component({
   selector: 'app-user',
@@ -26,7 +26,7 @@ export class UserComponent implements OnInit {
       } else {
         (res as []).forEach((user: any) => {
           this.userForms.push(this.fb.group({
-            userID: [user.userID, Validators.min(1)],
+            userID: [user.userID, Validators.required],
             name: [user.name],
             surname: [user.surname, Validators.required],
             password: [user.password, Validators.required]
@@ -37,17 +37,19 @@ export class UserComponent implements OnInit {
   }
   AddUserForm() {
     this.userForms.push(this.fb.group({
-      userID: [0],
+      userID: [{ value: 0, disabled: true }],
       name: ['', Validators.required],
       surname: ['', Validators.required],
       password: ['', Validators.required]
     }));
   }
   recordSubmit(fg: FormGroup) {
+    console.log(fg.value);
     if (fg.get('userID').value === 0) {
       this.us.postUser(fg.value).subscribe(
         (res: any) => {
           fg.patchValue({ userID: res.userID });
+          this.showNotification('insert');
         }
       );
     } else {

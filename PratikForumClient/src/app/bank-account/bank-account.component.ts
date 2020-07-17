@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormArray, Validators, FormGroup } from '@angular/forms';
 import { BankService } from '../shared/bank.service';
 import { BankAccountService } from '../shared/bank-account.service';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-bank-account',
@@ -12,14 +13,18 @@ export class BankAccountComponent implements OnInit {
 
   bankAccountForms: FormArray = this.fb.array([]);
   bankList = [];
+  userList = [];
   notification = null;
-  constructor(private fb: FormBuilder, private bs: BankService, private bas: BankAccountService) { }
+  constructor(private fb: FormBuilder, private bs: BankService, private us: UserService, private bas: BankAccountService) { }
 
   ngOnInit() {
     this.bs.getBankList()
       .subscribe(resp => this.bankList = resp as []);
+    this.us.getUserList()
+      .subscribe(resp => this.userList = resp as []);
     this.GetBankAccountList();
   }
+
   GetBankAccountList() {
     this.bankAccountForms.clear();
 
@@ -45,7 +50,7 @@ export class BankAccountComponent implements OnInit {
       BankID: [0, Validators.min(1)],
       BankAccountID: [0],
       AccountNumber: ['', Validators.required],
-      AccountHolder: ['', Validators.required],
+      AccountHolder: [0, Validators.required],
       IFSC: ['', Validators.required]
     }));
   }
