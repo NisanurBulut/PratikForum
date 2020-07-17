@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { BankComponent } from './bank/bank.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { BankComponent } from './bank/bank.component';
     BankAccountComponent,
     HeaderComponent,
     HomeComponent,
-    BankComponent
+    BankComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'bankAccount', component: BankAccountComponent },
     { path: 'bank', component: BankComponent },
+    { path: 'user', component: BankComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
