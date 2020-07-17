@@ -1,4 +1,4 @@
-<blockquote class="blockquote ml-5">
+<blockquote class="blockquote 5">
   <h2></h2>
   <footer class="blockquote-footer">
     <i> Banka Hesap Bilgileri </i>
@@ -14,9 +14,8 @@
       <div class="td">
         <button class="btn btn-outline-success" (click)="AddBankAccountForm()">
           <i class="fa fa-plus"></i> Yeni Hesap
-        </button>
-      </div>
-      <div class="td">
+        </button> </div>
+      <div class="td" style="width: 75px;">
         <span *ngIf="notification" class="elementToFadeInAndOut">
           <i class="fas fa-check-circle {{ notification.class }}"></i> {{notification.message}}
         </span>
