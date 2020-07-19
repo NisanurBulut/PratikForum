@@ -9,9 +9,11 @@
 |   +---*User
 |   |   |--- User.Component.ts|.html
 |   |   +---*Registration
-|   |   |--- Registration.Component.ts|.html
+|   |   |   |--- Registration.Component.ts|.html
 |   |   +---*Login
-|   |   |--- Login.Component.ts|.html
+|   |   |   |--- Login.Component.ts|.html
+|   |   +---*Operations
+|   |   |   |---Operations.Component.ts|.html
 |   |
 |   +---*Bank
 |   |   |--- Bank.Component.ts|.html
