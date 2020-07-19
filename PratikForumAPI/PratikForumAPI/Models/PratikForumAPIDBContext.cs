@@ -15,6 +15,6 @@ namespace PratikForumAPI.Models
         }
         public DbSet<Bank> Banks { get; set; }
         public DbSet<BankAccount> BankAccounts { get; set; }
-        public DbSet<PratikForumAPI.Models.User> User { get; set; }
+        public DbSet<User> User { get; set; }
     }
 }

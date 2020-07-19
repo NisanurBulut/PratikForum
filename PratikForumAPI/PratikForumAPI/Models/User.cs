@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PratikForumAPI.Models
 {
-    public class User
+    public class User:IdentityUser
     {
         [Key]
         public int UserID { get; set; }
@@ -17,5 +18,6 @@ namespace PratikForumAPI.Models
         public string Surname { get; set; }
         [Column(TypeName = "nvarchar(6)")]
         public string Password { get; set; }
+        
     }
 }

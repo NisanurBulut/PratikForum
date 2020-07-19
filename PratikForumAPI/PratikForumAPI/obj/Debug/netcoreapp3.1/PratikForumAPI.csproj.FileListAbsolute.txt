@@ -137,8 +137,6 @@ E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\wi
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.csprojAssemblyReference.cache
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.AssemblyInfoInputs.cache
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.AssemblyInfo.cs
-E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.csproj.CoreCompileInputs.cache
-E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.MvcApplicationPartsAssemblyInfo.cache
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.RazorTargetAssemblyInfo.cache
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.csproj.CopyComplete
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\staticwebassets\PratikForumAPI.StaticWebAssets.Manifest.cache
@@ -146,3 +144,16 @@ E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\staticwebas
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.pdb
 E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.genruntimeconfig.cache
+E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.csproj.CoreCompileInputs.cache
+E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.MvcApplicationPartsAssemblyInfo.cs
+E:\PratikForum\PratikForumAPI\PratikForumAPI\obj\Debug\netcoreapp3.1\PratikForumAPI.MvcApplicationPartsAssemblyInfo.cache
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\PratikForumAPI.StaticWebAssets.xml
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
