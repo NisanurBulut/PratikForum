@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormArray, Validators, FormGroup, FormControl } from '@angular/forms';
 import { UserService } from '../../shared/user.service';
+import { User } from 'src/app/models/user.model';
 @Component({
   selector: 'app-user-operations',
   templateUrl: './user-operations.component.html',
