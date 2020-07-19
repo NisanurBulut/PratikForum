@@ -3,12 +3,11 @@
 |   |
 |   +---*Home
 |   |   |--- Home.Component.ts|.html
-|   |
-|   +---*Header
 |   |   |--- Header.Component.ts|.html
 |   |
 |   +---*User
 |   |   |--- User.Component.ts|.html
+|   |   |--- Registration.Component.ts|.html
 |   |
 |   +---*Bank
 |   |   |--- Bank.Component.ts|.html
