@@ -1,13 +1,27 @@
 * src
 +...*app
 |   |
+|   +---*Home
+|   |   |--- Home.Component.ts|.html
+|   |
+|   +---*Header
+|   |   |--- Header.Component.ts|.html
+|   |
+|   +---*User
+|   |   |--- User.Component.ts|.html
+|   |
+|   +---*Bank
+|   |   |--- Bank.Component.ts|.html
+|   |
 |   +---*BankAccount
 |   |   |--- BankAccount.Component.ts|.html
 |   |
 |   +---*Shared
+|   |   |---user.service.ts
 |   |   |---bank.service.ts
 |   |   |---bank-account.service.ts,
 |   |
 |   |---app.module.ts
+|   |---app.routing.module.ts
 |
 |---index.html (cdn path for bootstrap)
