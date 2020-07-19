@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PkU/CZ1jan7UpXWOGUverI3UeCkdByJ+7dTGni8XQpr0gd7ux2hZaYTVbqgDY87R/tu61EjeXLoKK7wYFqIxWg==",
+  "dgSpecHash": "dS5ZT2BAZ3+t/L72OyLza184c28VWOG1QhfGL300FTCmHpnsZAOabQaIP4XFkqKmXhyjo//xaFG9hhPMlohp9Q==",
   "success": true,
   "projectFilePath": "E:\\PratikForum\\PratikForumAPI\\PratikForumAPI\\PratikForumAPI.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\nisanur.bulut\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.6\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.6.nupkg.sha512",
     "C:\\Users\\nisanur.bulut\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\3.1.6\\microsoft.aspnetcore.identity.ui.3.1.6.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\nisanur.bulut\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",

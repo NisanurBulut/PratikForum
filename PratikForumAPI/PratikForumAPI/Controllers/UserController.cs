@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PratikForumAPI.Models;
@@ -11,13 +12,22 @@ namespace PratikForumAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly PratikForumAPIDBContext _context;
-
-        public UsersController(PratikForumAPIDBContext context)
+        private UserManager<User> _userManager;
+        private SignInManager<User> _signInManager;
+        public UserController(PratikForumAPIDBContext context, UserManager<User> userManager, SignInManager<User> signInManager)
         {
             _context = context;
+            this._userManager = userManager;
+            this._signInManager = signInManager;
+        }
+        [HttpPost]
+        [Route("/register")]
+        public async Task<Object> registerUser(User _user)
+        {
+
         }
 
         // GET: api/Users

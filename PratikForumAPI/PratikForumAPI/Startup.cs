@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PratikForumAPI.Models;
-
+using Microsoft.AspNetCore.Identity;
 namespace PratikForumAPI
 {
     public class Startup
@@ -23,6 +23,8 @@ namespace PratikForumAPI
             services.AddControllers();
             services.AddDbContext<PratikForumAPIDBContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            services.AddDefaultIdentity<User>()
+                     .AddEntityFrameworkStores<PratikForumAPIDBContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
