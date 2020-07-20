@@ -15,19 +15,19 @@ const routes: Routes = [
         path: 'user', component: UserComponent,
         children: [
             {
-                path: ':operations', component: UserOperationsComponent, pathMatch: 'full',
+                path: 'registration', component: RegistrationComponent, pathMatch: 'full',
             },
             {
-                path: ':registration', component: RegistrationComponent, pathMatch: 'full',
+                path: 'login', component: LoginComponent, pathMatch: 'full',
             },
             {
-                path: ':login', component: LoginComponent, pathMatch: 'full',
+                path: 'operations', component: UserOperationsComponent, pathMatch: 'full',
             }
         ]
     },
     { path: 'bankAccount', component: BankAccountComponent },
-    { path: 'bank', component: BankComponent },
-    { path: '**', component: HomeComponent }
+    { path: 'bank', component: BankComponent }
+    // { path: '**', component: HomeComponent }
 ];
 
 @NgModule({

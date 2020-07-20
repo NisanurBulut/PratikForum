@@ -25,8 +25,22 @@ namespace PratikForumAPI.Controllers
         }
         [HttpPost]
         [Route("/register")]
-        public async Task<Object> registerUser(User _user)
+        public async Task<Object> PostRegisterUser(User _user)
         {
+            var applicationUser = new User()
+            {
+                UserName = _user.Name,
+                Surname = _user.Surname
+            };
+            try
+            {
+                var result = await _userManager.CreateAsync(applicationUser, _user.Password);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
 
