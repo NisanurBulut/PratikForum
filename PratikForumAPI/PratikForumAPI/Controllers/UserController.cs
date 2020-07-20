@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -20,12 +21,17 @@ namespace PratikForumAPI.Controllers
             _context = context;
            
         }
-        
-        // GET: api/Users
-        [HttpGet]
+        [HttpPost]
         public async Task<ActionResult<IEnumerable<User>>> GetUser()
         {
             return await _context.User.ToListAsync();
+        }
+        // GET: api/Users
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<ActionResult<IEnumerable<User>>> Register(User _user)
+        {
+            return Ok();
         }
 
         // GET: api/Users/5

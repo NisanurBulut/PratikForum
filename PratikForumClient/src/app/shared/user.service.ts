@@ -29,7 +29,7 @@ export class UserService {
     console.log(error);
   }
   register(formData) {
-    return this.http.post(environment.apiBaseUrl  + '/User/PostRegisterUser', formData);
+    return this.http.post(environment.apiBaseUrl  + '/User/Register', formData);
   }
 
   login(formData) {

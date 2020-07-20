@@ -9,7 +9,7 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(private fb: FormBuilder,private us:UserService) { }
+  constructor(private fb: FormBuilder, private us: UserService) { }
   formModel = this.fb.group({
     UserName: ['', Validators.required],
     Email: ['', Validators.email],
@@ -23,8 +23,17 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
-console.log(this.formModel.value);
-this.us.register(this.formModel.value);
+    var body = {
+      Name: this.formModel.value.UserName,
+      Surname: this.formModel.value.FullName,
+      Email: this.formModel.value.Email,
+      Password: this.formModel.value.Password
+    };
+    this.us.register(body).subscribe(
+      (res: any) => {
+
+      }
+    );
   }
   comparePasswords(fb: FormGroup) {
     const confirmPswrdCtrl = fb.get('ConfirmPassword');
