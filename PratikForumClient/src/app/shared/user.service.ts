@@ -28,4 +28,15 @@ export class UserService {
   private handleError(error: any, caught: any): any {
     console.log(error);
   }
+  register(formData) {
+    return this.http.post(environment.apiBaseUrl  + '/User/PostRegisterUser', formData);
+  }
+
+  login(formData) {
+    return this.http.post(environment.apiBaseUrl  + '/ApplicationUser/Login', formData);
+  }
+
+  getUserProfile() {
+    return this.http.get(environment.apiBaseUrl  + '/UserProfile');
+  }
 }

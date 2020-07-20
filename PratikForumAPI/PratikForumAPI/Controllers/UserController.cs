@@ -15,35 +15,12 @@ namespace PratikForumAPI.Controllers
     public class UserController : ControllerBase
     {
         private readonly PratikForumAPIDBContext _context;
-        private UserManager<User> _userManager;
-        private SignInManager<User> _signInManager;
-        public UserController(PratikForumAPIDBContext context, UserManager<User> userManager, SignInManager<User> signInManager)
+        public UserController(PratikForumAPIDBContext context)
         {
             _context = context;
-            this._userManager = userManager;
-            this._signInManager = signInManager;
+           
         }
-        [HttpPost]
-        [Route("/register")]
-        public async Task<Object> PostRegisterUser(User _user)
-        {
-            var applicationUser = new User()
-            {
-                UserName = _user.Name,
-                Surname = _user.Surname
-            };
-            try
-            {
-                var result = await _userManager.CreateAsync(applicationUser, _user.Password);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-        }
-
+        
         // GET: api/Users
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUser()

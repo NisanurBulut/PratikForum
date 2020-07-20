@@ -10,7 +10,7 @@ import { UserOperationsComponent } from './user/user-operations/user-operations.
 
 
 const routes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', component: UserComponent },
     {
         path: 'user', component: UserComponent,
         children: [
