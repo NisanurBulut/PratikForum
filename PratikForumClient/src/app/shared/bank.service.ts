@@ -15,6 +15,10 @@ export class BankService {
     return this.http.get(environment.apiBaseUrl + '/Bank')
       .pipe(catchError(this.handleError));
   }
+  getBankDetail(id) {
+    return this.http.get(environment.apiBaseUrl + '/Bank/' + id)
+      .pipe(catchError(this.handleError));
+  }
   deleteBank(id) {
     return this.http.delete(environment.apiBaseUrl + '/Bank/' + id)
       .pipe(catchError(this.handleError));

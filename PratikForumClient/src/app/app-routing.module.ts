@@ -34,10 +34,10 @@ const routes: Routes = [
     { path: 'bank', component: BankComponent,
     children: [
         {
-            path: 'operations', component: BankOperationsComponent, pathMatch: 'full',
+            path: 'bank/operations', component: BankOperationsComponent, pathMatch: 'full',
         },
         {
-            path: 'degerlendirme', component: BankDegerlendirmeComponent, pathMatch: 'full',
+            path: 'bank/degerlendirme/:id', component: BankDegerlendirmeComponent, pathMatch: 'full',
         }
     ] },
      { path: '**', component: HomeComponent }
