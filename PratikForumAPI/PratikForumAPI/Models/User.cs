@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PratikForumAPI.Models
 {
-    public class User:IdentityUser
+    public class User
     {
         [Key]
         public int UserID { get; set; }

@@ -1,7 +1,27 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
+
+        <li class="nav-item">
+          <a class="nav-link"
+          routerLink='/user/operations'
+          routerLinkActive="active">Kullanıcı İşlemleri</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"  routerLink='/bank/operations' routerLinkActive="active">
+              Banka İşlemleri</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+              routerLink='/bankAccount' routerLinkActive="active">
+              Hesap İşlemleri</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+              routerLink='/bank/degerlendirme' routerLinkActive="active">
+              Banka Puanlama</a>
+        </li>
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Banka-Hesap
           </a>
@@ -14,7 +34,7 @@
               Hesap İşlemleri</a>
             <a class="dropdown-item"  routerLink='/bank' routerLinkActive="active">Banka İşlemleri</a>
           </div>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" routerLink='/book' routerLinkActive="active" aria-haspopup="true"
           aria-expanded="false">

@@ -1,1 +1,13 @@
-<p>rate-result works!</p>
+<div class="row" *ngFor="let pd of puanDetay">
+    <div class="col-xs-3 col-md-3 text-right">
+      <span class="fa fa-star"></span>{{pd.yildiz}}
+    </div>
+    <div class="col-xs-8 col-md-9">
+      <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
+             aria-valuemin="0" aria-valuemax="100"  [style.width]="pd.puan+'%'">
+          <span>{{pd.puan}}%</span>
+        </div>
+      </div>
+    </div>
+    </div>

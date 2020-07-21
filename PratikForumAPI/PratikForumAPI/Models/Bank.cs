@@ -13,5 +13,8 @@ namespace PratikForumAPI.Models
         public int BankID { get; set; }
         [Column(TypeName="nvarchar(100)")]
         public string BankName { get; set; }
+        [Column(TypeName = "nvarchar(400)")]
+        public string Aciklama { get; set; }
+        public int Puan { get; set; }
     }
 }

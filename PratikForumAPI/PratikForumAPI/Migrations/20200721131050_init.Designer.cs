@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PratikForumAPI.Models;
 
 namespace PratikForumAPI.Migrations
 {
     [DbContext(typeof(PratikForumAPIDBContext))]
-    partial class PratikForumAPIDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200721131050_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,24 +66,6 @@ namespace PratikForumAPI.Migrations
                     b.HasKey("BankAccountID");
 
                     b.ToTable("BankAccounts");
-                });
-
-            modelBuilder.Entity("PratikForumAPI.Models.Puan", b =>
-                {
-                    b.Property<int>("PuanId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("BankID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BankPuan")
-                        .HasColumnType("int");
-
-                    b.HasKey("PuanId");
-
-                    b.ToTable("Puan");
                 });
 
             modelBuilder.Entity("PratikForumAPI.Models.User", b =>

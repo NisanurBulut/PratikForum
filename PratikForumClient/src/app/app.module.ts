@@ -16,6 +16,11 @@ import { BookComponent } from './book/book.component';
 import { CommentComponent } from './book/comment/comment.component';
 import { RateComponent } from './book/rate/rate.component';
 import { RateResultComponent } from './book/rate-result/rate-result.component';
+import { BankOperationsComponent } from './bank/bank-operations/bank-operations.component';
+import { BankPuanComponent } from './bank/bank-puan/bank-puan.component';
+import { BankCommentComponent } from './bank/bank-comment/bank-comment.component';
+import { BankPuanResultComponent } from './bank/bank-puan-result/bank-puan-result.component';
+import { BankDegerlendirmeComponent } from './bank/bank-degerlendirme/bank-degerlendirme.component';
 
 
 @NgModule({
@@ -32,7 +37,12 @@ import { RateResultComponent } from './book/rate-result/rate-result.component';
     BookComponent,
     CommentComponent,
     RateComponent,
-    RateResultComponent
+    RateResultComponent,
+    BankOperationsComponent,
+    BankPuanComponent,
+    BankCommentComponent,
+    BankPuanResultComponent,
+    BankDegerlendirmeComponent
   ],
   imports: [
     BrowserModule,

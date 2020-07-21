@@ -1,58 +1,23 @@
 <div class="container d-inline align-items-center vh-100">
-    <div class="h-100 row align-items-center">
-      <div class="container-fluid">
-        <div class="col-9 mt-3">
-          <div class="card">
-            <div class="card-horizontal">
-              <div class="img-square-wrapper">
-                <img src="assets/select.jpg" alt="Card image cap" height="225px" width="175px">
-              </div>
-              <div class="card-body">
-                <div class="col-6 left">
-                  <h4 class="card-title">{{kitap.adi}}</h4>
-                  <p class="card-text">{{kitap.aciklama}}</p>
-                </div>
-                <div class="col-6 right mt-5">
-
-                  <!-- <app-rate-result
-                    [puanDetay]="kitap.puanDetay"
-                  ></app-rate-result>
-   -->
-                </div>
-              </div>
+  <div class="h-100 row align-items-center">
+    <div class="container-fluid">
+      <div class="col-9 mt-3">
+        <div class="card">
+          <div class="card-horizontal">
+            <div class="img-square-wrapper">
+              <img src="assets/select.jpg" alt="Card image cap" height="225px" width="175px">
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid py-3">
-        <div class="col-md-9 px-3">
-          <div class="card">
-            <div class="row ">
-              <div class="col-8 mt-3 ml-1">
-                <div class="comment-wrap">
-                  <div class="photo">
-                    <div class="avatar"
-                         style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg')"></div>
-                  </div>
-                  <div class="comment-block">
-                    <form >
-                      <textarea name="yorum" id="yorum" cols="30" rows="5" placeholder="Yorum Yaz"
-                                [(ngModel)]="yeniYorum"
-                                [ngModelOptions]="{standalone: true}"
-                      ></textarea>
-                      <div class="py-1">
-                        <button class="btn btn-success pull-right" (click)="yorumEkle()">Ekle</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
+            <div class="card-body">
+              <div class="col-6 left">
+                <h4 class="card-title">{{kitap.adi}}</h4>
+                <p class="card-text">{{kitap.aciklama}}</p>
               </div>
-              <div class="col-3 text-center mt-3">
-                <app-rate
-                  [toplamPuan]="kitap.puan"
-                  [kisiSayisi]="kitap.kisiSayisi"
-                  (puanDegistir)="puanla($event)"
-                ></app-rate>
+              <div class="col-6 right mt-5">
+
+                <app-rate-result
+                  [puanDetay]="kitap.puanDetay"
+                ></app-rate-result>
+
               </div>
             </div>
           </div>
@@ -60,10 +25,45 @@
       </div>
     </div>
     <div class="container-fluid py-3">
-      <div class="card col-9">
-        <div class="col-md-9">
-          <!-- <app-comment [yorumlar]="kitap.yorumlar"></app-comment> -->
+      <div class="col-md-9 px-3">
+        <div class="card">
+          <div class="row ">
+            <div class="col-8 mt-3 ml-1">
+              <div class="comment-wrap">
+                <div class="photo">
+                  <div class="avatar"
+                       style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg')"></div>
+                </div>
+                <div class="comment-block">
+                  <form >
+                    <textarea name="yorum" id="yorum" cols="30" rows="5" placeholder="Yorum Yaz"
+                              [(ngModel)]="yeniYorum"
+                              [ngModelOptions]="{standalone: true}"
+                    ></textarea>
+                    <div class="py-1">
+                      <button class="btn btn-success pull-right" (click)="yorumEkle()">Ekle</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-3 text-center mt-3">
+              <app-rate
+                [toplamPuan]="kitap.puan"
+                [kisiSayisi]="kitap.kisiSayisi"
+                (puanDegistir)="puanla($event)"
+              ></app-rate>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="container-fluid py-3">
+    <div class="card col-9">
+      <div class="col-md-9">
+        <app-comment [yorumlar]="kitap.yorumlar"></app-comment>
+      </div>
+    </div>
+  </div>
+</div>

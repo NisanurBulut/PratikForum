@@ -8,6 +8,9 @@ import { RegistrationComponent } from './user/registration/registration.componen
 import { LoginComponent } from './user/login/login.component';
 import { UserOperationsComponent } from './user/user-operations/user-operations.component';
 import { BookComponent } from './book/book.component';
+import { BankOperationsComponent } from './bank/bank-operations/bank-operations.component';
+import { BankPuanComponent } from './bank/bank-puan/bank-puan.component';
+import { BankDegerlendirmeComponent } from './bank/bank-degerlendirme/bank-degerlendirme.component';
 
 
 const routes: Routes = [
@@ -28,7 +31,15 @@ const routes: Routes = [
         ]
     },
     { path: 'bankAccount', component: BankAccountComponent },
-    { path: 'bank', component: BankComponent },
+    { path: 'bank', component: BankComponent,
+    children: [
+        {
+            path: 'operations', component: BankOperationsComponent, pathMatch: 'full',
+        },
+        {
+            path: 'degerlendirme', component: BankDegerlendirmeComponent, pathMatch: 'full',
+        }
+    ] },
      { path: '**', component: HomeComponent }
 ];
 
