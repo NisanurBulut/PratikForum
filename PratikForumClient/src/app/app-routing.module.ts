@@ -7,10 +7,12 @@ import { UserComponent } from './user/user.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { LoginComponent } from './user/login/login.component';
 import { UserOperationsComponent } from './user/user-operations/user-operations.component';
+import { BookComponent } from './book/book.component';
 
 
 const routes: Routes = [
-    { path: '', component: UserComponent },
+    { path: '', component: HomeComponent },
+    { path: 'book', component: BookComponent },
     {
         path: 'user', component: UserComponent,
         children: [
@@ -26,8 +28,8 @@ const routes: Routes = [
         ]
     },
     { path: 'bankAccount', component: BankAccountComponent },
-    { path: 'bank', component: BankComponent }
-    // { path: '**', component: HomeComponent }
+    { path: 'bank', component: BankComponent },
+     { path: '**', component: HomeComponent }
 ];
 
 @NgModule({

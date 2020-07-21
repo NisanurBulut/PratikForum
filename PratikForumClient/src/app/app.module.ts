@@ -12,6 +12,10 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { UserOperationsComponent } from './user/user-operations/user-operations.component';
+import { BookComponent } from './book/book.component';
+import { CommentComponent } from './book/comment/comment.component';
+import { RateComponent } from './book/rate/rate.component';
+import { RateResultComponent } from './book/rate-result/rate-result.component';
 
 
 @NgModule({
@@ -24,7 +28,11 @@ import { UserOperationsComponent } from './user/user-operations/user-operations.
     UserComponent,
     LoginComponent,
     RegistrationComponent,
-    UserOperationsComponent
+    UserOperationsComponent,
+    BookComponent,
+    CommentComponent,
+    RateComponent,
+    RateResultComponent
   ],
   imports: [
     BrowserModule,
