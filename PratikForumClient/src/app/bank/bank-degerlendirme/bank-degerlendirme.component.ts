@@ -5,6 +5,7 @@ import { Bank } from 'src/app/models/bank.model';
 import { Subscription } from 'rxjs';
 import { BankPuan } from 'src/app/models/bankPuan.model';
 import { ignoreElements } from 'rxjs/operators';
+import { debug } from 'console';
 
 @Component({
   selector: 'app-bank-degerlendirme',
@@ -57,9 +58,9 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
     this.bankItem.puan = ((this.bankItem.puan * 10) + puan) / 10;
     this.bankItem.bankaninPuanlari.map(y => {
       if (y.yildiz === puan) {
-        console.log(y.puan);
-        y.puan += puan;
-        return y.puan;
+        y.bankPuan += puan;
+        console.log(y.bankPuan);
+        return y.bankPuan;
       }
     });
 
