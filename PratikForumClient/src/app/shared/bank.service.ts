@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { FormGroup } from '@angular/forms';
-import { map, catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { Bank } from '../models/bank.model';
 import { BankPuan } from '../models/bankPuan.model';
-import { Yorum } from '../models/yorum.model';
 
 @Injectable({
   providedIn: 'root'
@@ -25,17 +23,8 @@ export class BankService {
     return this.http.get(environment.apiBaseUrl + '/Bank/getBankPuanDetail/' + id)
       .pipe(catchError(this.handleError));
   }
-  getBankYorumDetail(id) {
-    return this.http.get(environment.apiBaseUrl + '/Bank/getBankYorumDetail/' + id)
-      .pipe(catchError(this.handleError));
-  }
   deleteBank(id) {
     return this.http.delete(environment.apiBaseUrl + '/Bank/' + id)
-      .pipe(catchError(this.handleError));
-  }
-  postBankYorum(formData: Yorum) {
-    console.log(formData);
-    return this.http.post(environment.apiBaseUrl + '/Yorums', formData)
       .pipe(catchError(this.handleError));
   }
   postBankPuan(formData: BankPuan) {

@@ -17,7 +17,6 @@ namespace PratikForumAPI.Models
         public DbSet<BankAccount> BankAccounts { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<Puan> Puan { get; set; }
-        public DbSet<Yorum> Yorum { get; set; }
 
     }
 }

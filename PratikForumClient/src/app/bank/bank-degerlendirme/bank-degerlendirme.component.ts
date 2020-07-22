@@ -4,7 +4,7 @@ import { BankService } from 'src/app/shared/bank.service';
 import { Bank } from 'src/app/models/bank.model';
 import { Subscription } from 'rxjs';
 import { BankPuan } from 'src/app/models/bankPuan.model';
-import { Yorum } from 'src/app/models/yorum.model';
+
 @Component({
   selector: 'app-bank-degerlendirme',
   templateUrl: './bank-degerlendirme.component.html',
@@ -46,17 +46,21 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
       this.bankItem.puanlamaSayisi = this.bankItem.bankaninPuanlari.length;
     });
   }
-  yorumYap() {
+
+  degerlendir() {
     //  kullanıcıların yorum yapmasını sağlayacak
     // ve bu bilgiyi “comments.component.ts” ye aktaracak
-    const bYorum = new Yorum();
-    bYorum.BankId = this.bankItem.bankID;
-    bYorum.BankYorum = this.yeniYorum;
-    bYorum.YorumId = 0;
+    const bYorum = new BankPuan();
+    bYorum.bankId = this.bankItem.bankID;
+    bYorum.yorum = this.yeniYorum;
+    bYorum.puanId = 0;
     // this.bankItem.bankaninPuanlari.push(bYorum);
     this.bankItem.puanlamaSayisi++;
-    this.bs.postBankYorum(bYorum);
+    this.puanPostSub = this.bs.postBankPuan(bYorum).subscribe(data => {
+
+    });
     // ekran yeniden dolmalı
+    this.getBankPuanDetail();
   }
 
   puanla(puan: number) {
@@ -65,9 +69,10 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
     this.bankItem.puan = ((this.bankItem.puan * 10) + puan) / 10;
     this.bankItem.bankaninPuanlari.map(y => {
       if (y.yildiz === puan) {
-        y.bankPuan += puan;
-        console.log(y.bankPuan);
-        return y.bankPuan;
+        // y.bankPuan += puan;
+        // console.log(y.bankPuan);
+        // return y.bankPuan;
+        return y.yildiz;
       }
     });
 
@@ -78,5 +83,6 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
     this.routeSub.unsubscribe();
     this.req.unsubscribe();
     this.puansub.unsubscribe();
+    this.puanPostSub.unsubscribe();
   }
 }
