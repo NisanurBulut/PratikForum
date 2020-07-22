@@ -1,0 +1,2 @@
+.fa-lg:hover { color: #000000 }
+.fa-lg:hover > i { color: yellow; }

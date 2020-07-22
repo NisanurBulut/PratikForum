@@ -59,9 +59,7 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
 
     console.log(this.bankItem.bankaninPuanlari);
     this.bankItem.puanlamaSayisi++;
-    this.puanPostSub = this.bs.postBankPuan(bPuan).subscribe(data => {
-      console.log(data);
-    });
+    this.bs.postBankPuan(bPuan);
     // ekran yeniden dolmalı
   }
 
@@ -84,6 +82,5 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
     this.routeSub.unsubscribe();
     this.req.unsubscribe();
     this.puansub.unsubscribe();
-    this.puanPostSub.unsubscribe();
   }
 }
