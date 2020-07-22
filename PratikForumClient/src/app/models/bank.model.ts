@@ -7,6 +7,7 @@ export class Bank {
     public puan: number;
     public puanlamaSayisi: number;
     public bankaninPuanlari: [BankPuan];
+    public bankaninYorumlari: [BankPuan];
     constructor(bankId: number, aciklama: string, bankName: string, puan: number) {
         this.bankID = bankId;
         this.bankName = bankName;

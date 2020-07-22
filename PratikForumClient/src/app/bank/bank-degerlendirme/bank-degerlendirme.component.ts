@@ -4,7 +4,7 @@ import { BankService } from 'src/app/shared/bank.service';
 import { Bank } from 'src/app/models/bank.model';
 import { Subscription } from 'rxjs';
 import { BankPuan } from 'src/app/models/bankPuan.model';
-
+import { Yorum } from 'src/app/models/yorum.model';
 @Component({
   selector: 'app-bank-degerlendirme',
   templateUrl: './bank-degerlendirme.component.html',
@@ -46,20 +46,16 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
       this.bankItem.puanlamaSayisi = this.bankItem.bankaninPuanlari.length;
     });
   }
-  degerlendir() {
+  yorumYap() {
     //  kullanıcıların yorum yapmasını sağlayacak
     // ve bu bilgiyi “comments.component.ts” ye aktaracak
-    const bPuan = new BankPuan();
-    bPuan.bankId = this.bankItem.bankID;
-    bPuan.yorum = this.yeniYorum;
-    bPuan.yildiz = this.bankItem.puan;
-    bPuan.bankPuan = 50;
-    bPuan.puanId = 0;
-    this.bankItem.bankaninPuanlari.push(bPuan);
-
-    console.log(this.bankItem.bankaninPuanlari);
+    const bYorum = new Yorum();
+    bYorum.BankId = this.bankItem.bankID;
+    bYorum.BankYorum = this.yeniYorum;
+    bYorum.YorumId = 0;
+    // this.bankItem.bankaninPuanlari.push(bYorum);
     this.bankItem.puanlamaSayisi++;
-    this.bs.postBankPuan(bPuan);
+    this.bs.postBankYorum(bYorum);
     // ekran yeniden dolmalı
   }
 
