@@ -33,7 +33,7 @@ Adı ve açıklama :Bu iki değişken “book.component.ts” ve
       'kapsamlı \'Atatürk\' incelemesi...\'Atatürk büyüleyici ve gizemli bir kişilik olarak belleklerde kalıyor." -The Times-',
     puan: 4,
     puanDetay: [
-      {yildiz: 5, puan: 80},
+      {yildiz: 5, puan: 10},
       {yildiz: 4, puan: 55},
       {yildiz: 3, puan: 50},
       {yildiz: 2, puan: 40},
@@ -64,7 +64,7 @@ Adı ve açıklama :Bu iki değişken “book.component.ts” ve
 
   puanla(puan: number) {
     // puan artışını göstermek için böyle bir kural belirledim.
-    //kullanıcının kitabı puanlayıp bilgiyi “rate-result.component.ts” ye aktaracak
+    // kullanıcının kitabı puanlayıp bilgiyi “rate-result.component.ts” ye aktaracak
     this.kitap.puan = ((this.kitap.puan * 10) + puan) / 10;
     this.kitap.puanDetay.map(y => {
       if (y.yildiz === puan) {

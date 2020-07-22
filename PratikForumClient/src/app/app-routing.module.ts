@@ -11,10 +11,19 @@ import { BookComponent } from './book/book.component';
 import { BankOperationsComponent } from './bank/bank-operations/bank-operations.component';
 import { BankPuanComponent } from './bank/bank-puan/bank-puan.component';
 import { BankDegerlendirmeComponent } from './bank/bank-degerlendirme/bank-degerlendirme.component';
+import { BankCommentComponent } from './bank/bank-comment/bank-comment.component';
 
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
+    {
+        path: 'bank/operations',
+        component: BankOperationsComponent
+    },
+    {
+        path: 'bank/degerlendirme/:id',
+        component: BankDegerlendirmeComponent
+    },
     { path: 'book', component: BookComponent },
     {
         path: 'user', component: UserComponent,
@@ -30,17 +39,7 @@ const routes: Routes = [
             }
         ]
     },
-    { path: 'bankAccount', component: BankAccountComponent },
-    { path: 'bank', component: BankComponent,
-    children: [
-        {
-            path: 'bank/operations', component: BankOperationsComponent, pathMatch: 'full',
-        },
-        {
-            path: 'bank/degerlendirme/:id', component: BankDegerlendirmeComponent, pathMatch: 'full',
-        }
-    ] },
-     { path: '**', component: HomeComponent }
+    { path: 'bankAccount', component: BankAccountComponent }
 ];
 
 @NgModule({

@@ -8,7 +8,8 @@
     <div class="thead">
       <div class="tr">
         <div class="td">Banka ID</div>
-        <div class="td">Banka Bilgisi</div>
+        <div class="td">Banka İsim</div>
+        <div class="td">Açıklama</div>
         <div class="td">
           <button class="btn btn-sm btn-outline-success" (click)="addBank()">
             <i class="fa fa-plus"></i> Ekle
@@ -36,6 +37,9 @@
           <input class="form-control" formControlName="bankName" />
         </div>
         <div class="td">
+          <textarea  style="min-width: 100%;resize:none" class="form-control" formControlName="Aciklama"></textarea>
+        </div>
+        <div class="td">
           <button
             type="submit"
             [ngClass]="
@@ -56,10 +60,11 @@
           </button>
         </div>
         <div class="td">
-          <!-- <a routerLink="/degerlendirme/{{fg.get('bankID').value}}" routerLinkActive="active">
+          <a href="bank/degerlendirme/{{fg.get('bankID').value}}"
+>
                Değerlendir
                 <i class="far fa-star fa-lg text-warning"></i>
-              </a> -->
+              </a>
         </div>
       </form>
     </div>

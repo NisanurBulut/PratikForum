@@ -1,1 +1,13 @@
-<p>bank-comment works!</p>
+<div class="comments">
+    <div class="comment-wrap" *ngFor="let by of  bankYorumlar">
+      <div class="photo">
+        <div class="avatar"><h1>{{by.yildiz}} </h1></div>
+         <span> <i class="fa fa-star "></i></span>
+      </div>
+      <div class="comment-block">
+        <p class="comment-text">
+          {{by.yorum}}
+        </p>
+      </div>
+    </div>
+  </div>

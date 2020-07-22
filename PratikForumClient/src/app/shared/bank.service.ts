@@ -19,6 +19,10 @@ export class BankService {
     return this.http.get(environment.apiBaseUrl + '/Bank/' + id)
       .pipe(catchError(this.handleError));
   }
+  getBankPuanDetail(id) {
+    return this.http.get(environment.apiBaseUrl + '/Bank/getBankPuanDetail/' + id)
+      .pipe(catchError(this.handleError));
+  }
   deleteBank(id) {
     return this.http.delete(environment.apiBaseUrl + '/Bank/' + id)
       .pipe(catchError(this.handleError));
@@ -28,7 +32,7 @@ export class BankService {
       .pipe(catchError(this.handleError));
   }
   putBank(formData: Bank) {
-    return this.http.put(environment.apiBaseUrl + '/Bank/' + formData.BankID, formData)
+    return this.http.put(environment.apiBaseUrl + '/Bank/' + formData.bankID, formData)
       .pipe(catchError(this.handleError));
   }
   private handleError(error: any, caught: any): any {

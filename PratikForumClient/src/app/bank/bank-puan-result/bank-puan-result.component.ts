@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-bank-puan-result',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BankPuanResultComponent implements OnInit {
 
   constructor() { }
-
+  @Input() bankaninPuanlari = [];
   ngOnInit() {
   }
 

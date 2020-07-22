@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-bank-comment',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bank-comment.component.css']
 })
 export class BankCommentComponent implements OnInit {
-
+@Input() bankYorumlar:[];
   constructor() { }
 
   ngOnInit() {

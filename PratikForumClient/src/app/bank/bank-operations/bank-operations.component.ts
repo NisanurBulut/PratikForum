@@ -20,15 +20,18 @@ export class BankOperationsComponent implements OnInit, OnDestroy {
     this.getBankList();
   }
   getBankList() {
+
     this.bankForms.clear();
     this.req = this.bs.getBankList().subscribe(rs => {
       if (rs === [] || (rs as []).length === 0) {
         this.addBank();
       } else {
         (rs as []).forEach((bank: any) => {
+          console.log(bank);
           this.bankForms.push(this.fb.group({
             bankID: [bank.bankID, Validators.min(0)],
-            bankName: [bank.bankName, Validators.required]
+            bankName: [bank.bankName, Validators.required],
+            Aciklama: [bank.aciklama, Validators.required]
           }));
         });
       }
@@ -56,7 +59,7 @@ export class BankOperationsComponent implements OnInit, OnDestroy {
   }
   recordSubmit(fg: FormGroup) {
     this.bankModel = new Bank(fg.value.bankID,
-      '',
+      fg.value.Aciklama,
       fg.value.bankName,
       0);
     console.log();
