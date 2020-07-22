@@ -15,6 +15,6 @@ namespace PratikForumAPI.Models
         public string BankName { get; set; }
         [Column(TypeName = "nvarchar(400)")]
         public string Aciklama { get; set; }
-        public int Puan { get; set; }
+        public double Puan { get; set; }
     }
 }

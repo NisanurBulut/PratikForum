@@ -1,5 +1,4 @@
-E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
-E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\appsettings.json
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -131,7 +130,6 @@ E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\un
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
@@ -140,7 +138,9 @@ E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\li
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\PratikForum\PratikForumAPI\PratikForumAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll

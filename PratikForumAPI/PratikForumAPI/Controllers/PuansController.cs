@@ -11,55 +11,48 @@ namespace PratikForumAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BankController : ControllerBase
+    public class PuansController : ControllerBase
     {
         private readonly PratikForumAPIDBContext _context;
 
-        public BankController(PratikForumAPIDBContext context)
+        public PuansController(PratikForumAPIDBContext context)
         {
             _context = context;
         }
 
-        // GET: api/Bank
+        // GET: api/Puans
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Bank>>> GetBanks()
+        public async Task<ActionResult<IEnumerable<Puan>>> GetPuan()
         {
-            return await _context.Banks.ToListAsync();
+            return await _context.Puan.ToListAsync();
         }
-        // GET: api/Bank/5
-        [HttpGet("getBankPuanDetail/{id}")]
-        public async Task<IEnumerable<Puan>> getBankPuanDetail(int id)
-        {
-            var bankPuanList = await _context.Puan.Where(a=>a.BankID==id).ToListAsync();
 
-            return bankPuanList;
-        }
-        // GET: api/Bank/5
+        // GET: api/Puans/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Bank>> GetBank(int id)
+        public async Task<ActionResult<Puan>> GetPuan(int id)
         {
-            var bank = await _context.Banks.FindAsync(id);
+            var puan = await _context.Puan.FindAsync(id);
 
-            if (bank == null)
+            if (puan == null)
             {
                 return NotFound();
             }
 
-            return bank;
+            return puan;
         }
 
-        // PUT: api/Bank/5
+        // PUT: api/Puans/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBank(int id, Bank bank)
+        public async Task<IActionResult> PutPuan(int id, Puan puan)
         {
-            if (id != bank.BankID)
+            if (id != puan.PuanId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(bank).State = EntityState.Modified;
+            _context.Entry(puan).State = EntityState.Modified;
 
             try
             {
@@ -67,7 +60,7 @@ namespace PratikForumAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!BankExists(id))
+                if (!PuanExists(id))
                 {
                     return NotFound();
                 }
@@ -80,37 +73,37 @@ namespace PratikForumAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Bank
+        // POST: api/Puans
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Bank>> PostBank(Bank bank)
+        public async Task<ActionResult<Puan>> PostPuan(Puan puan)
         {
-            _context.Banks.Add(bank);
+            _context.Puan.Add(puan);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetBank", new { id = bank.BankID }, bank);
+            return CreatedAtAction("GetPuan", new { id = puan.PuanId }, puan);
         }
-        
-        // DELETE: api/Bank/5
+
+        // DELETE: api/Puans/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Bank>> DeleteBank(int id)
+        public async Task<ActionResult<Puan>> DeletePuan(int id)
         {
-            var bank = await _context.Banks.FindAsync(id);
-            if (bank == null)
+            var puan = await _context.Puan.FindAsync(id);
+            if (puan == null)
             {
                 return NotFound();
             }
 
-            _context.Banks.Remove(bank);
+            _context.Puan.Remove(puan);
             await _context.SaveChangesAsync();
 
-            return bank;
+            return puan;
         }
 
-        private bool BankExists(int id)
+        private bool PuanExists(int id)
         {
-            return _context.Banks.Any(e => e.BankID == id);
+            return _context.Puan.Any(e => e.PuanId == id);
         }
     }
 }

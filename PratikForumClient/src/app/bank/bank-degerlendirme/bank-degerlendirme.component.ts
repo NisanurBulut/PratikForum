@@ -4,8 +4,6 @@ import { BankService } from 'src/app/shared/bank.service';
 import { Bank } from 'src/app/models/bank.model';
 import { Subscription } from 'rxjs';
 import { BankPuan } from 'src/app/models/bankPuan.model';
-import { ignoreElements } from 'rxjs/operators';
-import { debug } from 'console';
 
 @Component({
   selector: 'app-bank-degerlendirme',
@@ -16,10 +14,10 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
   private id: number;
   private routeSub: any;
   private puansub: Subscription;
+  private puanPostSub: Subscription;
   private req: any;
   yeniYorum: string;
   bankItem: Bank;
-  public sonPuan: number;
   // bankaninPuanlari: banka puanlarının tutulduğu listedir(Array).
   // Bu bilgi “rate-result.component.ts” ye aktarılıp
   // “rate-result.component.html” de kullanılacak.
@@ -48,8 +46,23 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
       this.bankItem.puanlamaSayisi = this.bankItem.bankaninPuanlari.length;
     });
   }
-  yorumEkle() {
+  degerlendir() {
+    //  kullanıcıların yorum yapmasını sağlayacak
+    // ve bu bilgiyi “comments.component.ts” ye aktaracak
+    const bPuan = new BankPuan();
+    bPuan.bankId = this.bankItem.bankID;
+    bPuan.yorum = this.yeniYorum;
+    bPuan.yildiz = this.bankItem.puan;
+    bPuan.bankPuan = 50;
+    bPuan.puanId = 0;
+    this.bankItem.bankaninPuanlari.push(bPuan);
 
+    console.log(this.bankItem.bankaninPuanlari);
+    this.bankItem.puanlamaSayisi++;
+    this.puanPostSub = this.bs.postBankPuan(bPuan).subscribe(data => {
+      console.log(data);
+    });
+    // ekran yeniden dolmalı
   }
 
   puanla(puan: number) {
@@ -65,11 +78,12 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
     });
 
     this.bankItem.puanlamaSayisi++;
-    this.sonPuan = puan;
+    this.bankItem.puan = puan;
   }
   ngOnDestroy() {
     this.routeSub.unsubscribe();
     this.req.unsubscribe();
     this.puansub.unsubscribe();
+    this.puanPostSub.unsubscribe();
   }
 }

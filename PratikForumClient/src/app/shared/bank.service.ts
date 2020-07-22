@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { FormGroup } from '@angular/forms';
 import { map, catchError } from 'rxjs/operators';
 import { Bank } from '../models/bank.model';
+import { BankPuan } from '../models/bankPuan.model';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,11 @@ export class BankService {
   }
   deleteBank(id) {
     return this.http.delete(environment.apiBaseUrl + '/Bank/' + id)
+      .pipe(catchError(this.handleError));
+  }
+  postBankPuan(formData: BankPuan) {
+    console.log(formData);
+    return this.http.post(environment.apiBaseUrl + '/Puans', formData)
       .pipe(catchError(this.handleError));
   }
   postBank(formData: Bank) {
