@@ -18,12 +18,13 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
   private req: any;
   yeniYorum: string;
   bankItem: Bank = new Bank();
-  puanDetay: [
+  puanDetay = [
     { yildiz: 5, puan: 10 },
     { yildiz: 4, puan: 55 },
     { yildiz: 3, puan: 50 },
     { yildiz: 2, puan: 40 },
-    { yildiz: 1, puan: 15 }];
+    { yildiz: 1, puan: 15 }
+  ];
   // bankaninPuanlari: banka puanlarının tutulduğu listedir(Array).
   // Bu bilgi “rate-result.component.ts” ye aktarılıp
   // “rate-result.component.html” de kullanılacak.
@@ -60,11 +61,11 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
     // ve bu bilgiyi “comments.component.ts” ye aktaracak
     const ydegerlendirme = new BankYorum();
     ydegerlendirme.BankId = this.bankItem.bankID;
-    ydegerlendirme.Yildiz = this.bankItem.puan;
+    ydegerlendirme.Yildiz = this.bankItem.yildiz;
     ydegerlendirme.YorumId = 0;
     ydegerlendirme.Yorum = this.yeniYorum;
-    // this.bankItem.bankaninPuanlari.push(bYorum);
     this.bankItem.puanlamaSayisi++;
+    console.log(ydegerlendirme);
     this.yorumPostSub = this.bs.postBankYorum(ydegerlendirme)
       .subscribe(data => {
         // ekran yeniden dolmalı
@@ -72,26 +73,19 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
       });
   }
 
-  puanla(puan: number) {
+  puanla(yildiz: number) {
     // puan artışını göstermek için böyle bir kural belirledim.
     // kullanıcının kitabı puanlayıp bilgiyi “rate-result.component.ts” ye aktaracak
-    this.bankItem.puan = ((this.bankItem.puan * 10) + puan) / 10;
+    this.bankItem.yildiz = yildiz;
+    this.bankItem.puan = ((this.bankItem.puan * 10) + yildiz) / 10;
     console.log(this.bankItem.puan);
-    this.puanDetay.map(y => {
-      if (y.yildiz === puan) {
-        this.bankItem.puan += puan;
+    this.puanDetay.map((y: any) => {
+      if (y.yildiz === yildiz) {
+        this.bankItem.puan += yildiz;
         this.bankItem.puanlamaSayisi++;
-        return this.bankItem.puan;
-
-        // y.bankPuan += puan;
-        // console.log(y.bankPuan);
-        // return y.bankPuan;
-        return y.yildiz;
+        return y.puan;
       }
     });
-
-    this.bankItem.puanlamaSayisi++;
-    this.bankItem.puan = puan;
   }
   ngOnDestroy() {
     this.routeSub.unsubscribe();

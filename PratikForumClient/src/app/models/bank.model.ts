@@ -5,9 +5,10 @@ export class Bank {
     public aciklama: string;
     public bankName: string;
     public puan: number;
+    public yildiz: number;
     public puanlamaSayisi: number;
     public bankaninYorumlari: BankYorum[] = [];
-    constructor(){}
+    constructor() {}
     // constructor(bankId: number, aciklama: string, bankName: string, puan: number) {
     //     this.bankID = bankId;
     //     this.bankName = bankName;
