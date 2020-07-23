@@ -1,4 +1,5 @@
 import { BankYorum } from './bankYorum.model';
+import { PuanDetay } from './puanDetay.model';
 
 export class Bank {
     public bankID: number;
@@ -8,6 +9,7 @@ export class Bank {
     public yildiz: number;
     public puanlamaSayisi: number;
     public bankaninYorumlari: BankYorum[] = [];
+    public bankaninPuanlari: PuanDetay[] = [];
     constructor() {}
     // constructor(bankId: number, aciklama: string, bankName: string, puan: number) {
     //     this.bankID = bankId;

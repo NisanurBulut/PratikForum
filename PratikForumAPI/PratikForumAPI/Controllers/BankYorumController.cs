@@ -26,7 +26,23 @@ namespace PratikForumAPI.Controllers
         {
             return await _context.BankYorum.ToListAsync();
         }
+        // GET: api/GetBankPuan/5
+        [HttpGet("BankPuan/{id}")]
+        public async Task<ActionResult<IEnumerable<PuanDetay>>> GetBankPuan(int id)
+        {
+            var result= await _context.BankYorum.Where(a => a.BankID == id).ToListAsync();
 
+            var resultGroup = result.GroupBy(a => a.Yildiz).Select(cl => new PuanDetay
+            {
+                BankID = cl.First().BankID,
+                Puan = (cl.Count()*100)/result.Count,
+                Yildiz = cl.Key
+            }).ToList();
+            //burada puan yüzdesel hesaplanmalı
+
+            return resultGroup;
+        }
+        
         // GET: api/BankYorum/5
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<BankYorum>>> GetBankYorum(int id)

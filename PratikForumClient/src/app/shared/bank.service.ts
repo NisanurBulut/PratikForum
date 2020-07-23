@@ -23,6 +23,10 @@ export class BankService {
     return this.http.get(environment.apiBaseUrl + '/BankYorum/' + id)
       .pipe(catchError(this.handleError));
   }
+  getBankPuanDetail(id) {
+    return this.http.get(environment.apiBaseUrl + '/BankYorum/BankPuan/' + id)
+      .pipe(catchError(this.handleError));
+  }
   deleteBank(id) {
     return this.http.delete(environment.apiBaseUrl + '/Bank/' + id)
       .pipe(catchError(this.handleError));
