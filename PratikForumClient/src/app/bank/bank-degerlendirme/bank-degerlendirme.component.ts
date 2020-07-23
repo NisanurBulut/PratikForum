@@ -29,27 +29,27 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
 
   prodIdSnapshot: number;
   constructor(private route: ActivatedRoute, private bs: BankService) {
-
     this.routeSub = this.route.params.subscribe(params => {
       this.id = params.id;
-
-      this.getBankDetail();
-      this.getBankYorumDetail();
-      this.getBankPuanDetail();
     });
   }
 
   ngOnInit() {
+    this.getBankDetail();
+    this.getBankYorumDetail();
+    this.getBankPuanDetail();
   }
   getBankDetail() {
     this.req = this.bs.getBankDetail(this.id).subscribe(data => {
       this.bankItem = data as Bank;
+      console.log(this.bankItem);
     });
   }
   getBankYorumDetail() {
     this.yorumsub = this.bs.getBankYorumDetail(this.id).subscribe(data => {
       this.bankItem.bankaninYorumlari = data as [BankYorum];
       this.bankItem.puanlamaSayisi = this.bankItem.bankaninYorumlari.length;
+
     });
   }
   getBankPuanDetail() {
@@ -78,10 +78,10 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
           // ekran yeniden dolmalı
           this.getBankYorumDetail();
           this.getBankPuanDetail();
+          this.yeniYorum = '';
         });
       this.putBankSub = this.bs.putBank(this.bankItem).subscribe(data => {
       });
-      this.getBankDetail();
     }
 
   }
