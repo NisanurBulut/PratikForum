@@ -58,10 +58,11 @@ export class BankOperationsComponent implements OnInit, OnDestroy {
     }
   }
   recordSubmit(fg: FormGroup) {
-    this.bankModel = new Bank(fg.value.bankID,
-      fg.value.Aciklama,
-      fg.value.bankName,
-      0);
+    this.bankModel = new Bank();
+    this.bankModel.bankID = fg.value.bankID;
+    this.bankModel.aciklama = fg.value.Aciklama;
+    this.bankModel.bankName = fg.value.bankName;
+    this.bankModel.puan = 0;
     console.log();
     if (fg.get('bankID').value === 0) {
       this.bs.postBank(this.bankModel).subscribe(

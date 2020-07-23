@@ -11,48 +11,41 @@ namespace PratikForumAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PuansController : ControllerBase
+    public class BankYorumController : ControllerBase
     {
         private readonly PratikForumAPIDBContext _context;
 
-        public PuansController(PratikForumAPIDBContext context)
+        public BankYorumController(PratikForumAPIDBContext context)
         {
             _context = context;
         }
 
-        // GET: api/Puans
+        // GET: api/BankYorum
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Puan>>> GetPuan()
+        public async Task<ActionResult<IEnumerable<BankYorum>>> GetBankYorum()
         {
-            return await _context.Puan.ToListAsync();
+            return await _context.BankYorum.ToListAsync();
         }
 
-        // GET: api/Puans/5
+        // GET: api/BankYorum/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Puan>> GetPuan(int id)
+        public async Task<ActionResult<IEnumerable<BankYorum>>> GetBankYorum(int id)
         {
-            var puan = await _context.Puan.FindAsync(id);
-
-            if (puan == null)
-            {
-                return NotFound();
-            }
-
-            return puan;
+           return await _context.BankYorum.Where(a=>a.BankID==id).ToListAsync();
         }
 
-        // PUT: api/Puans/5
+        // PUT: api/BankYorum/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPuan(int id, Puan puan)
+        public async Task<IActionResult> PutBankYorum(int id, BankYorum bankYorum)
         {
-            if (id != puan.PuanId)
+            if (id != bankYorum.YorumID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(puan).State = EntityState.Modified;
+            _context.Entry(bankYorum).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +53,7 @@ namespace PratikForumAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PuanExists(id))
+                if (!BankYorumExists(id))
                 {
                     return NotFound();
                 }
@@ -73,37 +66,37 @@ namespace PratikForumAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Puans
+        // POST: api/BankYorum
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Puan>> PostPuan(Puan puan)
+        public async Task<ActionResult<BankYorum>> PostBankYorum(BankYorum bankYorum)
         {
-            _context.Puan.Add(puan);
+            _context.BankYorum.Add(bankYorum);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPuan", new { id = puan.PuanId }, puan);
+            return CreatedAtAction("GetBankYorum", new { id = bankYorum.YorumID }, bankYorum);
         }
 
-        // DELETE: api/Puans/5
+        // DELETE: api/BankYorum/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Puan>> DeletePuan(int id)
+        public async Task<ActionResult<BankYorum>> DeleteBankYorum(int id)
         {
-            var puan = await _context.Puan.FindAsync(id);
-            if (puan == null)
+            var bankYorum = await _context.BankYorum.FindAsync(id);
+            if (bankYorum == null)
             {
                 return NotFound();
             }
 
-            _context.Puan.Remove(puan);
+            _context.BankYorum.Remove(bankYorum);
             await _context.SaveChangesAsync();
 
-            return puan;
+            return bankYorum;
         }
 
-        private bool PuanExists(int id)
+        private bool BankYorumExists(int id)
         {
-            return _context.Puan.Any(e => e.PuanId == id);
+            return _context.BankYorum.Any(e => e.YorumID == id);
         }
     }
 }

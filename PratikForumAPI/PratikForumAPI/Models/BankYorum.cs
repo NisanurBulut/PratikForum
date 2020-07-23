@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace PratikForumAPI.Models
 {
-    public class Puan
+    public class BankYorum
     {
         [Key]
-        public int PuanId { get; set; }
+        public int YorumID { get; set; }
         public int BankID { get; set; }
-        public int Yildiz { get; set; }
         [Column(TypeName = "nvarchar(400)")]
+        public int Yildiz { get; set; }
         public string Yorum { get; set; }
     }
 }

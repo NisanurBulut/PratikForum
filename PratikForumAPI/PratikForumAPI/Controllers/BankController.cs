@@ -27,13 +27,13 @@ namespace PratikForumAPI.Controllers
             return await _context.Banks.ToListAsync();
         }
         // GET: api/Bank/5
-        [HttpGet("getBankPuanDetail/{id}")]
-        public async Task<IEnumerable<Puan>> getBankPuanDetail(int id)
-        {
-            var bankPuanList = await _context.Puan.Where(a=>a.BankID==id).ToListAsync();
+        //[HttpGet("getBankPuanDetail/{id}")]
+        //public async Task<IEnumerable<Puan>> getBankPuanDetail(int id)
+        //{
+        //    var bankPuanList = await _context.Puan.Where(a=>a.BankID==id).ToListAsync();
 
-            return bankPuanList;
-        }
+        //    return bankPuanList;
+        //}
         // GET: api/Bank/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Bank>> GetBank(int id)

@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { BankService } from 'src/app/shared/bank.service';
 import { Bank } from 'src/app/models/bank.model';
 import { Subscription } from 'rxjs';
-import { BankPuan } from 'src/app/models/bankPuan.model';
+import { BankYorum } from 'src/app/models/bankYorum.model';
 
 @Component({
   selector: 'app-bank-degerlendirme',
@@ -13,11 +13,17 @@ import { BankPuan } from 'src/app/models/bankPuan.model';
 export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
   private id: number;
   private routeSub: any;
-  private puansub: Subscription;
-  private puanPostSub: Subscription;
+  private yorumsub: Subscription;
+  private yorumPostSub: Subscription;
   private req: any;
   yeniYorum: string;
-  bankItem: Bank;
+  bankItem: Bank = new Bank();
+  puanDetay: [
+    { yildiz: 5, puan: 10 },
+    { yildiz: 4, puan: 55 },
+    { yildiz: 3, puan: 50 },
+    { yildiz: 2, puan: 40 },
+    { yildiz: 1, puan: 15 }];
   // bankaninPuanlari: banka puanlarının tutulduğu listedir(Array).
   // Bu bilgi “rate-result.component.ts” ye aktarılıp
   // “rate-result.component.html” de kullanılacak.
@@ -25,50 +31,58 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
 
   prodIdSnapshot: number;
   constructor(private route: ActivatedRoute, private bs: BankService) {
+
+    this.routeSub = this.route.params.subscribe(params => {
+      this.id = params.id;
+
+      this.getBankDetail();
+      this.getBankYorumDetail();
+    });
   }
 
   ngOnInit() {
-    this.routeSub = this.route.params.subscribe(params => {
-      this.id = params.id;
-    });
-    this.getBankDetail();
-    this.getBankPuanDetail();
   }
   getBankDetail() {
     this.req = this.bs.getBankDetail(this.id).subscribe(data => {
       this.bankItem = data as Bank;
     });
   }
-  getBankPuanDetail() {
-    this.puansub = this.bs.getBankPuanDetail(this.id).subscribe(data => {
+  getBankYorumDetail() {
+    this.yorumsub = this.bs.getBankYorumDetail(this.id).subscribe(data => {
       console.log('bankPuanDetay:', data);
-      this.bankItem.bankaninPuanlari = data as [BankPuan];
-      this.bankItem.puanlamaSayisi = this.bankItem.bankaninPuanlari.length;
+      this.bankItem.bankaninYorumlari = data as [BankYorum];
+      this.bankItem.puanlamaSayisi = this.bankItem.bankaninYorumlari.length;
     });
   }
 
   degerlendir() {
     //  kullanıcıların yorum yapmasını sağlayacak
     // ve bu bilgiyi “comments.component.ts” ye aktaracak
-    const bYorum = new BankPuan();
-    bYorum.bankId = this.bankItem.bankID;
-    bYorum.yorum = this.yeniYorum;
-    bYorum.puanId = 0;
+    const ydegerlendirme = new BankYorum();
+    ydegerlendirme.BankId = this.bankItem.bankID;
+    ydegerlendirme.Yildiz = this.bankItem.puan;
+    ydegerlendirme.YorumId = 0;
+    ydegerlendirme.Yorum = this.yeniYorum;
     // this.bankItem.bankaninPuanlari.push(bYorum);
     this.bankItem.puanlamaSayisi++;
-    this.puanPostSub = this.bs.postBankPuan(bYorum).subscribe(data => {
-
-    });
-    // ekran yeniden dolmalı
-    this.getBankPuanDetail();
+    this.yorumPostSub = this.bs.postBankYorum(ydegerlendirme)
+      .subscribe(data => {
+        // ekran yeniden dolmalı
+        this.getBankYorumDetail();
+      });
   }
 
   puanla(puan: number) {
     // puan artışını göstermek için böyle bir kural belirledim.
     // kullanıcının kitabı puanlayıp bilgiyi “rate-result.component.ts” ye aktaracak
     this.bankItem.puan = ((this.bankItem.puan * 10) + puan) / 10;
-    this.bankItem.bankaninPuanlari.map(y => {
+    console.log(this.bankItem.puan);
+    this.puanDetay.map(y => {
       if (y.yildiz === puan) {
+        this.bankItem.puan += puan;
+        this.bankItem.puanlamaSayisi++;
+        return this.bankItem.puan;
+
         // y.bankPuan += puan;
         // console.log(y.bankPuan);
         // return y.bankPuan;
@@ -82,7 +96,7 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.routeSub.unsubscribe();
     this.req.unsubscribe();
-    this.puansub.unsubscribe();
-    this.puanPostSub.unsubscribe();
+    this.yorumPostSub.unsubscribe();
+    this.yorumsub.unsubscribe();
   }
 }

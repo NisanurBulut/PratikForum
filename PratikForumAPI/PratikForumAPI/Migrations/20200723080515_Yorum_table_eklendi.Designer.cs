@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PratikForumAPI.Models;
 
 namespace PratikForumAPI.Migrations
 {
     [DbContext(typeof(PratikForumAPIDBContext))]
-    partial class PratikForumAPIDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200723080515_Yorum_table_eklendi")]
+    partial class Yorum_table_eklendi
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,7 +36,7 @@ namespace PratikForumAPI.Migrations
                     b.Property<double>("Puan")
                         .HasColumnType("float");
 
-                    b.Property<int>("PuanlamaSayisi")
+                    b.Property<int>("kisiSayisi")
                         .HasColumnType("int");
 
                     b.HasKey("BankID");
@@ -67,28 +69,6 @@ namespace PratikForumAPI.Migrations
                     b.HasKey("BankAccountID");
 
                     b.ToTable("BankAccounts");
-                });
-
-            modelBuilder.Entity("PratikForumAPI.Models.BankYorum", b =>
-                {
-                    b.Property<int>("YorumID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("BankID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Yildiz")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(400)");
-
-                    b.Property<string>("Yorum")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("YorumID");
-
-                    b.ToTable("BankYorum");
                 });
 
             modelBuilder.Entity("PratikForumAPI.Models.User", b =>
