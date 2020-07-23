@@ -5,7 +5,6 @@ import { Bank } from 'src/app/models/bank.model';
 import { Subscription } from 'rxjs';
 import { BankYorum } from 'src/app/models/bankYorum.model';
 import { PuanDetay } from 'src/app/models/puanDetay.model';
-import { debug } from 'console';
 
 @Component({
   selector: 'app-bank-degerlendirme',
@@ -104,9 +103,15 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.routeSub.unsubscribe();
     this.req.unsubscribe();
-    this.yorumPostSub.unsubscribe();
+    // this.yorumPostSub.unsubscribe();
     this.yorumsub.unsubscribe();
     this.puanSub.unsubscribe();
-    this.putBankSub.unsubscribe();
+    //  this.putBankSub.unsubscribe();
+    if (this.yorumPostSub) {
+      this.yorumPostSub.unsubscribe();
+    }
+    if (this.putBankSub) {
+      this.putBankSub.unsubscribe();
+    }
   }
 }

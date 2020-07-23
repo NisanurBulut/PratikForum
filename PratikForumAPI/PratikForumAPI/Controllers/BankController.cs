@@ -96,6 +96,16 @@ namespace PratikForumAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Bank>> DeleteBank(int id)
         {
+            var bankHesaplar = await _context.BankAccounts.Where(a => a.BankID == id).ToListAsync();
+           
+            _context.BankAccounts.RemoveRange(bankHesaplar);
+            await _context.SaveChangesAsync();
+
+            var bankYorumlar = await _context.BankYorum.Where(a => a.BankID == id).ToListAsync();
+
+            _context.BankYorum.RemoveRange(bankYorumlar);
+            await _context.SaveChangesAsync();
+
             var bank = await _context.Banks.FindAsync(id);
             if (bank == null)
             {

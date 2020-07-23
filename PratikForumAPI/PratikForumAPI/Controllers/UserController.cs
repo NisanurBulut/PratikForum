@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PratikForumAPI.Models;
@@ -16,25 +14,20 @@ namespace PratikForumAPI.Controllers
     public class UserController : ControllerBase
     {
         private readonly PratikForumAPIDBContext _context;
+
         public UserController(PratikForumAPIDBContext context)
         {
             _context = context;
-           
         }
-        [HttpPost]
+
+        // GET: api/User
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUser()
         {
             return await _context.User.ToListAsync();
         }
-        // GET: api/Users
-        [AllowAnonymous]
-        [HttpPost]
-        public async Task<ActionResult<IEnumerable<User>>> Register(User _user)
-        {
-            return Ok();
-        }
 
-        // GET: api/Users/5
+        // GET: api/User/5
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
@@ -48,7 +41,7 @@ namespace PratikForumAPI.Controllers
             return user;
         }
 
-        // PUT: api/Users/5
+        // PUT: api/User/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
@@ -80,7 +73,7 @@ namespace PratikForumAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Users
+        // POST: api/User
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
@@ -92,7 +85,7 @@ namespace PratikForumAPI.Controllers
             return CreatedAtAction("GetUser", new { id = user.UserID }, user);
         }
 
-        // DELETE: api/Users/5
+        // DELETE: api/User/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<User>> DeleteUser(int id)
         {

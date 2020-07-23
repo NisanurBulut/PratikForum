@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup } from '@angular/forms';
 import { catchError } from 'rxjs/internal/operators/catchError';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class UserService {
     return this.http.delete(environment.apiBaseUrl + '/User/' + id)
       .pipe(catchError(this.handleError));
   }
-  postUser(formData: FormGroup) {
+  postUser(formData: User) {
+    console.log(formData);
     return this.http.post(environment.apiBaseUrl + '/User', formData)
       .pipe(catchError(this.handleError));
   }

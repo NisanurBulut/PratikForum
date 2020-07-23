@@ -17,13 +17,25 @@ import { BankCommentComponent } from './bank/bank-comment/bank-comment.component
 const routes: Routes = [
     { path: '', component: HomeComponent },
     {
-        path: 'bank/operations',
-        component: BankOperationsComponent
-    },
-    {
-        path: 'bank/degerlendirme/:id',
-        component: BankDegerlendirmeComponent
-    },
+        path: 'bank',
+        component: BankComponent,
+        children: [
+          { path: 'operations', component: BankOperationsComponent },
+          { path: 'degerlendirme/:id', component: BankDegerlendirmeComponent }
+        ]
+      },
+    // {
+    //     path: 'bank',
+    //     component: BankComponent
+    // },
+    // {
+    //     path: 'bank/operations',
+    //     component: BankOperationsComponent
+    // },
+    // {
+    //     path: 'bank/degerlendirme/:id',
+    //     component: BankDegerlendirmeComponent
+    // },
     { path: 'book', component: BookComponent },
     {
         path: 'user', component: UserComponent,

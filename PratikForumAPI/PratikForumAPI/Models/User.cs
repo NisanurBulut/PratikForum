@@ -18,11 +18,11 @@ namespace PratikForumAPI.Models
         public string Surname { get; set; }
         [Column(TypeName = "nvarchar(6)")]
         public string Password { get; set; }
-        public string PasswordHash { get; set; }
-        [Column(TypeName = "nvarchar(175)")]
-        public string Email { get; set; }
-        [Column(TypeName = "nvarchar(10)")]
-        public string PhoneNumber { get; set; }
+        //public string PasswordHash { get; set; }
+        //[Column(TypeName = "nvarchar(175)")]
+        //public string Email { get; set; }
+        //[Column(TypeName = "nvarchar(10)")]
+        //public string PhoneNumber { get; set; }
 
     }
 }

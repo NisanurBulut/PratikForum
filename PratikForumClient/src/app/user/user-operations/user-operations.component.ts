@@ -20,7 +20,6 @@ export class UserOperationsComponent implements OnInit {
     this.userForms.clear();
 
     this.us.getUserList().subscribe(res => {
-      console.log(res);
       if (res === [] || (res as []).length === 0) {
         this.AddUserForm();
       } else {
