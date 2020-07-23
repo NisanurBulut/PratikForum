@@ -7,6 +7,7 @@ export class Bank {
     public bankName: string;
     public puan: number;
     public yildiz: number;
+    public imagePath:string;
     public puanlamaSayisi: number;
     public bankaninYorumlari: BankYorum[] = [];
     public bankaninPuanlari: PuanDetay[] = [];

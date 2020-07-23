@@ -41,7 +41,8 @@ export class BankOperationsComponent implements OnInit, OnDestroy {
   addBank() {
     this.bankForms.push(this.fb.group({
       bankID: [0],
-      bankName: ['', Validators.required]
+      bankName: ['', Validators.required],
+      Aciklama: ['', Validators.required]
     }));
   }
 
