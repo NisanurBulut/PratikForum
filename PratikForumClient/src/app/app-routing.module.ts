@@ -9,6 +9,7 @@ import { LoginComponent } from './user/login/login.component';
 import { UserOperationsComponent } from './user/user-operations/user-operations.component';
 import { BankOperationsComponent } from './bank/bank-operations/bank-operations.component';
 import { BankDegerlendirmeComponent } from './bank/bank-degerlendirme/bank-degerlendirme.component';
+import { BudgetMainComponent } from './budget-main/budget-main.component';
 
 
 const routes: Routes = [
@@ -35,7 +36,8 @@ const routes: Routes = [
             }
         ]
     },
-    { path: 'bankAccount', component: BankAccountComponent }
+    { path: 'bankAccount', component: BankAccountComponent },
+    { path: 'budgetMain', component: BudgetMainComponent }
 ];
 
 @NgModule({

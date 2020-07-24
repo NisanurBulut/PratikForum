@@ -17,6 +17,7 @@ import { BankPuanComponent } from './bank/bank-puan/bank-puan.component';
 import { BankCommentComponent } from './bank/bank-comment/bank-comment.component';
 import { BankPuanResultComponent } from './bank/bank-puan-result/bank-puan-result.component';
 import { BankDegerlendirmeComponent } from './bank/bank-degerlendirme/bank-degerlendirme.component';
+import { BudgetMainComponent } from './budget-main/budget-main.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { BankDegerlendirmeComponent } from './bank/bank-degerlendirme/bank-deger
     BankPuanComponent,
     BankCommentComponent,
     BankPuanResultComponent,
-    BankDegerlendirmeComponent
+    BankDegerlendirmeComponent,
+    BudgetMainComponent
   ],
   imports: [
     BrowserModule,
