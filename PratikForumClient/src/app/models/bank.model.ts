@@ -7,11 +7,11 @@ export class Bank {
     public bankName: string;
     public puan: number;
     public yildiz: number;
-    public imagePath:string;
+    public imagePath: string;
     public puanlamaSayisi: number;
-    public bankaninYorumlari: BankYorum[] = [];
-    public bankaninPuanlari: PuanDetay[] = [];
-    constructor() {}
+    public bankaninYorumlari: BankYorum[];
+    public bankaninPuanlari: PuanDetay[];
+    constructor() { }
     // constructor(bankId: number, aciklama: string, bankName: string, puan: number) {
     //     this.bankID = bankId;
     //     this.bankName = bankName;

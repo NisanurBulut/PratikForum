@@ -32,17 +32,18 @@ export class BankDegerlendirmeComponent implements OnInit, OnDestroy {
     this.routeSub = this.route.params.subscribe(params => {
       this.id = params.id;
     });
-  }
-
-  ngOnInit() {
     this.getBankDetail();
     this.getBankYorumDetail();
     this.getBankPuanDetail();
   }
+
+  ngOnInit() {
+
+    console.log('bank degerlendirme ngOnInit');
+  }
   getBankDetail() {
     this.req = this.bs.getBankDetail(this.id).subscribe(data => {
       this.bankItem = data as Bank;
-      console.log(this.bankItem);
     });
   }
   getBankYorumDetail() {

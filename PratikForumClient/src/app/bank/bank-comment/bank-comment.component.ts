@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./bank-comment.component.css']
 })
 export class BankCommentComponent implements OnInit {
-@Input() bankYorumlar:[];
+@Input() bankYorumlar: [];
   constructor() { }
 
   ngOnInit() {

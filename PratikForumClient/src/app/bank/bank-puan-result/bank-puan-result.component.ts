@@ -7,9 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BankPuanResultComponent implements OnInit {
 
-  constructor() { }
+  constructor() {console.log('BankPuanResultComponent constructor'); }
   @Input() bankaninPuanlari = [];
   ngOnInit() {
+    console.log('bank puan result ngOnInit');
   }
 
 }
