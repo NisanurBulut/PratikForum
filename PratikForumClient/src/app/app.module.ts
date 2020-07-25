@@ -18,6 +18,9 @@ import { BankCommentComponent } from './bank/bank-comment/bank-comment.component
 import { BankPuanResultComponent } from './bank/bank-puan-result/bank-puan-result.component';
 import { BankDegerlendirmeComponent } from './bank/bank-degerlendirme/bank-degerlendirme.component';
 import { BudgetMainComponent } from './budget-main/budget-main.component';
+import { AddItemFormComponent } from './budget-main/add-item-form/add-item-form.component';
+import { BudgetItemListComponent } from './budget-main/budget-item-list/budget-item-list.component';
+import { BudgetItemCardComponent } from './budget-main/budget-item-list/budget-item-card/budget-item-card.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import { BudgetMainComponent } from './budget-main/budget-main.component';
     BankCommentComponent,
     BankPuanResultComponent,
     BankDegerlendirmeComponent,
-    BudgetMainComponent
+    BudgetMainComponent,
+    AddItemFormComponent,
+    BudgetItemListComponent,
+    BudgetItemCardComponent
   ],
   imports: [
     BrowserModule,

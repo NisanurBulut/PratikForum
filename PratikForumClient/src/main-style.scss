@@ -20,10 +20,11 @@ $primary: $purple;
 $link: $pink;
 
 
-
+$dark:rgb(22,28,41);
 $body-background-color: white;
 $control-border-width: 2px;
-$input-border-color: light-grey;
+$input-border-color: transparent;
+$input-background-color: $grey-light;
 $input-shadow: none;
 
 

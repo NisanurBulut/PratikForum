@@ -1,13 +1,47 @@
+@import "../../main-style.scss";
 .top-bar {
-    display:flex;
-    width:100%;
-    height: 68px;
-    background:linear-gradient(75deg,rgb(214,180,247),rgb(173,203,231));
-
-h1{
-    font-family:Lato ;
+  display: flex;
+  width: 100%;
+  height: 68px;
+  background: linear-gradient(75deg, rgb(214, 180, 247), rgb(173, 203, 231));
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-family: Lato;
     font-size: 18px;
     letter-spacing: 1px;
     font-weight: 900;
+    text-transform: uppercase;
+    color: $dark;
+  }
 }
+.total-budget-section {
+  display: flex;
+  height: 250px;
+  background-color: $dark;
+  // ortala
+  justify-content: center;
+  align-items: center;
+  h2 {
+    font-family: Lato;
+    color: white;
+    font-size: 58px;
+    font-weight: 300;
+
+    &.green {
+      color: lighten($green, 15%);
+    }
+    &.red {
+      color: lighten($red, 15%);
+    }
+  }
+}
+.add-item-section {
+  display: flex;
+  // ortala
+  justify-content: center;
+  align-items: center;
+  .add-item-container {
+    width: 600px;
+  }
 }

@@ -1,0 +1,43 @@
+@import "../../../main-style.scss";
+.budget-items-section {
+  display: flex;
+  padding: 50px;
+
+  // ortala
+  justify-content: center;
+  align-items: center;
+
+  .budget-items-container {
+    display: flex;
+    max-width: 600px;
+    height: 100%;
+    width: 100%;
+
+    .income-column,
+    .expense-column {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 0; // içerikten bağımsız olarak sütunların eşit genişlikte olmaıs için
+      flex-grow: 1;
+
+      h1 {
+        font-family: Lato;
+        font-size: 24px;
+        letter-spacing: 1px;
+        font-weight: 900;
+      }
+    }
+    .income-column{
+        margin-right: 35px;
+        h1{
+            color:$green;
+        }
+    }
+    .expense-column{
+        margin-right: 35px;
+        h1{
+            color:$red;
+        }
+    }
+  }
+}
