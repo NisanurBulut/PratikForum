@@ -2,9 +2,19 @@
   <div class="budget-items-container">
     <div class="income-column">
       <h1>GELİR</h1>
+      <div class="budget-items">
+        <app-budget-item-card [isIncome]="true" style="margin-bottom:20px;"></app-budget-item-card>
+        <app-budget-item-card [isIncome]="true" style="margin-bottom:20px;"></app-budget-item-card>
+      </div>
+
     </div>
     <div class="expense-column">
       <h1>GİDER</h1>
+      <div class="budget-items">
+        <app-budget-item-card [isIncome]="false"  style="margin-bottom:20px;"></app-budget-item-card>
+        <app-budget-item-card [isIncome]="false"  style="margin-bottom:20px;"></app-budget-item-card>
+      </div>
+
     </div>
   </div>
 </section>

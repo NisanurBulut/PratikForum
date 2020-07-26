@@ -26,6 +26,12 @@
         letter-spacing: 1px;
         font-weight: 900;
       }
+
+      .budget-items{
+        display: flex;
+        flex-direction: column;
+
+      }
     }
     .income-column{
         margin-right: 35px;
