@@ -4,24 +4,30 @@
       <div class="field is-narrow">
         <p class="control">
           <input
+          name="amount"
+          required
             type="number"
             style="width: 100px;"
             class="input"
             placeholder="Harcama Miktarı"
+            [ngModel]="item.amount"
           />
         </p>
       </div>
       <div class="field">
         <p class="control">
           <input
+          name="description"
+          required
             type="text"
             class="input"
             placeholder="Açıklama"
+            [ngModel]="item.description"
           />
         </p>
       </div>
       <div class="field is-narrow">
-        <button type="submit" class="button is-primary">
+        <button type="submit" [disabled]="!budgetForm.valid" class="button is-primary">
           Ekle
         </button>
       </div>
