@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { BudgetItem } from 'src/app/models/budget-item.model';
 
@@ -10,9 +10,14 @@ import { BudgetItem } from 'src/app/models/budget-item.model';
 export class AddItemFormComponent implements OnInit {
   constructor() { }
   @Input() item: BudgetItem = new BudgetItem('', null);
+  // Parente haber verelim
+
+  @Output() submitForm: EventEmitter<BudgetItem> = new EventEmitter();
   ngOnInit() {
   }
   onSubmit(form: NgForm): void {
-    alert('Merhaba Nisanur');
+    // bu değeri dinleyene formu gönderir
+    // parente haber verecek
+  this.submitForm.emit(form.value);
   }
 }

@@ -1,5 +1,5 @@
 <div class="root">
-    <div class="budget-item" [ngClass]="{'income':isIncome,'expense':!isIncome}">
+    <div class="budget-item" [ngClass]="{'income':item.amount>=0,'expense':item.amount<0}">
         <div class="description">
             <p>Lorem ipsum</p>
         </div>
