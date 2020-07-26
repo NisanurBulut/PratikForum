@@ -19,5 +19,6 @@ export class AddItemFormComponent implements OnInit {
     // bu değeri dinleyene formu gönderir
     // parente haber verecek
   this.submitForm.emit(form.value);
+  form.reset();
   }
 }
