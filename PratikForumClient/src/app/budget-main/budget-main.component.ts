@@ -16,4 +16,9 @@ export class BudgetMainComponent implements OnInit {
   addItem(newItem: BudgetItem) {
     this.budgetItems.push(newItem);
   }
+  deleteItem(delItem: BudgetItem) {
+    console.log('budgetMain', delItem);
+    const index = this.budgetItems.indexOf(delItem);
+    this.budgetItems.splice(index, 1);
+  }
 }

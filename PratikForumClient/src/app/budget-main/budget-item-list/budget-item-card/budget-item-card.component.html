@@ -1,13 +1,12 @@
 <div class="root">
     <div class="budget-item" [ngClass]="{'income':item.amount>=0,'expense':item.amount<0}">
         <div class="description">
-            <p>Lorem ipsum</p>
+            <p>{{item.description}}</p>
         </div>
         <div class="amount">
-            <p>100</p>
+            <p>{{item.amount}}</p>
         </div>
     </div>
-    <div class="x-icon-button">
-
+    <div class="x-icon-button" (click)="onRemoveButgetItem(item)">
     </div>
 </div>

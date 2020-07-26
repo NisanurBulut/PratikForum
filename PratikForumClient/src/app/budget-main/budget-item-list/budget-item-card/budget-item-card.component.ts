@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BudgetItem } from 'src/app/models/budget-item.model';
 
 @Component({
@@ -8,9 +8,13 @@ import { BudgetItem } from 'src/app/models/budget-item.model';
 })
 export class BudgetItemCardComponent implements OnInit {
   @Input() item: BudgetItem;
+  @Output() removeItem: EventEmitter<BudgetItem> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
-
+  onRemoveButgetItem(rItem: BudgetItem) {
+    // emit etmeli parentine
+    this.removeItem.emit(rItem);
+  }
 }
