@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-item-form',
@@ -11,5 +12,7 @@ export class AddItemFormComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSubmit(form: NgForm): void {
+    alert('Merhaba Nisanur');
+  }
 }
