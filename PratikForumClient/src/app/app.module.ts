@@ -21,6 +21,7 @@ import { BudgetMainComponent } from './budget-main/budget-main.component';
 import { AddItemFormComponent } from './budget-main/add-item-form/add-item-form.component';
 import { BudgetItemListComponent } from './budget-main/budget-item-list/budget-item-list.component';
 import { BudgetItemCardComponent } from './budget-main/budget-item-list/budget-item-card/budget-item-card.component';
+import { EditItemModalComponent } from './budget-main/edit-item-modal/edit-item-modal.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { BudgetItemCardComponent } from './budget-main/budget-item-list/budget-i
     BudgetMainComponent,
     AddItemFormComponent,
     BudgetItemListComponent,
-    BudgetItemCardComponent
+    BudgetItemCardComponent,
+    EditItemModalComponent
   ],
   imports: [
     BrowserModule,
