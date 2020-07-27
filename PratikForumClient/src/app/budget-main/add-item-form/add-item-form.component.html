@@ -28,8 +28,10 @@
       </div>
       <div class="field is-narrow">
         <button type="submit" [disabled]="!budgetForm.valid"
+        [ngClass]="{'is-primary':isNewItem,'is-success':!isNewItem}"
         class="button is-primary">
-          Ekle
+          <p *ngIf="isNewItem">Ekle</p>
+          <p *ngIf="!isNewItem">Düzenle</p>
         </button>
       </div>
     </div>

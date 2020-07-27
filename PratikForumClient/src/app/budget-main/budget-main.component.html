@@ -7,7 +7,7 @@
   <h1>Bütçe Hesaplayıcı</h1>
 </div>
 <section class="total-budget-section">
-  <h2 class="red">1500</h2>
+  <h2 [ngClass]="{'red':totalBudget<0, 'green':totalBudget>=0}">{{this.totalBudget}}</h2>
 </section>
 <section class="add-item-section">
   <div class="add-item-container">
@@ -19,4 +19,5 @@
 <hr style="margin-top: 0;">
 <app-budget-item-list
 [budgetItems]="budgetItems"
-(onDeleteBudgetItem)="deleteItem($event)"></app-budget-item-list>
+(onDeleteBudgetItem)="deleteItem($event)"
+(onUpdateBudgetItem)="updateItem($event)"></app-budget-item-list>
