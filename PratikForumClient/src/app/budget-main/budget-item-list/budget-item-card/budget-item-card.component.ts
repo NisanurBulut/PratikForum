@@ -9,6 +9,7 @@ import { BudgetItem } from 'src/app/models/budget-item.model';
 export class BudgetItemCardComponent implements OnInit {
   @Input() item: BudgetItem;
   @Output() removeItem: EventEmitter<BudgetItem> = new EventEmitter();
+  @Output() selectItem: EventEmitter<BudgetItem> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -16,5 +17,9 @@ export class BudgetItemCardComponent implements OnInit {
   onRemoveButgetItem(rItem: BudgetItem) {
     // emit etmeli parentine
     this.removeItem.emit(rItem);
+  }
+  onCardclick(sItem: BudgetItem) {
+    // emit etmeli parentine
+    this.selectItem.emit(sItem);
   }
 }

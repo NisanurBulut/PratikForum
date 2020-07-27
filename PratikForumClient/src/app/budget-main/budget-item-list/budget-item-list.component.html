@@ -9,6 +9,7 @@
           [item]="item"
           style="display: block; margin-bottom: 20px;"
           (removeItem)="deleteBudgetItem(item)"
+          (selectItem)="editBudgetItem(item)"
         ></app-budget-item-card>
     </div>
       </div>
@@ -22,6 +23,7 @@
           [item]="item"
             style="display: block; margin-bottom: 20px;"
             (removeItem)="deleteBudgetItem(item)"
+            (selectItem)="editBudgetItem(item)"
           ></app-budget-item-card>
       </div>
         </div>

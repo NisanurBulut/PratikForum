@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BudgetItem } from 'src/app/models/budget-item.model';
+import { MatDialog } from '@angular/material/dialog';
+import { EditItemModalComponent } from '../edit-item-modal/edit-item-modal.component';
 
 
 @Component({
@@ -11,12 +13,27 @@ export class BudgetItemListComponent implements OnInit {
   @Input() budgetItems: BudgetItem[];
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onDeleteBudgetItem: EventEmitter<BudgetItem> = new EventEmitter();
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
+
   deleteBudgetItem(delBudgetItem: BudgetItem) {
     // burada da parentine emit etmeli
     this.onDeleteBudgetItem.emit(delBudgetItem);
+  }
+  editBudgetItem(edBudgetItem: BudgetItem) {
+    console.log(edBudgetItem);
+    const dialogRef = this.dialog.open(EditItemModalComponent, {
+      width: '500px',
+      data: edBudgetItem
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // güncelleme
+        this.budgetItems[this.budgetItems.indexOf(edBudgetItem)] = result;
+      }
+    });
   }
 }

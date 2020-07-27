@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+
 import { AppComponent } from './app.component';
 import { BankAccountComponent } from './bank-account/bank-account.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,6 +25,7 @@ import { AddItemFormComponent } from './budget-main/add-item-form/add-item-form.
 import { BudgetItemListComponent } from './budget-main/budget-item-list/budget-item-list.component';
 import { BudgetItemCardComponent } from './budget-main/budget-item-list/budget-item-card/budget-item-card.component';
 import { EditItemModalComponent } from './budget-main/edit-item-modal/edit-item-modal.component';
+
 
 
 @NgModule({
@@ -51,9 +55,12 @@ import { EditItemModalComponent } from './budget-main/edit-item-modal/edit-item-
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
+  entryComponents:[EditItemModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
