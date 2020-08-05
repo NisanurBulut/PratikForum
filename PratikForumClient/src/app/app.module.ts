@@ -25,7 +25,7 @@ import { AddItemFormComponent } from './budget-main/add-item-form/add-item-form.
 import { BudgetItemListComponent } from './budget-main/budget-item-list/budget-item-list.component';
 import { BudgetItemCardComponent } from './budget-main/budget-item-list/budget-item-card/budget-item-card.component';
 import { EditItemModalComponent } from './budget-main/edit-item-modal/edit-item-modal.component';
-import {TaskViewComponent} from '../app/task-pages/task-view/task-view.component';
+import {TaskViewComponent} from './task-pages/task-view/task-view.component';
 
 @NgModule({
   declarations: [
