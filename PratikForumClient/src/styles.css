@@ -1,5 +1,5 @@
 
-
+html, body { height: 100%; }
 .grid-table
 {
 	display:table;
@@ -50,5 +50,3 @@ input.ng-invalid.ng-touched,select.ng-invalid.ng-touched{
 @keyframes fadeinout {
   50% { opacity: 1; }
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
