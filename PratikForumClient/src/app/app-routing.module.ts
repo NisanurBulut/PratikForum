@@ -11,18 +11,21 @@ import { BankOperationsComponent } from './bank/bank-operations/bank-operations.
 import { BankDegerlendirmeComponent } from './bank/bank-degerlendirme/bank-degerlendirme.component';
 import { BudgetMainComponent } from './budget-main/budget-main.component';
 import { TaskViewComponent } from './task-pages/task-view/task-view.component';
-
+import { NewListComponent } from './task-pages/new-list/new-list.component';
 
 const routes: Routes = [
-    { path: '', component: TaskViewComponent },
+    { path: '', component: HomeComponent },
+    { path: 'taks', component: TaskViewComponent },
+    { path: ':new-list', component: NewListComponent },
+    { path: 'lists/:listId', component: TaskViewComponent },
     {
         path: 'bank',
         component: BankComponent,
         children: [
-          { path: 'operations', component: BankOperationsComponent },
-          { path: 'degerlendirme/:id', component: BankDegerlendirmeComponent }
+            { path: 'operations', component: BankOperationsComponent },
+            { path: 'degerlendirme/:id', component: BankDegerlendirmeComponent }
         ]
-      },
+    },
     {
         path: 'user', component: UserComponent,
         children: [

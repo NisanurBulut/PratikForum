@@ -5,17 +5,16 @@
         LİSTE
       </h1>
       <div class="list-menu">
-        <a class="list-menu-item is-active">
-          <p>List item #1</p>
-        </a>
-        <a class="list-menu-item">
-          <p>List item #2</p>
-        </a>
-        <a class="list-menu-item">
-          <p>List item #3</p>
+        <a
+          class="list-menu-item is-active"
+          *ngFor="let item of lists"
+          [routerLink]="['/lists', item.taskListId]"
+          routerLinkActive="is-active"
+        >
+          <p>{{ item.title }}</p>
         </a>
       </div>
-      <button class="button is-primary has-text-white" (click)="yeniListeOlustur()">
+      <button class="button is-primary has-text-white" routerLink="/new-list">
         + Yeni Liste
       </button>
     </div>
@@ -25,23 +24,9 @@
       </h1>
 
       <!-- Görev listesi -->
-      <div class="task">
+      <div class="task" *ngFor="let task of tasks">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet
-          consectetur adipiscing elit ut aliquam purus sit amet.
-        </p>
-      </div>
-      <div class="task complete">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet
-          consectetur adipiscing elit ut aliquam purus sit amet.
-        </p>
-      </div>
-      <div class="task complete">
-        <p>
-         Labore esse qui tempor ea.
+       {{task.description}}
         </p>
       </div>
     </div>

@@ -19,7 +19,6 @@ export class UserService {
       .pipe(catchError(this.handleError));
   }
   postUser(formData: User) {
-    console.log(formData);
     return this.http.post(environment.apiBaseUrl + '/User', formData)
       .pipe(catchError(this.handleError));
   }

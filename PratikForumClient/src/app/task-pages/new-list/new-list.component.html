@@ -1,0 +1,20 @@
+<div class="centered-content">
+  <div class="modal-box has-background-light">
+    <h1 class="title">
+      Yeni Liste Oluştur
+    </h1>
+    <input #ListTitleInput class="input is-medium" type="text" placeholder="Görev Listesi" />
+    <br /><br />
+    <div class="buttons is-right">
+      <button class="button is-medium" routerLink="/">
+        İptal
+      </button>
+      <button
+        class="button is-primary has-text-white is-medium"
+        (click)="yeniListeOlustur(ListTitleInput.value)"
+      >
+        Ekle
+      </button>
+    </div>
+  </div>
+</div>
