@@ -12,5 +12,7 @@ namespace PratikForumAPI.Models
         public int TaskId { get; set; }
         public int TasklistId { get; set; }
         public string Description { get; set; }
+ 
+        public bool Completed { get; set; } = false;
     }
 }

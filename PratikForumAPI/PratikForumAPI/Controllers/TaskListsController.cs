@@ -97,8 +97,18 @@ namespace PratikForumAPI.Controllers
 
             return CreatedAtAction("GetTaskList", new { id = taskList.TaskListId }, taskList);
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Models.Task>> CompleteTask(int id)
+        {
+            var item = await _context.Task.FirstAsync(a => a.TaskId == id);
+            item.Completed = true;
+            _context.Entry(item).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return CreatedAtAction("GetTaskItems", new { id = item.TasklistId }, item);
+        }
         [HttpPost]
-        public async Task<ActionResult<TaskList>> TaskKaydet(Models.Task task)
+        public async Task<ActionResult<TaskList>> PostTask(Models.Task task)
         {
             _context.Task.Add(task);
             await _context.SaveChangesAsync();

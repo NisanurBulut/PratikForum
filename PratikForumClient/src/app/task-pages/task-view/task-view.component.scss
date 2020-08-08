@@ -65,17 +65,27 @@
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 
   &:not(.complete) {
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+
     &:active {
-      transform: scale(0.95);
+        transform: scale(0.95);
     }
+
     &:hover {
-      box-shadow: 0 0 0 5px #eeeeee;
+        box-shadow: 0 0 0 5px #eeeeee;
+
+        .task-buttons {
+            opacity: 1;
+            transform: scale(1);
+        }
     }
-  }
-  &.complete {
+}
+
+&.completed .task-text {
     text-decoration: line-through;
     opacity: 0.8;
-  }
+}
 }
 .circle-add-button{
   position: absolute;

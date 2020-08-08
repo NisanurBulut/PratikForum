@@ -20,6 +20,9 @@ export class TaskService {
     return this.http.get(environment.apiBaseUrl + '/TaskLists/GetTaskItems/' + id);
   }
   postTask(newItem: Task) {
-    return this.http.post(environment.apiBaseUrl + '/TaskLists/TaskKaydet/', newItem);
+    return this.http.post(environment.apiBaseUrl + '/TaskLists/PostTask/', newItem);
+  }
+  completeTask(id: number) {
+    return this.http.get(environment.apiBaseUrl + '/TaskLists/CompleteTask/' + id);
   }
 }

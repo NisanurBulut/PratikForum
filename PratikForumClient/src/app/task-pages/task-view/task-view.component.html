@@ -24,8 +24,12 @@
       </h1>
 
       <!-- Görev listesi -->
-      <div class="task" *ngFor="let task of tasks">
-        <p>
+      <div
+      [ngClass]="task.completed === true ? 'task completed' : 'task'"
+        *ngFor="let task of tasks"
+        (click)="completeTask(task)"
+      >
+        <p class="task-text">
           {{ task.description }}
         </p>
       </div>
