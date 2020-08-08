@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TaskService } from 'src/app/shared/task.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Task } from 'src/app/models/task.model';
+import { ToastService } from 'src/app/shared/toast.service';
 
 @Component({
   selector: 'app-task-view',
@@ -12,7 +13,7 @@ export class TaskViewComponent implements OnInit {
   lists: any;
   tasks: any;
   listId: number;
-  constructor(private ts: TaskService, private route: ActivatedRoute) {
+  constructor(private ts: TaskService, private route: ActivatedRoute, private tos: ToastService) {
   }
 
   ngOnInit() {
@@ -38,17 +39,20 @@ export class TaskViewComponent implements OnInit {
   completeTask(taskItem: Task) {
     this.ts.completeTask(taskItem.taskId).subscribe((response: any) => {
       taskItem.completed = true;
+      this.tos.info('Başarılı', 'Görev tamamlanmıştır.');
     });
   }
   deleteTaskLists() {
     this.ts.DeleteTaskList(this.listId).subscribe((response: any) => {
       this.tasks = [];
       this.gorevListeleriniGetir();
+      this.tos.warn('Başarılı', 'Görev silinmiştir.');
     });
   }
   deleteTask(taskItem: Task) {
     this.ts.DeleteTask(taskItem.taskId).subscribe((response: any) => {
       this.gorevleriGetir();
+      this.tos.warn('Başarılı', 'Görev listesi silinmiştir.');
     });
   }
 }

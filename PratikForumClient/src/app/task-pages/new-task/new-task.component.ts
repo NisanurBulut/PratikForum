@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TaskService } from 'src/app/shared/task.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Task } from 'src/app/models/task.model';
+import { ToastService } from 'src/app/shared/toast.service';
 
 @Component({
   selector: 'app-new-task',
@@ -10,7 +11,7 @@ import { Task } from 'src/app/models/task.model';
 })
 export class NewTaskComponent implements OnInit {
 
-  constructor(private ts: TaskService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private ts: TaskService, private tos: ToastService, private route: ActivatedRoute, private router: Router) { }
   taskListId: number;
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
@@ -24,6 +25,7 @@ export class NewTaskComponent implements OnInit {
     taskItem.description = descTask;
     taskItem.taskId = 0;
     this.ts.postTask(taskItem).subscribe((response: any) => {
+      this.tos.success('Başarılı', 'Yeni görev oluşturuldu.');
       this.router.navigate(['../'], { relativeTo: this.route });
     });
   }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
+import { SimpleNotificationsModule } from 'angular2-notifications';
 
 import { AppComponent } from './app.component';
 import { BankAccountComponent } from './bank-account/bank-account.component';
@@ -59,7 +60,8 @@ import { NewTaskComponent } from './task-pages/new-task/new-task.component';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    SimpleNotificationsModule.forRoot()
   ],
   providers: [],
   entryComponents: [EditItemModalComponent],
