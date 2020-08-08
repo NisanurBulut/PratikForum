@@ -24,10 +24,7 @@ $input-border-color:transparent;
 $input-shadow:none;
 
 // Bütün uygulamada kullanılacak olan custom global stiller
-:host{
-    background: linear-gradient(to right top,$turqoise,$green);
-    display: block;
-}
+
 html,body{
     height: 100%;
 }
