@@ -1,0 +1,32 @@
+// task ekranıyla ilgili global css düzenlemelerini içerir
+
+// import fonts
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Lato:400,700');
+
+$turqoise:#44ddd0;
+$green:#00cc86;
+$light-green:#bafacd;
+$dark-green: rgb(0, 100, 80);
+
+$light:#f8f8f8;
+
+// Bulma global değişkenlerini overrite edelim
+
+$family-sant-serif:"Nunito",sans-serif;
+$primary:$green;
+
+$link:$light-green;
+
+// Bulma component'leri overrite edilir.
+$control-border-width:2px;
+$input-border-color:transparent;
+$input-shadow:none;
+
+// Bütün uygulamada kullanılacak olan custom global stiller
+html{
+    background: linear-gradient(to right top,$turqoise,$green);
+}
+html,body{
+    height: 100%;
+}
