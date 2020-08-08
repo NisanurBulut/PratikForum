@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { TaskList } from '../models/taskList.model';
+import { Task } from '../models/task.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,5 +18,8 @@ export class TaskService {
   }
   getTaskList(id: number) {
     return this.http.get(environment.apiBaseUrl + '/TaskLists/GetTaskItems/' + id);
+  }
+  postTask(newItem: Task) {
+    return this.http.post(environment.apiBaseUrl + '/TaskLists/TaskKaydet/', newItem);
   }
 }

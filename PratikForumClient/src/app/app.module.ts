@@ -29,6 +29,7 @@ import { EditItemModalComponent } from './budget-main/edit-item-modal/edit-item-
 import { TaskViewComponent } from './task-pages/task-view/task-view.component';
 import { TaskEditComponent } from './task-pages/task-edit/task-edit.component';
 import { NewListComponent } from './task-pages/new-list/new-list.component';
+import { NewTaskComponent } from './task-pages/new-task/new-task.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { NewListComponent } from './task-pages/new-list/new-list.component';
     EditItemModalComponent,
     TaskViewComponent,
     TaskEditComponent,
-    NewListComponent
+    NewListComponent,
+    NewTaskComponent
   ],
   imports: [
     BrowserModule,

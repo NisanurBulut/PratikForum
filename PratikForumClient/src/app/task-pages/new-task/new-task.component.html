@@ -1,0 +1,19 @@
+<div class="centered-content">
+    <div class="modal-box has-background-light">
+      <h1 class="title">
+        Yeni Görev Oluştur
+      </h1>
+      <input #taskDescription class="input is-medium" type="text" placeholder="Görev" />
+      <br /><br />
+      <div class="buttons is-right">
+        <button class="button is-medium" routerLink="/">
+          İptal
+        </button>
+        <button
+          class="button is-primary has-text-white is-medium"
+          (click)="yeniGorevOlustur(taskDescription.value)">
+          Ekle
+        </button>
+      </div>
+    </div>
+  </div>

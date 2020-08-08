@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using PratikForumAPI.Models;
 
 namespace PratikForumAPI.Controllers
@@ -95,6 +96,14 @@ namespace PratikForumAPI.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetTaskList", new { id = taskList.TaskListId }, taskList);
+        }
+        [HttpPost]
+        public async Task<ActionResult<TaskList>> TaskKaydet(Models.Task task)
+        {
+            _context.Task.Add(task);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetTaskItems", new { id = task.TasklistId }, task);
         }
 
         // DELETE: api/TaskLists/5

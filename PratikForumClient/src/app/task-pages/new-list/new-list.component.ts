@@ -1,6 +1,8 @@
 import * as core from '@angular/core';
 import { TaskService } from 'src/app/shared/task.service';
 import { TaskList } from 'src/app/models/taskList.model';
+import { Route } from '@angular/compiler/src/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @core.Component({
   selector: 'app-new-list',
@@ -9,7 +11,7 @@ import { TaskList } from 'src/app/models/taskList.model';
 })
 export class NewListComponent implements core.OnInit {
 
-  constructor(private ts: TaskService) { }
+  constructor(private ts: TaskService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
   }
@@ -18,7 +20,7 @@ export class NewListComponent implements core.OnInit {
     task.TaskListId = 0;
     task.Title = title;
     this.ts.postTaskList(task).subscribe((response: any) => {
-      console.log(response);
+      this.router.navigate(['/tasks'], { relativeTo: this.route });
     });
   }
 }

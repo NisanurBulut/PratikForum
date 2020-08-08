@@ -12,11 +12,13 @@ import { BankDegerlendirmeComponent } from './bank/bank-degerlendirme/bank-deger
 import { BudgetMainComponent } from './budget-main/budget-main.component';
 import { TaskViewComponent } from './task-pages/task-view/task-view.component';
 import { NewListComponent } from './task-pages/new-list/new-list.component';
+import { NewTaskComponent } from './task-pages/new-task/new-task.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'taks', component: TaskViewComponent },
-    { path: ':new-list', component: NewListComponent },
+    { path: 'tasks', component: TaskViewComponent },
+    { path: 'new-list', component: NewListComponent },
+    { path: 'lists/:listId/new-task', component: NewTaskComponent },
     { path: 'lists/:listId', component: TaskViewComponent },
     {
         path: 'bank',

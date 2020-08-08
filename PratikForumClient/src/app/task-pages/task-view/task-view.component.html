@@ -26,11 +26,11 @@
       <!-- Görev listesi -->
       <div class="task" *ngFor="let task of tasks">
         <p>
-       {{task.description}}
+          {{ task.description }}
         </p>
       </div>
-      <button class="circle-add-button button">
-<i class="fa fa-plus has-text-white"></i>
+      <button class="circle-add-button button" routerLink="./new-task">
+        <i class="fa fa-plus has-text-white"></i>
       </button>
     </div>
   </div>
