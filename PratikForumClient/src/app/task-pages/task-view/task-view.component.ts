@@ -16,6 +16,15 @@ export class TaskViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.gorevListeleriniGetir();
+    this.gorevleriGetir();
+  }
+  gorevListeleriniGetir() {
+    this.ts.getTaskLists().subscribe((response: any[]) => {
+      this.lists = response;
+    });
+  }
+  gorevleriGetir() {
     this.route.params.subscribe((params: Params) => {
       if (params.listId !== undefined) {
         this.listId = +params.listId;
@@ -25,9 +34,6 @@ export class TaskViewComponent implements OnInit {
         });
       }
     });
-    this.ts.getTaskLists().subscribe((response: any[]) => {
-      this.lists = response;
-    });
   }
   completeTask(taskItem: Task) {
     this.ts.completeTask(taskItem.taskId).subscribe((response: any) => {
@@ -36,14 +42,13 @@ export class TaskViewComponent implements OnInit {
   }
   deleteTaskLists() {
     this.ts.DeleteTaskList(this.listId).subscribe((response: any) => {
-      //  this.lists.removeAt(this.lists.indexOf(this.listId));
-      // ekran yenilenmeli
+      this.tasks = [];
+      this.gorevListeleriniGetir();
     });
   }
   deleteTask(taskItem: Task) {
     this.ts.DeleteTask(taskItem.taskId).subscribe((response: any) => {
-      //  this.lists.removeAt(this.lists.indexOf(this.listId));
-      // ekran yenilenmeli
+     this.gorevleriGetir();
     });
   }
 }
