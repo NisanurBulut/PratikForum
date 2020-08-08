@@ -8,11 +8,11 @@ import { TaskService } from 'src/app/shared/task.service';
 })
 export class TaskViewComponent implements OnInit {
 
-  constructor(private ts:TaskService) { }
+  constructor(private ts: TaskService) { }
 
   ngOnInit() {
   }
-  yeniListeOlustur(title:string){
+  yeniListeOlustur(title: string) {
 
   }
 }
