@@ -26,6 +26,9 @@ import { BudgetItemListComponent } from './budget-main/budget-item-list/budget-i
 import { BudgetItemCardComponent } from './budget-main/budget-item-list/budget-item-card/budget-item-card.component';
 import { EditItemModalComponent } from './budget-main/edit-item-modal/edit-item-modal.component';
 
+import { TaskViewComponent } from './task-pages/task-view/task-view.component';
+import { TaskEditComponent } from './task-pages/task-edit/task-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +50,9 @@ import { EditItemModalComponent } from './budget-main/edit-item-modal/edit-item-
     AddItemFormComponent,
     BudgetItemListComponent,
     BudgetItemCardComponent,
-    EditItemModalComponent
+    EditItemModalComponent,
+    TaskViewComponent,
+    TaskEditComponent
   ],
   imports: [
     BrowserModule,

@@ -10,9 +10,11 @@ import { UserOperationsComponent } from './user/user-operations/user-operations.
 import { BankOperationsComponent } from './bank/bank-operations/bank-operations.component';
 import { BankDegerlendirmeComponent } from './bank/bank-degerlendirme/bank-degerlendirme.component';
 import { BudgetMainComponent } from './budget-main/budget-main.component';
+import { TaskViewComponent } from './task-pages/task-view/task-view.component';
 
 
 const routes: Routes = [
+    { path: '', component: TaskViewComponent },
     {
         path: 'bank',
         component: BankComponent,

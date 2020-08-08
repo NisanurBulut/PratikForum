@@ -1,0 +1,86 @@
+@charset "utf-8";
+@import "../../../task-style.scss";
+
+// Bütün uygulamada kullanılacak olan custom global stiller
+
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.task-manager-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  min-width: 600px;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  padding: 42px;
+  background-color: white;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.task-list-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 42px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.title {
+  font-family: "Lato";
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.list-menu {
+  display: flex;
+  flex-grow: 1;
+  margin-top: 15px;
+  flex-direction: column;
+  .list-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 5px;
+
+    &:hover {
+      background: $light;
+    }
+    &:is-active {
+      background-color: #cff8ef;
+      color: $dark-green;
+    }
+  }
+}
+.task {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:not(.complete) {
+    &:active {
+      transform: scale(0.95);
+    }
+    &:hover {
+      box-shadow: 0 0 0 5px #eeeeee;
+    }
+  }
+  &.complete {
+    text-decoration: line-through;
+    opacity: 0.8;
+  }
+}
