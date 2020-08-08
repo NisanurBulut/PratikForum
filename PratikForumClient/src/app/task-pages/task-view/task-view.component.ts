@@ -11,13 +11,14 @@ import { Task } from 'src/app/models/task.model';
 export class TaskViewComponent implements OnInit {
   lists: any;
   tasks: any;
+  listId: number;
   constructor(private ts: TaskService, private route: ActivatedRoute) {
-
   }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       if (params.listId !== undefined) {
+        this.listId = +params.listId;
         this.ts.getTaskList(params.listId).subscribe((response: any[]) => {
           this.tasks = response;
           console.log(this.tasks);
@@ -26,12 +27,23 @@ export class TaskViewComponent implements OnInit {
     });
     this.ts.getTaskLists().subscribe((response: any[]) => {
       this.lists = response;
-
     });
   }
   completeTask(taskItem: Task) {
     this.ts.completeTask(taskItem.taskId).subscribe((response: any) => {
       taskItem.completed = true;
+    });
+  }
+  deleteTaskLists() {
+    this.ts.DeleteTaskList(this.listId).subscribe((response: any) => {
+      //  this.lists.removeAt(this.lists.indexOf(this.listId));
+      // ekran yenilenmeli
+    });
+  }
+  deleteTask(taskItem: Task) {
+    this.ts.DeleteTask(taskItem.taskId).subscribe((response: any) => {
+      //  this.lists.removeAt(this.lists.indexOf(this.listId));
+      // ekran yenilenmeli
     });
   }
 }

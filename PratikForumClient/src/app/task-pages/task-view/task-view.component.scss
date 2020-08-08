@@ -27,11 +27,15 @@
   padding: 42px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-}
-.title {
-  font-family: "Lato";
-  font-size: 28px;
-  letter-spacing: 2px;
+
+  .top-bar{
+    margin-bottom: 20px;
+    display: flex;
+    .title{
+      flex-grow: 1;
+      margin: 0;
+    }
+  }
 }
 
 .list-menu {
@@ -92,7 +96,7 @@
   width: 50px;
   height: 50px;
   background: $primary;
-  bottom: 35px;
+  bottom: -10px;
   right: 35px;
   border: none;
   border-radius: 50%;

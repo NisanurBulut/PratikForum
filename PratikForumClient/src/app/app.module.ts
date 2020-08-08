@@ -12,8 +12,6 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { BankComponent } from './bank/bank.component';
 import { UserComponent } from './user/user.component';
-import { LoginComponent } from './user/login/login.component';
-import { RegistrationComponent } from './user/registration/registration.component';
 import { UserOperationsComponent } from './user/user-operations/user-operations.component';
 import { BankOperationsComponent } from './bank/bank-operations/bank-operations.component';
 import { BankPuanComponent } from './bank/bank-puan/bank-puan.component';
@@ -27,7 +25,6 @@ import { BudgetItemCardComponent } from './budget-main/budget-item-list/budget-i
 import { EditItemModalComponent } from './budget-main/edit-item-modal/edit-item-modal.component';
 
 import { TaskViewComponent } from './task-pages/task-view/task-view.component';
-import { TaskEditComponent } from './task-pages/task-edit/task-edit.component';
 import { NewListComponent } from './task-pages/new-list/new-list.component';
 import { NewTaskComponent } from './task-pages/new-task/new-task.component';
 
@@ -40,8 +37,6 @@ import { NewTaskComponent } from './task-pages/new-task/new-task.component';
     HomeComponent,
     BankComponent,
     UserComponent,
-    LoginComponent,
-    RegistrationComponent,
     UserOperationsComponent,
     BankOperationsComponent,
     BankPuanComponent,
@@ -54,7 +49,6 @@ import { NewTaskComponent } from './task-pages/new-task/new-task.component';
     BudgetItemCardComponent,
     EditItemModalComponent,
     TaskViewComponent,
-    TaskEditComponent,
     NewListComponent,
     NewTaskComponent
   ],

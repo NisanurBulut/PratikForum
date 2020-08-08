@@ -19,23 +19,37 @@
       </button>
     </div>
     <div class="task-list-container has-background-light">
-      <h1 class="title has-text-primary">
-        Görevler
-      </h1>
+
+  <div class="top-bar">
+    <h1 class="title has-text-primary">
+      Görevler
+    </h1>
+    <div class="buttons has-addons is-right">
+      <button class="button is-primary has-text-white"  routerLink="./new-task"><span class="fa fa-plus"></span></button>
+      <button class="button is-danger has-text-white" (click)="deleteTaskLists()"><span class="fa fa-trash"></span></button>
+    </div>
+  </div>
+
 
       <!-- Görev listesi -->
       <div
       [ngClass]="task.completed === true ? 'task completed' : 'task'"
         *ngFor="let task of tasks"
-        (click)="completeTask(task)"
+
       >
         <p class="task-text">
           {{ task.description }}
         </p>
+        <div class="buttons has-addons is-right">
+          <button class="button is-success has-text-white is-small"  (click)="completeTask(task)">
+            <span class="fa fa-check"></span>
+          </button>
+          <button class="button is-danger has-text-white is-small" (click)="deleteTask(task)">
+            <span class="fa fa-eraser"></span>
+          </button>
+        </div>
       </div>
-      <button class="circle-add-button button" routerLink="./new-task">
-        <i class="fa fa-plus has-text-white"></i>
-      </button>
+
     </div>
   </div>
 </div>

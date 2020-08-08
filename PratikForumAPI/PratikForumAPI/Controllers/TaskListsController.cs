@@ -115,8 +115,22 @@ namespace PratikForumAPI.Controllers
 
             return CreatedAtAction("GetTaskItems", new { id = task.TasklistId }, task);
         }
+       
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Models.Task>> DeleteTask(int id)
+        {
+            var task = await _context.Task.FindAsync(id);
+            if (task == null)
+            {
+                return NotFound();
+            }
 
-        // DELETE: api/TaskLists/5
+            _context.Task.Remove(task);
+            await _context.SaveChangesAsync();
+
+            return task;
+        }
+       
         [HttpDelete("{id}")]
         public async Task<ActionResult<TaskList>> DeleteTaskList(int id)
         {
@@ -127,6 +141,15 @@ namespace PratikForumAPI.Controllers
             }
 
             _context.TaskList.Remove(taskList);
+            await _context.SaveChangesAsync();
+
+            var taskDetailList = await _context.Task.Where(a => a.TasklistId == id).ToListAsync();
+            if (taskDetailList == null)
+            {
+                return NotFound();
+            }
+
+            _context.Task.RemoveRange(taskDetailList);
             await _context.SaveChangesAsync();
 
             return taskList;

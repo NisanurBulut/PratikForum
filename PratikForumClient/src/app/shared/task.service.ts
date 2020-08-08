@@ -25,4 +25,10 @@ export class TaskService {
   completeTask(id: number) {
     return this.http.get(environment.apiBaseUrl + '/TaskLists/CompleteTask/' + id);
   }
+  DeleteTaskList(id: number) {
+    return this.http.delete(environment.apiBaseUrl + '/TaskLists/DeleteTaskList/' + id);
+  }
+  DeleteTask(id: number) {
+    return this.http.delete(environment.apiBaseUrl + '/TaskLists/DeleteTask/' + id);
+  }
 }

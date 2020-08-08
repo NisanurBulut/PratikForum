@@ -23,4 +23,5 @@ export class NewListComponent implements core.OnInit {
       this.router.navigate(['/tasks'], { relativeTo: this.route });
     });
   }
+
 }
