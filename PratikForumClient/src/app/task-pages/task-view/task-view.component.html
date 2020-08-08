@@ -24,7 +24,7 @@
     <h1 class="title has-text-primary">
       Görevler
     </h1>
-    <div class="buttons has-addons is-right">
+    <div class="buttons has-addons is-right" *ngIf="this.listId">
       <button class="button is-primary has-text-white"  routerLink="./new-task"><span class="fa fa-plus"></span></button>
       <button class="button is-danger has-text-white" (click)="deleteTaskLists()"><span class="fa fa-trash"></span></button>
     </div>
@@ -33,6 +33,7 @@
 
       <!-- Görev listesi -->
       <div
+
       [ngClass]="task.completed === true ? 'task completed' : 'task'"
         *ngFor="let task of tasks"
 

@@ -48,7 +48,7 @@ export class TaskViewComponent implements OnInit {
   }
   deleteTask(taskItem: Task) {
     this.ts.DeleteTask(taskItem.taskId).subscribe((response: any) => {
-     this.gorevleriGetir();
+      this.gorevleriGetir();
     });
   }
 }
