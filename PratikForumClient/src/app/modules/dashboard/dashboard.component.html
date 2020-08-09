@@ -1,16 +1,49 @@
 <div>
-<app-widget-area></app-widget-area>
+  <app-widget-area></app-widget-area>
 </div>
 
 <mat-divider></mat-divider>
-<br>
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
-  <mat-card fxFlex="25">Stats</mat-card>
+<br />
+
+<div
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+  fxLayoutGap="20px"
+  class="stats-cards"
+>
+  <mat-card fxFlex="25"
+    ><app-widget-card
+      label="Kullanıcılar"
+      total="18"
+      percentage="50%"
+    ></app-widget-card
+  ></mat-card>
+  <mat-card fxFlex="25"
+    ><app-widget-card
+      label="Görevler"
+      total="18"
+      percentage="50%"
+    ></app-widget-card
+  ></mat-card>
+  <mat-card fxFlex="25"
+    ><app-widget-card
+      label="Hesaplar"
+      total="18"
+      percentage="50%"
+    ></app-widget-card
+  ></mat-card>
+  <mat-card fxFlex="25"
+    ><app-widget-card
+      label="Bankalar"
+      total="18"
+      percentage="50%"
+    ></app-widget-card
+  ></mat-card>
 </div>
 
 <mat-divider></mat-divider>
-
-<div>
-    <div>Table</div>
-    <div>Pie Vhart</div>
+<br />
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+  <div fxFlex="60">Table</div>
+  <div fxFlex="40"><app-widget-pie></app-widget-pie></div>
 </div>
