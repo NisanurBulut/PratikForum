@@ -5,7 +5,7 @@ import { DashboardComponent } from '../../modules/dashboard/dashboard.component'
 import { RouterModule } from '@angular/router';
 import { PostsComponent } from 'src/app/modules/posts/posts.component';
 import { ComponentModule } from 'src/app/components/component/component.module';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSidenavModule, MatDividerModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     CommonModule,
     RouterModule,
     ComponentModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDividerModule
   ]
 })
 export class DefaultModule { }

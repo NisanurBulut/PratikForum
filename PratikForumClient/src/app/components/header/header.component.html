@@ -11,6 +11,21 @@
               <mat-icon>settings</mat-icon>
             </button>
           </li>
+          <li>
+            <button mat-icon-button>
+              <mat-icon>help-outline</mat-icon>
+            </button>
+          </li>
+          <li>
+            <button mat-button [matMenuTriggerFor]="menu">
+              <mat-icon>person_outline</mat-icon>
+            </button>
+
+            <mat-menu #menu="matMenu">
+              <mat-icon>exit_to_app</mat-icon>
+              Oturum Kapat
+            </mat-menu>
+          </li>
         </ul>
       </div>
     </mat-toolbar-row>

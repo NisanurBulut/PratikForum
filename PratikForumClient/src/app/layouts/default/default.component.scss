@@ -6,6 +6,9 @@
 mat-drawer {
   width: 350px;
 }
-mat-drawer-content {
+mat-drawer-container {
   height: 100%;
+}
+mat-drawer-content {
+padding: 20px;
 }

@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { BankAccountComponent } from './bank-account/bank-account.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { BankComponent } from './bank/bank.component';
 import { UserComponent } from './user/user.component';
@@ -35,7 +34,6 @@ import { DefaultModule } from './layouts/default/default.module';
   declarations: [
     AppComponent,
     BankAccountComponent,
-    HeaderComponent,
     HomeComponent,
     BankComponent,
     UserComponent,
