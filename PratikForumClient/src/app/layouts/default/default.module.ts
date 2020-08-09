@@ -5,8 +5,8 @@ import { DashboardComponent } from '../../modules/dashboard/dashboard.component'
 import { RouterModule } from '@angular/router';
 import { PostsComponent } from 'src/app/modules/posts/posts.component';
 import { ComponentModule } from 'src/app/components/component/component.module';
-import {MatSidenavModule, MatDividerModule} from '@angular/material';
-
+import { MatSidenavModule, MatDividerModule, MatCardModule } from '@angular/material';
+import {FlexModule,FlexLayoutModule} from '@angular/flex-layout';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -18,7 +18,10 @@ import {MatSidenavModule, MatDividerModule} from '@angular/material';
     RouterModule,
     ComponentModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCardModule,
+    FlexLayoutModule,
+    FlexModule
   ]
 })
 export class DefaultModule { }

@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-
+import {AreaComponent} from '../widgets/area/area.component';
+import {HighchartsChartModule} from 'highcharts-angular';
 import {
   MatDividerModule,
   MatIconModule,
@@ -17,8 +18,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
-
+    SidebarComponent,
+    AreaComponent
   ],
   imports: [
     CommonModule,
@@ -29,12 +30,14 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     FlexLayoutModule,
     MatMenuModule,
-    MatListModule
+    MatListModule,
+    HighchartsChartModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    AreaComponent
   ]
 })
 export class ComponentModule { }
