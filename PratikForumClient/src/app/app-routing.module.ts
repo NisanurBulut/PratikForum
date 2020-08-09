@@ -13,6 +13,7 @@ import { NewListComponent } from './task-pages/new-list/new-list.component';
 import { NewTaskComponent } from './task-pages/new-task/new-task.component';
 import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { PostsComponent } from './modules/posts/posts.component';
 
 const routes: Routes = [
     {
@@ -20,6 +21,9 @@ const routes: Routes = [
         children: [
             {
                 path: '', component: DashboardComponent
+            },
+            {
+                path: 'posts', component: PostsComponent
             }
         ]
     },

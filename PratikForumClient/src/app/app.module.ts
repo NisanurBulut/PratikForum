@@ -52,7 +52,7 @@ import { DefaultModule } from './layouts/default/default.module';
     EditItemModalComponent,
     TaskViewComponent,
     NewListComponent,
-    NewTaskComponent,
+    NewTaskComponent
   ],
   imports: [
     BrowserModule,
