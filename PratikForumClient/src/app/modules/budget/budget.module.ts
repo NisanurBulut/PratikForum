@@ -7,6 +7,7 @@ import {AddItemFormComponent} from '../../budget-main/add-item-form/add-item-for
 import {BudgetItemListComponent} from '../../budget-main/budget-item-list/budget-item-list.component';
 import {BudgetItemCardComponent} from '../../budget-main/budget-item-list/budget-item-card/budget-item-card.component';
 import {EditItemModalComponent} from '../../budget-main/edit-item-modal/edit-item-modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     BudgetMainComponent,
@@ -17,7 +18,9 @@ import {EditItemModalComponent} from '../../budget-main/edit-item-modal/edit-ite
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   entryComponents: [EditItemModalComponent]
 })
