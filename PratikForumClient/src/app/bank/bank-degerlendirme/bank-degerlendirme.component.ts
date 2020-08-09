@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BankService } from 'src/app/shared/bank.service';
+import { BankService } from '../../shared/bank.service';
 import { Bank } from 'src/app/models/bank.model';
 import { Subscription } from 'rxjs';
 import { BankYorum } from 'src/app/models/bankYorum.model';
