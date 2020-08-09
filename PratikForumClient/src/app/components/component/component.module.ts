@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-import {AreaComponent} from '../widgets/area/area.component';
-import {CardComponent} from '../widgets/card/card.component';
-import {PieComponent} from '../widgets/pie/pie.component';
-import {HighchartsChartModule} from 'highcharts-angular';
+import { AreaComponent } from '../widgets/area/area.component';
+import { CardComponent } from '../widgets/card/card.component';
+import { PieComponent } from '../widgets/pie/pie.component';
+import { HighchartsChartModule } from 'highcharts-angular';
 import {
   MatDividerModule,
   MatIconModule,

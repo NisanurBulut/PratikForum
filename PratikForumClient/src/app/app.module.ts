@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule, MatSidenavModule } from '@angular/material';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 
 import { AppComponent } from './app.component';
@@ -28,6 +28,7 @@ import { TaskViewComponent } from './task-pages/task-view/task-view.component';
 import { NewListComponent } from './task-pages/new-list/new-list.component';
 import { NewTaskComponent } from './task-pages/new-task/new-task.component';
 import { DefaultModule } from './layouts/default/default.module';
+import { ComponentModule } from './components/component/component.module';
 
 
 @NgModule({
@@ -61,6 +62,8 @@ import { DefaultModule } from './layouts/default/default.module';
     BrowserAnimationsModule,
     MatDialogModule,
     DefaultModule,
+    ComponentModule,
+    MatSidenavModule,
     SimpleNotificationsModule.forRoot()
   ],
   providers: [],

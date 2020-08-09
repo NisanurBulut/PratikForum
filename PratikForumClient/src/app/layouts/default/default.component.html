@@ -1,12 +1,3 @@
-<app-header (toggeSideBarForMenu)="toggleSideBarMenu($event)"></app-header>
-<mat-drawer-container>
-  <mat-drawer mode="side" [opened]="sideBarOpen">
-    <app-sidebar></app-sidebar>
-  </mat-drawer>
-  <mat-drawer-content>
-    <router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
-<app-footer></app-footer>
+
 <!-- router-outlet in tanımlı olarak htmlde gorunmesı için
 modul'e routerModul'un de eklenmesi gerekir. -->

@@ -7,14 +7,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   // dışarıya bilgi vermeli
-  @Output() toggeSideBarForMenu: EventEmitter<any> = new EventEmitter();
+  @Output() toggleSideBarForMenu: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
   toggleSideBar() {
     // dinlemeli
-    this.toggeSideBarForMenu.emit();
+    this.toggleSideBarForMenu.emit();
     setTimeout(() => {
       window.dispatchEvent(
         new Event('resize')
