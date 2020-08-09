@@ -5,8 +5,9 @@ import { DashboardComponent } from '../../modules/dashboard/dashboard.component'
 import { RouterModule } from '@angular/router';
 import { PostsComponent } from 'src/app/modules/posts/posts.component';
 import { ComponentModule } from 'src/app/components/component/component.module';
-import { MatSidenavModule, MatDividerModule, MatCardModule } from '@angular/material';
+import { MatSidenavModule, MatDividerModule, MatCardModule, MatPaginatorModule, MatTableModule } from '@angular/material';
 import { FlexModule, FlexLayoutModule } from '@angular/flex-layout';
+import { DashboardService } from '../../modules/dashboard.service';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -21,7 +22,12 @@ import { FlexModule, FlexLayoutModule } from '@angular/flex-layout';
     MatDividerModule,
     MatCardModule,
     FlexLayoutModule,
-    FlexModule
+    FlexModule,
+    MatPaginatorModule,
+    MatTableModule
+  ],
+  providers: [
+    DashboardService
   ]
 })
 export class DefaultModule { }
