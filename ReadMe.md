@@ -9,4 +9,4 @@ Ana Ekran
 
 ![Görev Ekranı](https://github.com/NisanurBulut/PratikForum/blob/master/Trailer/anaEkran_3.gif)
 
-![Dashboard Ekranı](https://github.com/NisanurBulut/PratikForum/blob/master/Trailer/anaEkran_4.gif)
+![Dashboard Ekranı](https://github.com/NisanurBulut/PratikForum/blob/master/Trailer/anaEkran_5.gif)
