@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from 'src/app/shared/task.service';
+import { TaskService } from '../../shared/task.service';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Task } from 'src/app/models/task.model';
-import { ToastService } from 'src/app/shared/toast.service';
+import { Task } from '../../models/task.model';
+import { ToastService } from '../../shared/toast.service';
 
 @Component({
   selector: 'app-task-view',

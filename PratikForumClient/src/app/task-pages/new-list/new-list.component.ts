@@ -1,9 +1,8 @@
 import * as core from '@angular/core';
-import { TaskService } from 'src/app/shared/task.service';
-import { TaskList } from 'src/app/models/taskList.model';
-import { Route } from '@angular/compiler/src/core';
+import { TaskService } from '../../shared/task.service';
+import { TaskList } from '../../models/taskList.model';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToastService } from 'src/app/shared/toast.service';
+import { ToastService } from '../../shared/toast.service';
 
 @core.Component({
   selector: 'app-new-list',
