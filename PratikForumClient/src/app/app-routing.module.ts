@@ -11,9 +11,18 @@ import { BudgetMainComponent } from './budget-main/budget-main.component';
 import { TaskViewComponent } from './task-pages/task-view/task-view.component';
 import { NewListComponent } from './task-pages/new-list/new-list.component';
 import { NewTaskComponent } from './task-pages/new-task/new-task.component';
+import { DefaultComponent } from './layouts/default/default.component';
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent },
+    {
+        path: '', component: DefaultComponent,
+        children: [
+            {
+                path: '', component: DashboardComponent
+            }
+        ]
+    },
     { path: 'tasks', component: TaskViewComponent },
     { path: 'new-list', component: NewListComponent },
     { path: 'lists/:listId/new-task', component: NewTaskComponent },
