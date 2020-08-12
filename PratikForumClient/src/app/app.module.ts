@@ -11,13 +11,14 @@ import { HomeComponent } from './home/home.component';
 import { BankComponent } from './bank/bank.component';
 import { UserComponent } from './user/user.component';
 import { UserOperationsComponent } from './user/user-operations/user-operations.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { ContactComponent } from './contacts/contact/contact.component';
 
 import { DefaultModule } from './modules/default.module';
 import { BankModule } from './modules/bank/bank.module';
 import { BudgetModule } from './modules/budget/budget.module';
 import { TaskModule } from './modules/task/task.module';
 import { MaterialModule } from './modules/material/material.module';
-import { ContactModule } from './modules/contact/contact.module';
 import { ComponentModule } from './components/component/component.module';
 
 
@@ -29,7 +30,9 @@ import { ComponentModule } from './components/component/component.module';
     HomeComponent,
     BankComponent,
     UserComponent,
-    UserOperationsComponent
+    UserOperationsComponent,
+    ContactComponent,
+    ContactsComponent
   ],
   imports: [
     AppRoutingModule,
@@ -37,7 +40,6 @@ import { ComponentModule } from './components/component/component.module';
     BrowserModule,
     BrowserAnimationsModule,
     BudgetModule,
-    ContactModule,
     ComponentModule,
     DefaultModule,
     FormsModule,

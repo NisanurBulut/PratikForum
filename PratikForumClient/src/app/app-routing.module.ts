@@ -16,7 +16,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 
 const routes: Routes = [
 
-    { path: '', component: HomeComponent, },
+    { path: '', component: ContactsComponent, },
     { path: 'contacts', component: ContactsComponent, },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'tasks', component: TaskViewComponent },

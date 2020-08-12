@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactService } from 'src/app/shared/contact.service';
+import { ContactService } from '../../shared/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,10 +7,18 @@ import { ContactService } from 'src/app/shared/contact.service';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  departments = [
+    { id: 3, value: 'Dep-3' },
+    { id: 2, value: 'Dep-2' },
+    { id: 1, value: 'Dep-1' }
+  ];
 
-  constructor(private cs: ContactService) { }
+  constructor(public cs: ContactService) { }
 
   ngOnInit(): void {
   }
-
+  onClear(): void {
+    this.cs.form.reset();
+    this.cs.initializeFormGroup();
+  }
 }

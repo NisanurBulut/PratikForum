@@ -1,1 +1,63 @@
-<form [formGroup]="cs.form" class="normal-form"></form>
+<form [formGroup]="cs.form" class="normal-form">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden" formControlName="$key" />
+        <mat-form-field fxFlex="100">
+          <input formControlName="fullName" placeholder="İsim*" matInput />
+          <mat-error>Bu alan boş bırakılamaz.</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+          <input formControlName="email" placeholder="Email*" matInput />
+          <mat-error>Bu alan boş bırakılamaz.</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+          <input formControlName="mobile" placeholder="Cep Telefonu*" matInput />
+          <mat-error *ngIf="cs.form.controls['mobile'].errors?.required">Bu alan boş bırakılamaz.</mat-error>
+          <mat-error *ngIf="cs.form.controls['mobile'].errors?.minlength">En az 10 karakter kullanmalısınız.</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+          <input formControlName="city" placeholder="Şehir*" matInput />
+          <mat-error>Bu alan boş bırakılamaz.</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <div class="add-bottom-padding" fxFlex="100">
+          <mat-radio-group formControlName="gender">
+            <mat-radio-button value="1">Kadın</mat-radio-button>
+            <mat-radio-button value="2">Erkek</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <mat-form-field fxFlex="100">
+          <mat-select formControlName="department" placeholder="Departman">
+            <mat-option>None</mat-option>
+            <ng-container *ngFor="let item of departments">
+              <mat-option value="{{ item.id }}">{{ item.value }}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+          <input matInput [matDatepicker]="picker" placeholder="İş Başlangıç Tarihi" formControlName="hireDate" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div class="add-bottom-padding">
+          <mat-checkbox formControlName="isPermanent" matInput>
+            Çalışma Durumu
+          </mat-checkbox>
+        </div>
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit" [disabled]="cs.form.invalid">
+            Gönder
+          </button>
+          <button mat-raised-button color="warn" (click)="onClear()">İptal</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

@@ -13,7 +13,16 @@ import * as Material from '@angular/material';
     Material.MatSidenavModule,
     Material.MatCardModule,
     Material.MatPaginatorModule,
-    Material.MatTableModule
+    Material.MatTableModule,
+    Material.MatGridListModule,
+    Material.MatFormFieldModule,
+    Material.MatInputModule,
+    Material.MatRadioModule,
+    Material.MatSelectModule,
+    Material.MatNativeDateModule,
+    Material.MatDatepickerModule,
+    Material.MatCheckboxModule,
+    Material.MatButtonModule
   ],
   exports: [
     Material.MatToolbarModule,
@@ -23,7 +32,16 @@ import * as Material from '@angular/material';
     Material.MatSidenavModule,
     Material.MatCardModule,
     Material.MatPaginatorModule,
-    Material.MatTableModule
-  ]
+    Material.MatTableModule,
+    Material.MatGridListModule,
+    Material.MatFormFieldModule,
+    Material.MatInputModule,
+    Material.MatRadioModule,
+    Material.MatSelectModule,
+    Material.MatCheckboxModule,
+    Material.MatNativeDateModule,
+    Material.MatDatepickerModule,
+    Material.MatButtonModule
+    ]
 })
 export class MaterialModule { }
