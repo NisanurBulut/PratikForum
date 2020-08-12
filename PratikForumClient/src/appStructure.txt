@@ -38,6 +38,7 @@
 |   |   |---bank-account.service.ts,
 |   |   |---task.service.ts,
 |   |   |---dashboard.service.ts,
+|   |   |---contact.service.ts,
 |   |   |---toast.service.ts
 |   |
 |   +---*Modules
