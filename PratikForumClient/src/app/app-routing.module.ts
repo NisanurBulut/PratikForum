@@ -13,7 +13,6 @@ import { NewListComponent } from './task-pages/new-list/new-list.component';
 import { NewTaskComponent } from './task-pages/new-task/new-task.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { ContactListComponent } from './contacts/contact-list/contact-list.component';
 const routes: Routes = [
 
     { path: '', component: ContactsComponent, },

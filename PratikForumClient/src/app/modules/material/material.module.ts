@@ -22,7 +22,8 @@ import * as Material from '@angular/material';
     Material.MatNativeDateModule,
     Material.MatDatepickerModule,
     Material.MatCheckboxModule,
-    Material.MatButtonModule
+    Material.MatButtonModule,
+    Material.MatIconModule
   ],
   exports: [
     Material.MatToolbarModule,
@@ -41,7 +42,8 @@ import * as Material from '@angular/material';
     Material.MatCheckboxModule,
     Material.MatNativeDateModule,
     Material.MatDatepickerModule,
-    Material.MatButtonModule
+    Material.MatButtonModule,
+    Material.MatIconModule
     ]
 })
 export class MaterialModule { }

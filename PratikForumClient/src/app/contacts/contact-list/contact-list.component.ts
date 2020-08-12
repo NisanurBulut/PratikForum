@@ -13,7 +13,7 @@ export class ContactListComponent implements OnInit {
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = [
     'fullName', 'Email', 'Mobile', 'City', 'Department', 'Gender', 'IsPermanent',
-    'Birthday'];
+    'Birthday', 'actions'];
   array = [];
   ngOnInit(): void {
     this.cs.getContacts().subscribe(
