@@ -8,6 +8,7 @@ import {BudgetItemListComponent} from '../../budget-main/budget-item-list/budget
 import {BudgetItemCardComponent} from '../../budget-main/budget-item-list/budget-item-card/budget-item-card.component';
 import {EditItemModalComponent} from '../../budget-main/edit-item-modal/edit-item-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material.module';
 @NgModule({
   declarations: [
     BudgetMainComponent,

@@ -7,6 +7,7 @@ import {TaskViewComponent} from '../../task-pages/task-view/task-view.component'
 import {NewListComponent} from '../../task-pages/new-list/new-list.component';
 import {NewTaskComponent} from '../../task-pages/new-task/new-task.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [

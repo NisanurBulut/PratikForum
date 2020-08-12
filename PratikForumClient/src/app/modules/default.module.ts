@@ -17,8 +17,7 @@ import { MaterialModule } from './material/material.module';
     RouterModule,
     ComponentModule,
     FlexLayoutModule,
-    FlexModule,
-    MaterialModule
+    FlexModule
   ],
   providers: [
     DashboardService

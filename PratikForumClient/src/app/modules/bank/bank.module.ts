@@ -7,6 +7,7 @@ import { BankCommentComponent } from '../../bank/bank-comment/bank-comment.compo
 import { BankPuanResultComponent } from '../../bank/bank-puan-result/bank-puan-result.component';
 import { BankDegerlendirmeComponent } from '../../bank/bank-degerlendirme/bank-degerlendirme.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [

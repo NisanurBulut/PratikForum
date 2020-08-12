@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import * as Material from '@angular/material';
 
-
 @NgModule({
   declarations: [],
   imports: [
@@ -17,7 +16,14 @@ import * as Material from '@angular/material';
     Material.MatTableModule
   ],
   exports: [
-    Material.MatToolbarModule
+    Material.MatToolbarModule,
+    Material.MatDialogModule,
+    Material.MatSidenavModule,
+    Material.MatDividerModule,
+    Material.MatSidenavModule,
+    Material.MatCardModule,
+    Material.MatPaginatorModule,
+    Material.MatTableModule
   ]
 })
 export class MaterialModule { }

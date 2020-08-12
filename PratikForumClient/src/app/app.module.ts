@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-
 import { AppComponent } from './app.component';
 import { BankAccountComponent } from './bank-account/bank-account.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,11 +16,10 @@ import { DefaultModule } from './modules/default.module';
 import { BankModule } from './modules/bank/bank.module';
 import { BudgetModule } from './modules/budget/budget.module';
 import { TaskModule } from './modules/task/task.module';
-import {MaterialModule} from './modules/material/material.module';
-
+import { MaterialModule } from './modules/material/material.module';
+import { ContactModule } from './modules/contact/contact.module';
 import { ComponentModule } from './components/component/component.module';
-import { ContactsComponent } from './contacts/contacts.component';
-import { ContactComponent } from './contacts/contact/contact.component';
+
 
 
 @NgModule({
@@ -32,9 +29,7 @@ import { ContactComponent } from './contacts/contact/contact.component';
     HomeComponent,
     BankComponent,
     UserComponent,
-    UserOperationsComponent,
-    ContactsComponent,
-    ContactComponent
+    UserOperationsComponent
   ],
   imports: [
     AppRoutingModule,
@@ -42,6 +37,7 @@ import { ContactComponent } from './contacts/contact/contact.component';
     BrowserModule,
     BrowserAnimationsModule,
     BudgetModule,
+    ContactModule,
     ComponentModule,
     DefaultModule,
     FormsModule,
