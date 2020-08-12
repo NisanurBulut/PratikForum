@@ -7,13 +7,11 @@ import { MatSidenavModule, MatDividerModule, MatCardModule, MatPaginatorModule, 
 import { FlexModule, FlexLayoutModule } from '@angular/flex-layout';
 
 import { DashboardService } from '../shared/dashboard.service';
-import { PostsComponent } from 'src/app/modules/posts/posts.component';
 import { ComponentModule } from 'src/app/components/component/component.module';
 
 @NgModule({
   declarations: [
-    DashboardComponent,
-    PostsComponent
+    DashboardComponent
   ],
   imports: [
     CommonModule,

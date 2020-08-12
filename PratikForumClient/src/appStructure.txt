@@ -3,20 +3,26 @@
 |   |
 |   +---*Home
 |   |   |--- Home.Component.ts|.html
-|   +---*Header
+|   +---*BudgetMain
+|   |   |--- BudgetMain.Component.ts|.html
+|   +---*Component
 |   |   |--- Header.Component.ts|.html
+|   |   |--- Sidebar.Component.ts|.html
+|   |   |--- Footer.Component.ts|.html
+|   |   |--- Widgets
+|   |   |    |--- Area.Component.ts|.html
+|   |   |    |--- Card.Component.ts|.html
+|   |   |    |--- Pie.Component.ts|.html
 |   |
 |   +---*User
 |   |   |--- User.Component.ts|.html
-|   |   +---*Registration
-|   |   |   |--- Registration.Component.ts|.html
-|   |   +---*Login
-|   |   |   |--- Login.Component.ts|.html
 |   |   +---*Operations
 |   |   |   |---Operations.Component.ts|.html
 |   |
-|   +---*Bank
-|   |   |--- Bank.Component.ts|.html
+|   +---*Task
+|   |   |--- New-List.Component.ts|.html
+|   |   |--- New-Task.Component.ts|.html
+|   |   |--- Task-View.Component.ts|.html
 |   |
 |   +---*BankAccount
 |   |   |--- BankAccount.Component.ts|.html
@@ -25,7 +31,16 @@
 |   |   |---user.service.ts
 |   |   |---bank.service.ts
 |   |   |---bank-account.service.ts,
+|   |   |---task.service.ts,
+|   |   |---dashboard.service.ts,
+|   |   |---toast.service.ts
 |   |
+|   +---*Modules
+|   |   |---bank.module.ts
+|   |   |---budget.module.ts
+|   |   |---task.module.ts
+|   |   |---dashboard.module.ts
+|   |---default.module.ts
 |   |---app.module.ts
 |   |---app.routing.module.ts (route configs.)
 |

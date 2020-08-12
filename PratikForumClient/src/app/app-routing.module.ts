@@ -12,12 +12,10 @@ import { TaskViewComponent } from './task-pages/task-view/task-view.component';
 import { NewListComponent } from './task-pages/new-list/new-list.component';
 import { NewTaskComponent } from './task-pages/new-task/new-task.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { PostsComponent } from './modules/posts/posts.component';
 
 const routes: Routes = [
 
     { path: '', component: HomeComponent, },
-    { path: 'posts', component: PostsComponent },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'tasks', component: TaskViewComponent },
     { path: 'new-list', component: NewListComponent },
