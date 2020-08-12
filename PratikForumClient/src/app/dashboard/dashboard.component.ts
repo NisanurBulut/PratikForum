@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DashboardService } from '../../shared/dashboard.service';
+import { DashboardService } from '../shared/dashboard.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 @Component({

@@ -11,7 +11,7 @@ import { BudgetMainComponent } from './budget-main/budget-main.component';
 import { TaskViewComponent } from './task-pages/task-view/task-view.component';
 import { NewListComponent } from './task-pages/new-list/new-list.component';
 import { NewTaskComponent } from './task-pages/new-task/new-task.component';
-import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
 
