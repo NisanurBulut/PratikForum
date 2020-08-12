@@ -20,6 +20,8 @@ import {BudgetModule} from './modules/budget/budget.module';
 import {TaskModule} from './modules/task/task.module';
 
 import { ComponentModule } from './components/component/component.module';
+import { ContactsComponent } from './contacts/contacts.component';
+import { ContactComponent } from './contacts/contact/contact.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { ComponentModule } from './components/component/component.module';
     HomeComponent,
     BankComponent,
     UserComponent,
-    UserOperationsComponent
+    UserOperationsComponent,
+    ContactsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

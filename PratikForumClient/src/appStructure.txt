@@ -19,6 +19,11 @@
 |   |   +---*Operations
 |   |   |   |---Operations.Component.ts|.html
 |   |
+|   +---*Contancts
+|   |   |--- Contancts.Component.ts|.html
+|   |   +---*Contanct
+|   |   |   |---Contanct.Component.ts|.html
+|   |
 |   +---*Task
 |   |   |--- New-List.Component.ts|.html
 |   |   |--- New-Task.Component.ts|.html
