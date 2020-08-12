@@ -14,6 +14,7 @@ import { MaterialModule } from '../material/material.module';
   ],
   imports: [
     CommonModule,
+    MaterialModule,
     RouterModule
   ],
   exports: [

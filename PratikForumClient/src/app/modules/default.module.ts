@@ -16,6 +16,7 @@ import { MaterialModule } from './material/material.module';
     CommonModule,
     RouterModule,
     ComponentModule,
+    MaterialModule,
     FlexLayoutModule,
     FlexModule
   ],

@@ -19,6 +19,7 @@ import { MaterialModule } from '../material/material.module';
     CommonModule,
     RouterModule,
     FormsModule,
+    MaterialModule,
     ReactiveFormsModule,
     SimpleNotificationsModule.forRoot()
   ]
