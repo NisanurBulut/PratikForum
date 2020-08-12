@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from '../../shared/contact.service';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-contact-list',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactListComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private cs: ContactService) { }
+  listData: MatTableDataSource<any>;
+  displayedColumns: string[] = [
+    'fullName', 'Email', 'Mobile', 'City', 'Department', 'Gender', 'IsPermanent',
+    'Birthday'];
+  array = [];
   ngOnInit(): void {
+    this.cs.getContacts().subscribe(
+      list => {
+        (list as [] | any).map(item => {
+          this.array.push(item);
+        });
+        this.listData = new MatTableDataSource(this.array);
+      });
   }
 
 }

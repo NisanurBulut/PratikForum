@@ -22,7 +22,7 @@ namespace PratikForumAPI.Controllers
 
         // GET: api/Contact
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Contact>>> GetContact()
+        public async Task<ActionResult<IEnumerable<Contact>>> GetContactList()
         {
             return await _context.Contact.ToListAsync();
         }

@@ -1,1 +1,38 @@
-<p>contact-list works!</p>
+<div class="mat-elevation-z8">
+  <mat-table *ngIf="listData" [dataSource]="listData">
+    <ng-container matColumnDef="fullName">
+      <mat-header-cell *matHeaderCellDef>İsim</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.fullName }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Email">
+        <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.email }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Mobile">
+        <mat-header-cell *matHeaderCellDef>Telefon No</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.mobile }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="City">
+        <mat-header-cell *matHeaderCellDef>Şehir</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.city }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Department">
+        <mat-header-cell *matHeaderCellDef>Bölüm</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.department }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Gender">
+        <mat-header-cell *matHeaderCellDef>Cinsiyet</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.gender }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="IsPermanent">
+        <mat-header-cell *matHeaderCellDef>Çalışma Durumu</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.ispermanent }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Birthday">
+        <mat-header-cell *matHeaderCellDef>Doğum Günü</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.birthday }}</mat-cell>
+      </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns:displayedColumns;"></mat-row>
+  </mat-table>
+</div>

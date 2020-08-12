@@ -17,6 +17,6 @@ namespace PratikForumAPI.Models
         public int Department { get; set; }
         public int Gender { get; set; }
         public bool IsPermanent { get; set; }
-        public DateTime HireDate { get; set; }
+        public DateTime Birthday { get; set; }
     }
 }

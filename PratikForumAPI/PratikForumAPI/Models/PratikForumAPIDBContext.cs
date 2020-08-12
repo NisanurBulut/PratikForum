@@ -19,7 +19,7 @@ namespace PratikForumAPI.Models
         public DbSet<BankYorum> BankYorum { get; set; }
         public DbSet<TaskList> TaskList { get; set; }
         public DbSet<Task> Task { get; set; }
-        public DbSet<PratikForumAPI.Models.Contact> Contact { get; set; }
+        public DbSet<Contact> Contact { get; set; }
 
     }
 }

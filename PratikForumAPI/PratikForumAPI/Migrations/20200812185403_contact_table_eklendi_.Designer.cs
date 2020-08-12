@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PratikForumAPI.Models;
 
 namespace PratikForumAPI.Migrations
 {
     [DbContext(typeof(PratikForumAPIDBContext))]
-    partial class PratikForumAPIDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200812185403_contact_table_eklendi_")]
+    partial class contact_table_eklendi_
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,9 +101,6 @@ namespace PratikForumAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("Birthday")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
@@ -116,6 +115,9 @@ namespace PratikForumAPI.Migrations
 
                     b.Property<int>("Gender")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("HireDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsPermanent")
                         .HasColumnType("bit");
