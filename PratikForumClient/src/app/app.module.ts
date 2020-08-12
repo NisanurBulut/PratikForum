@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule, MatSidenavModule } from '@angular/material';
+import { MatDialogModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -15,9 +15,9 @@ import { UserComponent } from './user/user.component';
 import { UserOperationsComponent } from './user/user-operations/user-operations.component';
 
 import { DefaultModule } from './modules/default.module';
-import {BankModule} from './modules/bank/bank.module';
-import {BudgetModule} from './modules/budget/budget.module';
-import {TaskModule} from './modules/task/task.module';
+import { BankModule } from './modules/bank/bank.module';
+import { BudgetModule } from './modules/budget/budget.module';
+import { TaskModule } from './modules/task/task.module';
 
 import { ComponentModule } from './components/component/component.module';
 import { ContactsComponent } from './contacts/contacts.component';
@@ -36,19 +36,20 @@ import { ContactComponent } from './contacts/contact/contact.component';
     ContactComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatDialogModule,
-    DefaultModule,
-    TaskModule,
     BankModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     BudgetModule,
     ComponentModule,
-    MatSidenavModule
+    DefaultModule,
+    FormsModule,
+    HttpClientModule,
+    MatDialogModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    ReactiveFormsModule,
+    TaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]
