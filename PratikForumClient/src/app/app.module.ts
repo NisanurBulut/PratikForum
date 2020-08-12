@@ -20,6 +20,7 @@ import { BudgetModule } from './modules/budget/budget.module';
 import { TaskModule } from './modules/task/task.module';
 import { MaterialModule } from './modules/material/material.module';
 import { ComponentModule } from './components/component/component.module';
+import { ContactListComponent } from './contacts/contact-list/contact-list.component';
 
 
 
@@ -32,7 +33,8 @@ import { ComponentModule } from './components/component/component.module';
     UserComponent,
     UserOperationsComponent,
     ContactComponent,
-    ContactsComponent
+    ContactsComponent,
+    ContactListComponent
   ],
   imports: [
     AppRoutingModule,
