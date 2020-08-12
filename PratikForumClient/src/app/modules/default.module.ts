@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
-
-import { MatSidenavModule, MatDividerModule, MatCardModule, MatPaginatorModule, MatTableModule } from '@angular/material';
 import { FlexModule, FlexLayoutModule } from '@angular/flex-layout';
 
 import { DashboardService } from '../shared/dashboard.service';
 import { ComponentModule } from 'src/app/components/component/component.module';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -17,13 +16,9 @@ import { ComponentModule } from 'src/app/components/component/component.module';
     CommonModule,
     RouterModule,
     ComponentModule,
-    MatSidenavModule,
-    MatDividerModule,
-    MatCardModule,
     FlexLayoutModule,
     FlexModule,
-    MatPaginatorModule,
-    MatTableModule
+    MaterialModule
   ],
   providers: [
     DashboardService

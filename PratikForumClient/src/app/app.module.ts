@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+
 
 
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import { DefaultModule } from './modules/default.module';
 import { BankModule } from './modules/bank/bank.module';
 import { BudgetModule } from './modules/budget/budget.module';
 import { TaskModule } from './modules/task/task.module';
+import {MaterialModule} from './modules/material/material.module';
 
 import { ComponentModule } from './components/component/component.module';
 import { ContactsComponent } from './contacts/contacts.component';
@@ -45,9 +46,7 @@ import { ContactComponent } from './contacts/contact/contact.component';
     DefaultModule,
     FormsModule,
     HttpClientModule,
-    MatDialogModule,
-    MatToolbarModule,
-    MatSidenavModule,
+    MaterialModule,
     ReactiveFormsModule,
     TaskModule
   ],
