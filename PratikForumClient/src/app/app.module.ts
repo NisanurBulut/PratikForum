@@ -51,6 +51,7 @@ import { ContactListComponent } from './contacts/contact-list/contact-list.compo
     TaskModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ContactComponent]
 })
 export class AppModule { }

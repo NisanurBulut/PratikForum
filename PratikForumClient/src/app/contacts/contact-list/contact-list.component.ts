@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ContactService } from '../../shared/contact.service';
-import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { MatTableDataSource, MatSort, MatPaginator, MatDialog, MatDialogClose, MatDialogConfig } from '@angular/material';
+import { ContactComponent } from '../contact/contact.component';
 
 @Component({
   selector: 'app-contact-list',
@@ -9,7 +10,7 @@ import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 })
 export class ContactListComponent implements OnInit {
 
-  constructor(private cs: ContactService) { }
+  constructor(private cs: ContactService, private mDialog: MatDialog) { }
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = [
     'fullName', 'email', 'mobile', 'city', 'gender', 'isPermanent',
@@ -30,7 +31,17 @@ export class ContactListComponent implements OnInit {
         this.listData.paginator = this.paginator;
       });
   }
-  onMatSortChange(): void {
+  onCreate(): void {
+    // burada html ayağa kalkacak
+    // inject edilen matDialog çağrılmalı
+    // html içeriğin popup içerisine yerleşmesi için EntryComponent olarak ilgili modulde tanımlanmalı
+
+    // html'in ekranda düzgünce görünmesi için config yapılandırması olmalı
+    const mConfig = new MatDialogConfig();
+    mConfig.disableClose = true;
+    mConfig.autoFocus = true;
+    mConfig.width = '60%';
+    this.mDialog.open(ContactComponent, mConfig);
 
   }
   onSearchClear(): void {
