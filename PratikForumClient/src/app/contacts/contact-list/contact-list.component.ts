@@ -12,8 +12,8 @@ export class ContactListComponent implements OnInit {
   constructor(private cs: ContactService) { }
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = [
-    'fullName', 'Email', 'Mobile', 'City', 'Gender', 'IsPermanent',
-    'Birthday', 'actions'];
+    'fullName', 'email', 'mobile', 'city', 'gender', 'isPermanent',
+    'birthday', 'actions'];
   array = [];
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -28,8 +28,10 @@ export class ContactListComponent implements OnInit {
         this.listData = new MatTableDataSource(this.array);
         this.listData.sort = this.sort;
         this.listData.paginator = this.paginator;
-
       });
+  }
+  onMatSortChange(): void {
+
   }
   onSearchClear(): void {
     this.searchKey = '';

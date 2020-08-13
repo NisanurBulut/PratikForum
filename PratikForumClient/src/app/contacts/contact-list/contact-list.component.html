@@ -23,38 +23,38 @@
   </mat-form-field>
 </div>
 <div class="mat-elevation-z8">
-  <mat-table *ngIf="listData" [dataSource]="listData" matSort>
+  <mat-table  [dataSource]="listData" matSort>
     <ng-container matColumnDef="fullName">
       <mat-header-cell *matHeaderCellDef mat-sort-header>İsim</mat-header-cell>
       <mat-cell *matCellDef="let element">{{ element.fullName }}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="Email">
+    <ng-container matColumnDef="email">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
       <mat-cell *matCellDef="let element">{{ element.email }}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="Mobile">
+    <ng-container matColumnDef="mobile">
       <mat-header-cell *matHeaderCellDef mat-sort-header
         >Telefon No</mat-header-cell
       >
       <mat-cell *matCellDef="let element">{{ element.mobile }}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="City">
+    <ng-container matColumnDef="city">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Şehir</mat-header-cell>
       <mat-cell *matCellDef="let element">{{ element.city }}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="Gender">
+    <ng-container matColumnDef="gender">
       <mat-header-cell *matHeaderCellDef mat-sort-header
         >Cinsiyet</mat-header-cell
       >
       <mat-cell *matCellDef="let element">{{ element.gender }}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="IsPermanent">
+    <ng-container matColumnDef="isPermanent">
       <mat-header-cell *matHeaderCellDef mat-sort-header
         >Çalışma Durumu</mat-header-cell
       >
       <mat-cell *matCellDef="let element">{{ element.isPermanent }}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="Birthday">
+    <ng-container matColumnDef="birthday">
       <mat-header-cell *matHeaderCellDef mat-sort-header
         >Doğum Günü</mat-header-cell
       >
