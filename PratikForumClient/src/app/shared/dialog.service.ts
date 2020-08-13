@@ -8,10 +8,11 @@ export class DialogService {
 
   constructor(private matdialog: MatDialog) { }
   openConfirmDialog(msg) {
-    this.matdialog.open(MaterialConfirmDialogComponent, {
+   return this.matdialog.open(MaterialConfirmDialogComponent, {
       disableClose: true,
       width: '390px',
       panelClass: 'confirm-dialog-container',
+      position: { top: '10px' },
       data: { message: msg }
     });
   }

@@ -12,9 +12,7 @@ import { DialogService } from 'src/app/shared/dialog.service';
 })
 export class ContactListComponent implements OnInit {
 
-  constructor(private cs: ContactService,
-              private mDialog: MatDialog,
-              private ds: DialogService) { }
+  constructor(private cs: ContactService, private mDialog: MatDialog, private ds: DialogService) { }
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = [
     'fullName', 'email', 'mobile', 'city', 'gender', 'isPermanent',
@@ -39,7 +37,6 @@ export class ContactListComponent implements OnInit {
     // html içeriğin popup içerisine yerleşmesi için EntryComponent olarak ilgili modulde tanımlanmalı
     // html'in ekranda düzgünce görünmesi için config yapılandırması olmalı
     this.mDialog.open(ContactComponent, this.mConfig);
-
   }
   onSearchClear(): void {
     this.searchKey = '';
@@ -54,14 +51,12 @@ export class ContactListComponent implements OnInit {
     this.mDialog.open(ContactComponent, this.mConfig);
   }
   onDelete(id: number) {
-    // if (confirm('Silmek istediğinizden emin misiniz ?')) {
-    //   this.cs.deleteContact(id);
-    // }
-    // this.onViewContactList();
-    this.ds.openConfirmDialog('Silmek istediğinizden emin misiniz ?')
-      .afterClosed().suscribe(res => {
-        console.log(res);
-      });
+    this.ds.openConfirmDialog('Silmek istediğinizden emin misiniz ?').afterClosed().subscribe(res => {
+      console.log(res);
+      if (res === true) {
+        this.cs.deleteContact(id);
+      }
+    });
   }
   onViewContactList() {
     this.cs.getContacts().subscribe(
