@@ -19,17 +19,14 @@ export class ContactListComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   searchKey: string;
+  mConfig = new MatDialogConfig();
 
   ngOnInit(): void {
-    this.cs.getContacts().subscribe(
-      list => {
-        (list as [] | any).map(item => {
-          this.array.push(item);
-        });
-        this.listData = new MatTableDataSource(this.array);
-        this.listData.sort = this.sort;
-        this.listData.paginator = this.paginator;
-      });
+    this.mConfig.width = '60%';
+    this.mConfig.autoFocus = true;
+    this.mConfig.disableClose = true;
+
+    this.onViewContactList();
   }
   onCreate(): void {
     // popup açılırken temizlenerek açılsın
@@ -39,11 +36,8 @@ export class ContactListComponent implements OnInit {
     // html içeriğin popup içerisine yerleşmesi için EntryComponent olarak ilgili modulde tanımlanmalı
 
     // html'in ekranda düzgünce görünmesi için config yapılandırması olmalı
-    const mConfig = new MatDialogConfig();
-    mConfig.disableClose = true;
-    mConfig.autoFocus = true;
-    mConfig.width = '60%';
-    this.mDialog.open(ContactComponent, mConfig);
+
+    this.mDialog.open(ContactComponent, this.mConfig);
 
   }
   onSearchClear(): void {
@@ -55,10 +49,24 @@ export class ContactListComponent implements OnInit {
   }
   onEdit(dataRow) {
     this.cs.populateForm(dataRow);
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '60%';
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = true;
-    this.mDialog.open(ContactComponent, dialogConfig);
+
+    this.mDialog.open(ContactComponent, this.mConfig);
+  }
+  onDelete(id: number) {
+    if (confirm('Silmek istediğinizden emin misiniz ?')) {
+      this.cs.deleteContact(id);
+    }
+    // this.onViewContactList();
+  }
+  onViewContactList() {
+    this.cs.getContacts().subscribe(
+      list => {
+        (list as [] | any).map(item => {
+          this.array.push(item);
+        });
+        this.listData = new MatTableDataSource(this.array);
+        this.listData.sort = this.sort;
+        this.listData.paginator = this.paginator;
+      });
   }
 }

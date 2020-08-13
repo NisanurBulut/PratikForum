@@ -54,4 +54,8 @@ export class ContactService {
   updateContact(formData) {
     return this.http.put(environment.apiBaseUrl + '/Contact/UpdateContact/' + formData.contactId, formData);
   }
+  deleteContact(id: number) {
+    console.log(id);
+    return this.http.delete(environment.apiBaseUrl + '/Contact/DeleteContact?id=' + id);
+  }
 }

@@ -21,6 +21,8 @@ import { TaskModule } from './modules/task/task.module';
 import { MaterialModule } from './modules/material/material.module';
 import { ComponentModule } from './components/component/component.module';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
+import { MaterialConfirmDialogComponent } from './contacts/material-confirm-dialog/material-confirm-dialog.component';
+import { DialogComponent } from './shared/dialog/dialog.component';
 
 
 
@@ -34,7 +36,9 @@ import { ContactListComponent } from './contacts/contact-list/contact-list.compo
     UserOperationsComponent,
     ContactComponent,
     ContactsComponent,
-    ContactListComponent
+    ContactListComponent,
+    MaterialConfirmDialogComponent,
+    DialogComponent
   ],
   imports: [
     AppRoutingModule,
