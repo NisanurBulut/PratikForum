@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ContactService } from '../../shared/contact.service';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 
 @Component({
   selector: 'app-contact-list',
@@ -15,6 +15,8 @@ export class ContactListComponent implements OnInit {
     'fullName', 'Email', 'Mobile', 'City', 'Department', 'Gender', 'IsPermanent',
     'Birthday', 'actions'];
   array = [];
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   ngOnInit(): void {
     this.cs.getContacts().subscribe(
       list => {
@@ -22,6 +24,8 @@ export class ContactListComponent implements OnInit {
           this.array.push(item);
         });
         this.listData = new MatTableDataSource(this.array);
+        this.listData.sort = this.sort;
+        this.listData.paginator = this.paginator;
       });
   }
 

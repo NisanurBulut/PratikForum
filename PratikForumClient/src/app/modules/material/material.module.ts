@@ -23,7 +23,9 @@ import * as Material from '@angular/material';
     Material.MatDatepickerModule,
     Material.MatCheckboxModule,
     Material.MatButtonModule,
-    Material.MatIconModule
+    Material.MatIconModule,
+    Material.MatSortModule,
+    Material.MatPaginatorModule
   ],
   exports: [
     Material.MatToolbarModule,
@@ -43,7 +45,9 @@ import * as Material from '@angular/material';
     Material.MatNativeDateModule,
     Material.MatDatepickerModule,
     Material.MatButtonModule,
-    Material.MatIconModule
+    Material.MatIconModule,
+    Material.MatSortModule,
+    Material.MatPaginatorModule
     ]
 })
 export class MaterialModule { }

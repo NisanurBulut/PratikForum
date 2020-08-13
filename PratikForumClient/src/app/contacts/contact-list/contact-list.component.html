@@ -1,35 +1,43 @@
 <div class="mat-elevation-z8">
-  <mat-table *ngIf="listData" [dataSource]="listData">
+  <mat-table *ngIf="listData" [dataSource]="listData" matSort>
     <ng-container matColumnDef="fullName">
-      <mat-header-cell *matHeaderCellDef>İsim</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>İsim</mat-header-cell>
       <mat-cell *matCellDef="let element">{{ element.fullName }}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="Email">
-      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
       <mat-cell *matCellDef="let element">{{ element.email }}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="Mobile">
-      <mat-header-cell *matHeaderCellDef>Telefon No</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Telefon No</mat-header-cell
+      >
       <mat-cell *matCellDef="let element">{{ element.mobile }}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="City">
-      <mat-header-cell *matHeaderCellDef>Şehir</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Şehir</mat-header-cell>
       <mat-cell *matCellDef="let element">{{ element.city }}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="Department">
-      <mat-header-cell *matHeaderCellDef>Bölüm</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Bölüm</mat-header-cell>
       <mat-cell *matCellDef="let element">{{ element.department }}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="Gender">
-      <mat-header-cell *matHeaderCellDef>Cinsiyet</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Cinsiyet</mat-header-cell
+      >
       <mat-cell *matCellDef="let element">{{ element.gender }}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="IsPermanent">
-      <mat-header-cell *matHeaderCellDef>Çalışma Durumu</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Çalışma Durumu</mat-header-cell
+      >
       <mat-cell *matCellDef="let element">{{ element.isPermanent }}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="Birthday">
-      <mat-header-cell *matHeaderCellDef>Doğum Günü</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Doğum Günü</mat-header-cell
+      >
       <mat-cell *matCellDef="let element">{{ element.birthday }}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="actions">
@@ -57,11 +65,16 @@
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
     <mat-footer-row
       *matFooterRowDef="['loading']"
-      [ngClass]="{ 'hide': listData != null }"
+      [ngClass]="{ hide: listData != null }"
     ></mat-footer-row>
     <mat-footer-row
       *matFooterRowDef="['noData']"
-      [ngClass]="{ 'hide': !(listData != null && listData.data.length === 0) }"
+      [ngClass]="{ hide: !(listData != null && listData.data.length === 0) }"
     ></mat-footer-row>
   </mat-table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    [pageSize]="5"
+    showFirstLastButtons
+  ></mat-paginator>
 </div>
