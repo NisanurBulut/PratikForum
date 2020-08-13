@@ -17,6 +17,8 @@ export class ContactListComponent implements OnInit {
   array = [];
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  searchKey: string;
+
   ngOnInit(): void {
     this.cs.getContacts().subscribe(
       list => {

@@ -1,3 +1,19 @@
+<div class="search-div">
+  <button mat-raised-button>
+    <mat-icon>add</mat-icon>
+  </button>
+  <mat-form-field class="search-form-field">
+    <input
+      matInput
+      autocomplete="off"
+      placeholder="Ara"
+      [(ngModel)]="searchKey"
+    />
+    <button mat-button matSuffix mat-icon-button aria-label="Temizle">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
 <div class="mat-elevation-z8">
   <mat-table *ngIf="listData" [dataSource]="listData" matSort>
     <ng-container matColumnDef="fullName">
