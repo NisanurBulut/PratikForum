@@ -2,14 +2,22 @@
   <button mat-raised-button>
     <mat-icon>add</mat-icon>
   </button>
-  <mat-form-field class="search-form-field">
+  <mat-form-field class="search-form-field" floatLabel="never">
     <input
       matInput
       autocomplete="off"
       placeholder="Ara"
       [(ngModel)]="searchKey"
+      (keyup)="applyfilter()"
     />
-    <button mat-button matSuffix mat-icon-button aria-label="Temizle">
+    <button
+      mat-button
+      matSuffix
+      mat-icon-button
+      aria-label="Temizle"
+      *ngIf="searchKey"
+      (click)="onSearchClear()"
+    >
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
@@ -33,10 +41,6 @@
     <ng-container matColumnDef="City">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Şehir</mat-header-cell>
       <mat-cell *matCellDef="let element">{{ element.city }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="Department">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Bölüm</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{ element.department }}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="Gender">
       <mat-header-cell *matHeaderCellDef mat-sort-header

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PratikForumAPI.Models;
 
 namespace PratikForumAPI.Migrations
 {
     [DbContext(typeof(PratikForumAPIDBContext))]
-    partial class PratikForumAPIDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200813075116_Contact_delete_department")]
+    partial class Contact_delete_department
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

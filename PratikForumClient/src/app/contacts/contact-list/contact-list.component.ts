@@ -12,7 +12,7 @@ export class ContactListComponent implements OnInit {
   constructor(private cs: ContactService) { }
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = [
-    'fullName', 'Email', 'Mobile', 'City', 'Department', 'Gender', 'IsPermanent',
+    'fullName', 'Email', 'Mobile', 'City', 'Gender', 'IsPermanent',
     'Birthday', 'actions'];
   array = [];
   @ViewChild(MatSort) sort: MatSort;
@@ -28,7 +28,18 @@ export class ContactListComponent implements OnInit {
         this.listData = new MatTableDataSource(this.array);
         this.listData.sort = this.sort;
         this.listData.paginator = this.paginator;
+        this.listData.filterPredicate = (data, filter) => {
+          return this.displayedColumns.some(ele => {
+            return ele !== 'actions' && data[ele].toLowerCase().indexOf(filter) !== -1;
+          });
+        };
       });
   }
-
+  onSearchClear(): void {
+    this.searchKey = '';
+    this.applyfilter();
+  }
+  applyfilter(): void {
+    this.listData.filter = this.searchKey.trim().toLowerCase();
+  }
 }

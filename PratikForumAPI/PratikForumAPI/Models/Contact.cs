@@ -14,7 +14,6 @@ namespace PratikForumAPI.Models
         public string Email { get; set; }
         public string Mobile { get; set; }
         public string City { get; set; }
-        public int Department { get; set; }
         public int Gender { get; set; }
         public bool IsPermanent { get; set; }
         public DateTime Birthday { get; set; }
