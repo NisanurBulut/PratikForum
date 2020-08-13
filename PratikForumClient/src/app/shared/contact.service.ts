@@ -13,10 +13,9 @@ export class ContactService {
     $key: new FormControl(null),
     fullName: new FormControl('', Validators.required),
     email: new FormControl('', Validators.email),
-    mobile: new FormControl('', [Validators.required, Validators.minLength(10)]),
+    mobile: new FormControl('', [Validators.required, Validators.minLength(12)]),
     city: new FormControl(''),
     gender: new FormControl('1'),
-    department: new FormControl(0),
     birthday: new FormControl(''),
     isPermanent: new FormControl(false)
   });
@@ -28,12 +27,31 @@ export class ContactService {
       mobile: '',
       city: '',
       gender: '1',
-      department: 0,
       birthday: new Date(),
       isPermanent: false
     });
   }
-  getContacts(){
+  populateForm(data: any): void {
+    console.log(data);
+    this.form.setValue({
+      $key: data.contactId,
+      fullName: data.fullName,
+      email: data.email,
+      mobile: data.mobile,
+      city: data.city,
+      gender: '' + data.gender,
+      birthday: data.birthday,
+      isPermanent: data.isPermanent
+    });
+  }
+  getContacts() {
     return this.http.get(environment.apiBaseUrl + '/Contact/GetContactList');
+  }
+  insertContact(formData) {
+    console.log(formData);
+    return this.http.post(environment.apiBaseUrl + '/Contact/InsertContact', formData);
+  }
+  updateContact(formData) {
+    return this.http.put(environment.apiBaseUrl + '/Contact/UpdateContact/' + formData.contactId, formData);
   }
 }

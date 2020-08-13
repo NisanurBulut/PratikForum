@@ -1,4 +1,11 @@
-<form [formGroup]="cs.form" class="normal-form">
+<mat-toolbar>
+  <span>{{this.cs.form.controls['$key'].value?"Kişiyi Düzenle":"Yeni Kişi Ekle"}}</span>
+<span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button tabindex="-1" (click)="onClose()">
+  <mat-icon>clear</mat-icon>
+</button>
+</mat-toolbar>
+<form [formGroup]="cs.form" class="normal-form" (submit)="onSubmit()">
   <mat-grid-list cols="2" rowHeight="300px">
     <mat-grid-tile>
       <div class="controles-container">
@@ -12,9 +19,17 @@
           <mat-error>Bu alan boş bırakılamaz.</mat-error>
         </mat-form-field>
         <mat-form-field fxFlex="100">
-          <input formControlName="mobile" placeholder="Cep Telefonu*" matInput />
-          <mat-error *ngIf="cs.form.controls['mobile'].errors?.required">Bu alan boş bırakılamaz.</mat-error>
-          <mat-error *ngIf="cs.form.controls['mobile'].errors?.minlength">En az 10 karakter kullanmalısınız.</mat-error>
+          <input
+            formControlName="mobile"
+            placeholder="Cep Telefonu*"
+            matInput
+          />
+          <mat-error *ngIf="cs.form.controls['mobile'].errors?.required"
+            >Bu alan boş bırakılamaz.</mat-error
+          >
+          <mat-error *ngIf="cs.form.controls['mobile'].errors?.minlength"
+            >En az 10 karakter kullanmalısınız.</mat-error
+          >
         </mat-form-field>
         <mat-form-field fxFlex="100">
           <input formControlName="city" placeholder="Şehir*" matInput />
@@ -26,21 +41,18 @@
       <div class="controles-container">
         <div class="add-bottom-padding" fxFlex="100">
           <mat-radio-group formControlName="gender">
-            <mat-radio-button value="1">Kadın</mat-radio-button>
-            <mat-radio-button value="2">Erkek</mat-radio-button>
+            <mat-radio-button value="0">Kadın</mat-radio-button>
+            <mat-radio-button value="1">Erkek</mat-radio-button>
           </mat-radio-group>
         </div>
+
         <mat-form-field fxFlex="100">
-          <mat-select formControlName="department" placeholder="Departman">
-            <mat-option>None</mat-option>
-            <ng-container *ngFor="let item of departments">
-              <mat-option value="{{ item.id }}">{{ item.value }}</mat-option>
-            </ng-container>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field fxFlex="100">
-          <input matInput [matDatepicker]="picker" placeholder="Doğum Günü"
-          formControlName="birthday" />
+          <input
+            matInput
+            [matDatepicker]="picker"
+            placeholder="Doğum Günü"
+            formControlName="birthday"
+          />
           <mat-datepicker-toggle
             matSuffix
             [for]="picker"
@@ -53,10 +65,17 @@
           </mat-checkbox>
         </div>
         <div class="button-row">
-          <button mat-raised-button color="primary" type="submit" [disabled]="cs.form.invalid">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="cs.form.invalid"
+          >
             Gönder
           </button>
-          <button mat-raised-button color="warn" (click)="onClear()">İptal</button>
+          <button mat-raised-button color="warn" (click)="onClear()">
+            İptal
+          </button>
         </div>
       </div>
     </mat-grid-tile>

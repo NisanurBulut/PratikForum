@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ContactService } from '../../shared/contact.service';
-import { MatTableDataSource, MatSort, MatPaginator, MatDialog, MatDialogClose, MatDialogConfig } from '@angular/material';
+import { MatTableDataSource, MatSort, MatPaginator, MatDialog, MatDialogClose, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { ContactComponent } from '../contact/contact.component';
 
 @Component({
@@ -32,6 +32,8 @@ export class ContactListComponent implements OnInit {
       });
   }
   onCreate(): void {
+    // popup açılırken temizlenerek açılsın
+    this.cs.initializeFormGroup();
     // burada html ayağa kalkacak
     // inject edilen matDialog çağrılmalı
     // html içeriğin popup içerisine yerleşmesi için EntryComponent olarak ilgili modulde tanımlanmalı
@@ -50,5 +52,13 @@ export class ContactListComponent implements OnInit {
   }
   applyfilter(): void {
     this.listData.filter = this.searchKey.trim().toLowerCase();
+  }
+  onEdit(dataRow) {
+    this.cs.populateForm(dataRow);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '60%';
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+    this.mDialog.open(ContactComponent, dialogConfig);
   }
 }
