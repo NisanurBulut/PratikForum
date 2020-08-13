@@ -22,10 +22,8 @@ import { MaterialModule } from './modules/material/material.module';
 import { ComponentModule } from './components/component/component.module';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
 import { MaterialConfirmDialogComponent } from './contacts/material-confirm-dialog/material-confirm-dialog.component';
-import { DialogComponent } from './shared/dialog/dialog.component';
 
-
-
+import { DialogService } from './shared/dialog.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,8 +35,8 @@ import { DialogComponent } from './shared/dialog/dialog.component';
     ContactComponent,
     ContactsComponent,
     ContactListComponent,
-    MaterialConfirmDialogComponent,
-    DialogComponent
+    MaterialConfirmDialogComponent
+
   ],
   imports: [
     AppRoutingModule,
@@ -54,8 +52,8 @@ import { DialogComponent } from './shared/dialog/dialog.component';
     ReactiveFormsModule,
     TaskModule
   ],
-  providers: [],
+  providers: [DialogService],
   bootstrap: [AppComponent],
-  entryComponents: [ContactComponent]
+  entryComponents: [ContactComponent, MaterialConfirmDialogComponent]
 })
 export class AppModule { }

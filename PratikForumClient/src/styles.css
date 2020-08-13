@@ -1,58 +1,114 @@
-@import 'bulma/css/bulma.css';
+@import "bulma/css/bulma.css";
 
-html, body { height: 100%; }
-.grid-table
-{
-	display:table;
+html,
+body {
+  height: 100%;
 }
-.thead
-{
-	display:table-header-group;
-	font-weight:bold;
-	border-bottom: 1px solid black;
-    text-align: center;
-    background-color: #f0f8ff;
+.grid-table {
+  display: table;
 }
-.tbody
-{
-	display:table-row-group;
+.thead {
+  display: table-header-group;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  text-align: center;
+  background-color: #f0f8ff;
 }
-.tr
-{
-	display:table-row;
+.tbody {
+  display: table-row-group;
 }
-.td
-{
-	display:table-cell;
-	padding: 10px 1px 1px 5px;
+.tr {
+  display: table-row;
 }
-.thead div.tr div.td:last-child{
-    background-color: #fff;
+.td {
+  display: table-cell;
+  padding: 10px 1px 1px 5px;
 }
-i:hover{
-	cursor: pointer;
+.thead div.tr div.td:last-child {
+  background-color: #fff;
+}
+i:hover {
+  cursor: pointer;
 }
 
-input.ng-invalid.ng-touched,select.ng-invalid.ng-touched{
-	border-color: #dc3545;
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border-color: #dc3545;
 }
-
 
 .elementToFadeInAndOut {
-    -webkit-animation: fadeinout 2s linear forwards;
-    animation: fadeinout 2s linear forwards;
-    opacity: 0;
+  -webkit-animation: fadeinout 2s linear forwards;
+  animation: fadeinout 2s linear forwards;
+  opacity: 0;
 }
 
 @-webkit-keyframes fadeinout {
-  50% { opacity: 1; }
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeinout {
-  50% { opacity: 1; }
-}
-.fill-remaining-space{
-	/* this fills the remaining space, by using flexbox.
-	Every toolbar row uses a flexbox row layout*/
-	flex:1 1 auto;
+  50% {
+    opacity: 1;
   }
+}
+.fill-remaining-space {
+  /* this fills the remaining space, by using flexbox.
+	Every toolbar row uses a flexbox row layout*/
+  flex: 1 1 auto;
+}
+.confirm-dialog-container .content-container {
+  margin: 5px 5px 15px 5px;
+  color: #8f9cb5;
+  display: flex;
+}
+.confirm-dialog-container #close-icon {
+  margin-left: auto;
+  order: 2;
+  font-weight: bolder;
+}
+.confirm-dialog-container #close-icon:hover {
+  cursor: pointer;
+} .btn-dialog-close{
+    width: 45px;
+    min-width: 0px !important;
+    height: 40px;
+    padding: 0px !important;
+  }
+
+   /* mat-confirm-dialog (customised dialog) */
+   .confirm-dialog-container .mat-dialog-container {
+    border-radius: .25em .25em .4em .4em;
+    padding: 0px;
+}
+.confirm-dialog-container .content-container{
+    margin: 5px 5px 15px 5px;
+    color: #8f9cb5;
+    display: flex;
+}
+.confirm-dialog-container #close-icon:hover{
+cursor: pointer;
+}
+
+.confirm-dialog-container #no-button{
+height: 50px;
+width: 50%;
+background-color: #fc7169;
+color:white;
+border-radius: 0px;
+}
+
+.confirm-dialog-container #yes-button{
+    height: 50px;
+    width: 50%;
+    background-color: #b6bece;
+    color:white;
+    border-radius: 0px;
+}
+
+.confirm-dialog-container span.content-span{
+    padding:  35px 16px;
+    text-align: center;
+    font-size: 20px;
+}
