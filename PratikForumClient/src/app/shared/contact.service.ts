@@ -56,6 +56,6 @@ export class ContactService {
   }
   deleteContact(id: number) {
     console.log(id);
-    return this.http.delete(environment.apiBaseUrl + '/Contact/DeleteContact?id=' + id);
+    return this.http.delete(environment.apiBaseUrl + '/Task/DeleteContact/' + id);
   }
 }

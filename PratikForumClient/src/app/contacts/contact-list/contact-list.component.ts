@@ -55,6 +55,7 @@ export class ContactListComponent implements OnInit {
       console.log(res);
       if (res === true) {
         this.cs.deleteContact(id);
+        this.listData.data.splice(this.listData.data.findIndex(a => a.contactId === id),1);
       }
     });
   }
