@@ -8,6 +8,7 @@ import { BankPuanResultComponent } from '../../bank/bank-puan-result/bank-puan-r
 import { BankDegerlendirmeComponent } from '../../bank/bank-degerlendirme/bank-degerlendirme.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
+import { SharedModule } from '../shared.module';
 
 @NgModule({
   declarations: [
@@ -18,11 +19,7 @@ import { MaterialModule } from '../material/material.module';
     BankDegerlendirmeComponent,
   ],
   imports: [
-    CommonModule,
-    RouterModule,
-    FormsModule,
-    MaterialModule,
-    ReactiveFormsModule
+   SharedModule
   ]
 })
 export class BankModule { }

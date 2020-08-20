@@ -8,6 +8,7 @@ import {NewListComponent} from '../../task-pages/new-list/new-list.component';
 import {NewTaskComponent} from '../../task-pages/new-task/new-task.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
+import { SharedModule } from '../shared.module';
 
 @NgModule({
   declarations: [
@@ -16,11 +17,7 @@ import { MaterialModule } from '../material/material.module';
     NewTaskComponent
   ],
   imports: [
-    CommonModule,
-    RouterModule,
-    FormsModule,
-    MaterialModule,
-    ReactiveFormsModule,
+    SharedModule,
     SimpleNotificationsModule.forRoot()
   ]
 })
