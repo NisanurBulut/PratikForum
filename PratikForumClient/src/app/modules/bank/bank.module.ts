@@ -6,6 +6,7 @@ import { BankPuanResultComponent } from '../../bank/bank-puan-result/bank-puan-r
 import { BankDegerlendirmeComponent } from '../../bank/bank-degerlendirme/bank-degerlendirme.component';
 import { SharedModule } from '../shared.module';
 import { BankRoutingModule } from '../bank/bank-routing.module';
+import { MaterialConfirmDialogComponent } from 'src/app/contacts/material-confirm-dialog/material-confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -13,11 +14,14 @@ import { BankRoutingModule } from '../bank/bank-routing.module';
     BankPuanComponent,
     BankCommentComponent,
     BankPuanResultComponent,
-    BankDegerlendirmeComponent,
+    BankDegerlendirmeComponent
   ],
   imports: [
-    BankRoutingModule,
-    SharedModule
-  ]
+    SharedModule,
+    BankRoutingModule
+  ],
+  exports: [
+  ],
+  entryComponents: [MaterialConfirmDialogComponent]
 })
 export class BankModule { }

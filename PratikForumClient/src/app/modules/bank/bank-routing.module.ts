@@ -7,6 +7,7 @@ import { BankDegerlendirmeComponent } from '../../bank/bank-degerlendirme/bank-d
 import { BankAccountComponent } from '../../bank-account/bank-account.component';
 
 const routes: Routes = [
+    { path: 'bankAccount', component: BankAccountComponent },
     {
         path: 'bank',
         component: BankComponent,
@@ -14,13 +15,12 @@ const routes: Routes = [
             { path: 'operations', component: BankOperationsComponent },
             { path: 'degerlendirme/:id', component: BankDegerlendirmeComponent }
         ]
-    },
-    { path: 'bankAccount', component: BankAccountComponent }
+    }
 ];
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],
-    exports: []
+    exports: [RouterModule]
 })
 export class BankRoutingModule {
 }
