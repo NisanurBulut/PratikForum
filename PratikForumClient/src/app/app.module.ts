@@ -37,7 +37,6 @@ import { SharedModule } from './modules/shared.module';
     ContactsComponent,
     ContactListComponent,
     MaterialConfirmDialogComponent
-
   ],
   imports: [
     AppRoutingModule,
