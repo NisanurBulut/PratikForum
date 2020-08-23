@@ -28,9 +28,7 @@ import { SharedModule } from './modules/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
-    BankAccountComponent,
     HomeComponent,
-    BankComponent,
     UserComponent,
     UserOperationsComponent,
     ContactComponent,
