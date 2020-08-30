@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { BudgetItem } from 'src/app/models/budget-item.model';
+import { BudgetItem } from '../../models';
 import { MatDialog } from '@angular/material/dialog';
 import { EditItemModalComponent } from '../edit-item-modal/edit-item-modal.component';
 import { IUpdateBudgetEvent } from 'src/app/shared/IUpdateBudgetEvent';

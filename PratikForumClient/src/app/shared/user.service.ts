@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { FormGroup } from '@angular/forms';
 import { catchError } from 'rxjs/internal/operators/catchError';
-import { User } from '../models/user.model';
+import { User } from '../models';
 
 @Injectable({
   providedIn: 'root'

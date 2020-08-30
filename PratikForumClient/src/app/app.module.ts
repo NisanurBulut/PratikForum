@@ -1,22 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
-import { UserOperationsComponent } from './user/user-operations/user-operations.component';
-import { MaterialConfirmDialogComponent } from './contacts/material-confirm-dialog/material-confirm-dialog.component';
+import { UserComponent, UserOperationsComponent } from './user';
+import { MaterialConfirmDialogComponent } from './contacts';
 
 import { AppRoutingModule } from './app-routing.module';
-import { DefaultModule } from './modules/default.module';
-import { BankModule } from './modules/bank/bank.module';
-import { BudgetModule } from './modules/budget/budget.module';
-import { TaskModule } from './modules/task/task.module';
-import { SharedModule } from './modules/shared.module';
-import { ContactModule } from './modules/contact/contact.module';
-import { ComponentModule } from './components/component/component.module';
+import {  DefaultModule,
+          BankModule,
+          BudgetModule,
+          TaskModule,
+          SharedModule,
+          ContactModule } from './modules';
+
+import { ComponentModule } from './components';
 
 import { DialogService } from './shared/dialog.service';
 @NgModule({

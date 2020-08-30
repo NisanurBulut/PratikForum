@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
-import { BudgetItem } from 'src/app/models/budget-item.model';
+import { Component, OnInit, Inject } from '@angular/core';
+import { BudgetItem } from '../../models';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({

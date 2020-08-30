@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared.module';
-import { ContactsComponent } from '../../contacts/contacts.component';
-import { ContactListComponent } from '../../contacts/contact-list/contact-list.component';
-import { ContactComponent } from '../../contacts/contact/contact.component';
+import {
+    ContactsComponent,
+    ContactListComponent,
+    ContactComponent } from '../../contacts';
 import { RouterModule } from '@angular/router';
 
 @NgModule({

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BankService } from '../../shared/bank.service';
 import { FormBuilder, FormArray, Validators, FormGroup } from '@angular/forms';
-import { Bank } from '../../models/bank.model';
+import { Bank } from '../../models';
 
 
 @Component({

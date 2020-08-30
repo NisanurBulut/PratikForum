@@ -1,10 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BankService } from '../../shared/bank.service';
-import { Bank } from 'src/app/models/bank.model';
 import { Subscription } from 'rxjs';
-import { BankYorum } from 'src/app/models/bankYorum.model';
-import { PuanDetay } from 'src/app/models/puanDetay.model';
+import { Bank, BankYorum, PuanDetay } from '../../models';
 
 @Component({
   selector: 'app-bank-degerlendirme',

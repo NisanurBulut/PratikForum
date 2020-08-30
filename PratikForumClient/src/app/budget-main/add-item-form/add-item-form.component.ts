@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { BudgetItem } from '../../models/budget-item.model';
+import { BudgetItem } from '../../models';
 
 @Component({
   selector: 'app-add-item-form',

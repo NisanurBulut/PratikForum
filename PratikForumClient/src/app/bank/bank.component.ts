@@ -1,8 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BankService } from '../shared/bank.service';
-import { FormBuilder, FormArray, Validators, FormGroup } from '@angular/forms';
-import { Bank } from '../models/bank.model';
-
+import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-bank',
   templateUrl: './bank.component.html',

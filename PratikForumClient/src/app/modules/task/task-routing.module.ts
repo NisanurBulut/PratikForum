@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TaskViewComponent } from 'src/app/task-pages/task-view/task-view.component';
-import { NewListComponent } from 'src/app/task-pages/new-list/new-list.component';
-import { NewTaskComponent } from 'src/app/task-pages/new-task/new-task.component';
+import {
+    TaskViewComponent,
+    NewListComponent,
+    NewTaskComponent } from '../../task-pages';
 
 
 const routes: Routes = [

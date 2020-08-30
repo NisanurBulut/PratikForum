@@ -1,4 +1,4 @@
-import { BudgetItem } from '../models/budget-item.model';
+import { BudgetItem } from '../models';
 
 export interface IUpdateBudgetEvent {
     old: BudgetItem;

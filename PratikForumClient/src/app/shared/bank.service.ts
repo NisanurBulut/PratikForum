@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { catchError } from 'rxjs/operators';
-import { Bank } from '../models/bank.model';
-import { BankYorum } from '../models/bankYorum.model';
+import { Bank, BankYorum } from '../models';
 
 @Injectable({
   providedIn: 'root'
