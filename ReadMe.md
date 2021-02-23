@@ -1,4 +1,8 @@
-Ana Ekran
+## Give a Star! :star:
+If you like or are using this project to learn or start your solution, please give it a star. Thanks!
+
+<hr>
+
 ![Ana Ekran](https://github.com/NisanurBulut/PratikForum/blob/master/Trailer/anaEkran.gif)
 
 ---
